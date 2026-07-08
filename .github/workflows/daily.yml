@@ -38,6 +38,6 @@ jobs:
         run: |
           git config user.name "trend-radar-bot"
           git config user.email "actions@github.com"
-          git add data/history.db
-          git diff --cached --quiet || git commit -m "chore: update history $(date -u +%F)"
+          git add data/history.db docs/
+          git diff --cached --quiet || git commit -m "chore: update history & archive $(date -u +%F)"
           git push

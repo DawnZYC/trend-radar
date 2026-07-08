@@ -29,6 +29,9 @@ def run(dry_run: bool = False) -> int:
     print(f"[1/4] 抓取 trending: {languages!r}")
     repos = scraper.fetch_all(languages)
     print(f"      共 {len(repos)} 个 repo")
+    if not repos:
+        # 页面结构变了或被反爬:让 CI 变红触发告警,而不是静默发空日报
+        raise RuntimeError("抓取结果为 0,GitHub Trending 页面可能已改版")
 
     print("[2/4] 去重(近 14 天未上榜)+ star 暴涨检测")
     new_repos = store.filter_new(repos, today)
@@ -60,9 +63,11 @@ def run(dry_run: bool = False) -> int:
     analyses, overview = analyzer.analyze_all(enriched)
     print(f"      成功分析 {len(analyses)} 个")
 
-    print("[4/4] 渲染并发送邮件")
+    print("[4/4] 渲染、存档并发送邮件")
     import mailer
+    import archive
     html = mailer.render(today, overview, analyses)
+    archive.save(today, html)
     mailer.send(f"GitHub Trend Radar · {today}", html)
     print("完成 ✓")
     return 0

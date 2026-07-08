@@ -48,11 +48,16 @@ def _parse_int(text: str) -> int:
 
 
 def fetch_trending(language: str = "", since: str = "daily") -> list[Repo]:
-    """解析 github.com/trending 页面。language 为空表示总榜。"""
+    """抓取 github.com/trending 页面。language 为空表示总榜。"""
     path = f"/trending/{language}" if language else "/trending"
     resp = _get(f"https://github.com{path}?since={since}", headers={"User-Agent": UA})
     resp.raise_for_status()
-    soup = BeautifulSoup(resp.text, "html.parser")
+    return parse_trending(resp.text)
+
+
+def parse_trending(html: str) -> list[Repo]:
+    """纯解析函数,便于离线测试。"""
+    soup = BeautifulSoup(html, "html.parser")
 
     repos: list[Repo] = []
     for article in soup.select("article.Box-row"):
