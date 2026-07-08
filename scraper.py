@@ -102,6 +102,7 @@ def enrich(repo: Repo) -> Repo:
             repo.created_at = (data.get("created_at") or "")[:10]
             repo.stars = data.get("stargazers_count", repo.stars)
             repo.description = data.get("description") or repo.description
+            repo.language = data.get("language") or repo.language
 
         r = _get(f"{API}/repos/{repo.full_name}/readme", headers=headers)
         if r.ok:

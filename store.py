@@ -17,13 +17,17 @@ CREATE TABLE IF NOT EXISTS sightings (
     stars_today INTEGER DEFAULT 0,
     PRIMARY KEY (full_name, date)
 );
+CREATE TABLE IF NOT EXISTS reported (
+    full_name TEXT PRIMARY KEY,
+    date      TEXT NOT NULL
+);
 """
 
 
 def _connect(db_path: Path = DB_PATH) -> sqlite3.Connection:
     db_path.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(db_path)
-    conn.execute(SCHEMA)
+    conn.executescript(SCHEMA)
     return conn
 
 
@@ -66,5 +70,50 @@ def record(repos: list[Repo], date: str, db_path: Path = DB_PATH) -> None:
             "INSERT OR REPLACE INTO sightings (full_name, date, stars, stars_today) "
             "VALUES (?, ?, ?, ?)",
             [(r.full_name, date, r.stars, r.stars_today) for r in repos],
+        )
+        conn.commit()
+
+
+def unreported_new(date: str, lookback_days: int = 4, dedup_days: int = 14,
+                   db_path: Path = DB_PATH) -> list[Repo]:
+    """近 lookback_days 天(含今天)首次上榜、且近 dedup_days 天未进过日报的 repo。
+
+    从 sightings 重建轻量 Repo(取该 repo 最近一次快照的 star 数),
+    描述/README 等由后续 enrich 补全。
+    """
+    with _connect(db_path) as conn:
+        rows = conn.execute(
+            """
+            SELECT s.full_name, s.stars, s.stars_today
+            FROM sightings s
+            JOIN (SELECT full_name, MAX(date) AS d FROM sightings
+                  WHERE date > date(?, ?) AND date <= ?
+                  GROUP BY full_name) latest
+              ON latest.full_name = s.full_name AND latest.d = s.date
+            WHERE NOT EXISTS (
+                SELECT 1 FROM sightings prev
+                WHERE prev.full_name = s.full_name
+                  AND prev.date <= date(?, ?) AND prev.date >= date(?, ?)
+            )
+            AND NOT EXISTS (
+                SELECT 1 FROM reported r
+                WHERE r.full_name = s.full_name AND r.date >= date(?, ?)
+            )
+            """,
+            (date, f"-{lookback_days} days", date,
+             date, f"-{lookback_days} days", date, f"-{dedup_days} days",
+             date, f"-{dedup_days} days"),
+        ).fetchall()
+    return [Repo(full_name=name, url=f"https://github.com/{name}",
+                 stars=stars, stars_today=stars_today)
+            for name, stars, stars_today in rows]
+
+
+def mark_reported(full_names: list[str], date: str, db_path: Path = DB_PATH) -> None:
+    """日报发送成功后调用;未标记的候选下次日报自动重试。"""
+    with _connect(db_path) as conn:
+        conn.executemany(
+            "INSERT OR REPLACE INTO reported (full_name, date) VALUES (?, ?)",
+            [(n, date) for n in full_names],
         )
         conn.commit()

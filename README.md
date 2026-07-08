@@ -18,7 +18,8 @@ Daily GitHub Trending digest — 每天自动抓取 GitHub Trending,筛出**新�
 conda create -n trend-radar python=3.12 -y && conda activate trend-radar
 pip install -r requirements.txt
 
-python main.py --dry-run        # 只抓取+去重,不调 AI 不发邮件
+python main.py --collect        # 只抓取入库(每晚采集模式)
+python main.py --dry-run        # 日报干跑:打印候选,不调 AI 不发邮件
 
 cp .env.example .env            # 填好凭据后:
 set -a && source .env && set +a
@@ -32,7 +33,9 @@ python main.py                  # 完整流程,跑完查收邮件
    `OPENAI_API_KEY` `SMTP_HOST` `SMTP_PORT` `SMTP_USER` `SMTP_PASS` `MAIL_TO`
 3. Settings → Actions → General → Workflow permissions 选 **Read and write permissions**
    (机器人需要把 history.db commit 回仓库)
-4. Actions 页手动 Run workflow 验证,之后每天 UTC 00:00(北京时间 08:00)自动运行
+4. Actions 页手动 Run workflow 验证(可选 digest / collect 模式)。之后自动运行:
+   每晚北京时间 20:00 采集入库(零 AI 成本),周一/三/五早 08:00 发日报,
+   覆盖自上次日报以来攒下的全部新项目;分析失败的候选下次日报自动重试
 
 Gmail 发件:开启两步验证后在 myaccount.google.com/apppasswords 创建应用专用密码,
 去掉空格填入 `SMTP_PASS`。
