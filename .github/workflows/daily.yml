@@ -1,0 +1,43 @@
+name: daily-digest
+
+on:
+  schedule:
+    - cron: "0 0 * * *"   # 00:00 UTC = 北京时间 08:00
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Run pipeline
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-4o-mini' }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          TRENDING_LANGUAGES: ${{ vars.TRENDING_LANGUAGES || ',python,typescript' }}
+        run: python main.py
+
+      - name: Persist history.db
+        run: |
+          git config user.name "trend-radar-bot"
+          git config user.email "actions@github.com"
+          git add data/history.db
+          git diff --cached --quiet || git commit -m "chore: update history $(date -u +%F)"
+          git push
