@@ -18,7 +18,7 @@ TEMPLATE = Template(autoescape=True, source="""\
   {% for a in analyses %}
   <div style="background:#fff;border:1px solid #d1d9e0;border-radius:8px;padding:16px 20px;margin-bottom:12px;">
     <div style="display:flex;justify-content:space-between;">
-      <a href="{{ a.url }}" style="font-weight:600;color:#0969da;text-decoration:none;">{{ a.full_name }}</a>
+      <a href="{{ a.url }}" style="font-weight:600;color:#0969da;text-decoration:none;">{{ a.full_name }}</a>{% if a.is_surge %} <span title="star surging">🚀</span>{% endif %}
       <span>{{ "⭐" * a.score }}</span>
     </div>
     <div style="color:#59636e;font-size:13px;margin:4px 0;">

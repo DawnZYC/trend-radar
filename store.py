@@ -40,6 +40,25 @@ def filter_new(repos: list[Repo], date: str, lookback_days: int = 14,
     return [r for r in repos if r.full_name not in seen]
 
 
+def find_surges(repos: list[Repo], date: str, lookback_days: int = 7,
+                ratio: float = 1.5, db_path: Path = DB_PATH) -> list[Repo]:
+    """在已上过榜的 repo 里,找当前 star 相比近 lookback_days 天内
+    最近一次记录暴涨 ≥ ratio 倍的,标记 is_surge 并返回。"""
+    surges: list[Repo] = []
+    with _connect(db_path) as conn:
+        for repo in repos:
+            row = conn.execute(
+                "SELECT stars FROM sightings "
+                "WHERE full_name = ? AND date < ? AND date >= date(?, ?) "
+                "ORDER BY date DESC LIMIT 1",
+                (repo.full_name, date, date, f"-{lookback_days} days"),
+            ).fetchone()
+            if row and row[0] > 0 and repo.stars >= row[0] * ratio:
+                repo.is_surge = True
+                surges.append(repo)
+    return surges
+
+
 def record(repos: list[Repo], date: str, db_path: Path = DB_PATH) -> None:
     """幂等写入当日快照。"""
     with _connect(db_path) as conn:

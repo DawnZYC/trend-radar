@@ -26,6 +26,7 @@ class Repo:
     topics: list[str] = field(default_factory=list)
     created_at: str = ""
     readme_excerpt: str = ""
+    is_surge: bool = False  # 老项目但 star 近日暴涨,重新入选
 
 
 def _get(url: str, headers: dict | None = None, retries: int = 3) -> requests.Response:
