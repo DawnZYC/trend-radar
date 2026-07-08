@@ -59,6 +59,8 @@ def fetch_trending(language: str = "", since: str = "daily") -> list[Repo]:
         if not a or not a.get("href"):
             continue
         full_name = a["href"].strip("/")
+        if not re.fullmatch(r"[\w.-]+/[\w.-]+", full_name):
+            continue  # 防御:owner/repo 之外的格式一律丢弃
         desc_el = article.select_one("p")
         lang_el = article.select_one('[itemprop="programmingLanguage"]')
         star_el = article.select_one('a[href$="/stargazers"]')

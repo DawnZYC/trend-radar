@@ -7,7 +7,7 @@ from email.mime.text import MIMEText
 
 from jinja2 import Template
 
-TEMPLATE = Template("""\
+TEMPLATE = Template(autoescape=True, source="""\
 <!DOCTYPE html>
 <html><body style="margin:0;padding:24px;background:#f6f8fa;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;color:#1f2328;">
 <div style="max-width:680px;margin:0 auto;">
