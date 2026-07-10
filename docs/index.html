@@ -1,18 +1,92 @@
 <!DOCTYPE html>
 <html lang="zh"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GitHub Trend Radar 归档</title>
+<title>Trend Radar — GitHub Trending 扫描日志</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  body { max-width: 680px; margin: 40px auto; padding: 0 16px;
-         font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; color: #1f2328; }
-  a { color: #0969da; text-decoration: none; }
-  li { margin: 6px 0; }
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.log { list-style: none; margin: 0; padding: 0; }
+.log li { border-bottom: 1px solid var(--line); }
+.log a { display: flex; align-items: baseline; gap: 14px; padding: 15px 6px;
+  text-decoration: none; transition: background .12s; }
+.log a:hover { background: var(--card); }
+.log a:hover .d::before { background: var(--blip); box-shadow: 0 0 0 4px rgba(23,122,91,.18); }
+.d { font-family: "IBM Plex Mono", monospace; font-weight: 500; white-space: nowrap; }
+.d::before { content: ""; display: inline-block; width: 7px; height: 7px;
+  border-radius: 50%; border: 1.5px solid var(--ink); margin-right: 12px;
+  vertical-align: 1px; transition: all .12s; }
+.leader { flex: 1; border-bottom: 1.5px dotted var(--line); transform: translateY(-4px); }
+.n { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--dim);
+  white-space: nowrap; }
 </style></head>
-<body>
-<h1>🛰 GitHub Trend Radar</h1>
-<p>每日 GitHub Trending 新项目 AI 日报归档,共 2 期。</p>
-<ul>
-<li><a href="2026-07-10.html">2026-07-10</a></li>
-<li><a href="2026-07-08.html">2026-07-08</a></li>
+<body><div class="wrap">
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">github trending · ai digest</div>
+    <h1>Trend Radar</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>SCAN LOG · 每周一 / 三 / 五</span><span>2 SCANS</span></div>
+<ul class="log">
+
+  <li><a href="2026-07-10.html">
+    <span class="d">2026-07-10</span>
+    <span class="leader" aria-hidden="true"></span>
+    <span class="n">view →</span>
+  </a></li>
+
+  <li><a href="2026-07-08.html">
+    <span class="d">2026-07-08</span>
+    <span class="leader" aria-hidden="true"></span>
+    <span class="n">view →</span>
+  </a></li>
+
 </ul>
-</body></html>
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a> · 抓取 → 去重 → AI 分析,全自动</footer>
+</div></body></html>
