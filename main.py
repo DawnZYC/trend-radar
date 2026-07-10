@@ -87,7 +87,7 @@ def digest(dry_run: bool = False) -> int:
     import mailer
     import archive
     html = mailer.render(today, overview, analyses)
-    archive.save(today, html)
+    archive.save(today, overview, analyses)  # 网页版单独渲染
     mailer.send(f"GitHub Trend Radar · {today}", html)
 
     # 只标记成功进入日报的;分析失败的下次日报自动重试

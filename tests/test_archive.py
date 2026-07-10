@@ -1,26 +1,52 @@
 import archive
 
 
-def test_save_and_index(tmp_path):
-    archive.save("2026-07-08", "<html>day1</html>", docs_dir=tmp_path)
-    archive.save("2026-07-09", "<html>day2</html>", docs_dir=tmp_path)
+def _a(name="a/b", **kw):
+    d = {"url": f"https://github.com/{name}", "full_name": name, "score": 3,
+         "category": "AI", "language": "Python", "stars_today": 10, "stars": 100,
+         "summary": "s", "problem_solved": "p", "reason": "r", "is_surge": False}
+    d.update(kw)
+    return d
 
-    assert (tmp_path / "2026-07-08.html").read_text() == "<html>day1</html>"
+
+def test_save_and_index(tmp_path):
+    archive.save("2026-07-08", "综述一", [_a()], docs_dir=tmp_path)
+    archive.save("2026-07-09", "综述二", [_a(), _a("c/d")], docs_dir=tmp_path)
+
+    report = (tmp_path / "2026-07-08.html").read_text()
+    assert "a/b" in report and "综述一" in report
+
     index = (tmp_path / "index.html").read_text()
     assert index.index("2026-07-09.html") < index.index("2026-07-08.html"), "索引应倒序"
-    assert "共 2 期" in index
+    assert "2 signals" in index and "2 SCANS" in index
+
+
+def test_report_escapes_injection(tmp_path):
+    evil = _a(summary="<script>alert(1)</script>")
+    archive.save("2026-07-08", "<b>o</b>", [evil], docs_dir=tmp_path)
+    html = (tmp_path / "2026-07-08.html").read_text()
+    assert "<script>alert" not in html and "&lt;script&gt;" in html
+    assert "<b>o</b>" not in html
+
+
+def test_surge_badge_and_signal_bars(tmp_path):
+    archive.save("2026-07-08", "o", [_a(is_surge=True, score=4)], docs_dir=tmp_path)
+    html = (tmp_path / "2026-07-08.html").read_text()
+    assert "SURGE" in html
+    assert html.count('<i class="on"></i>') == 4
 
 
 def test_index_ignores_non_date_files(tmp_path):
-    (tmp_path).mkdir(exist_ok=True)
+    tmp_path.mkdir(exist_ok=True)
     (tmp_path / "notes.html").write_text("x")
-    archive.save("2026-07-08", "<html>d</html>", docs_dir=tmp_path)
+    archive.save("2026-07-08", "o", [_a()], docs_dir=tmp_path)
     index = (tmp_path / "index.html").read_text()
-    assert "notes.html" not in index and "共 1 期" in index
+    assert "notes.html" not in index and "1 SCANS" in index
 
 
 def test_save_idempotent(tmp_path):
-    archive.save("2026-07-08", "<html>v1</html>", docs_dir=tmp_path)
-    archive.save("2026-07-08", "<html>v2</html>", docs_dir=tmp_path)
-    assert (tmp_path / "2026-07-08.html").read_text() == "<html>v2</html>"
-    assert "共 1 期" in (tmp_path / "index.html").read_text()
+    archive.save("2026-07-08", "v1", [_a()], docs_dir=tmp_path)
+    archive.save("2026-07-08", "v2", [_a(), _a("c/d")], docs_dir=tmp_path)
+    assert "v2" in (tmp_path / "2026-07-08.html").read_text()
+    index = (tmp_path / "index.html").read_text()
+    assert "1 SCANS" in index and "2 signals" in index
