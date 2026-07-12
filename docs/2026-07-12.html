@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-07-12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-07-12</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天 GitHub Trending 的项目显示出前端开发、智能家居和基础设施管理领域的强劲增长趋势。其中最值得关注的三个项目分别是：Bun，它通过提供一个快速的 JavaScript 运行时和工具集，显著提高了开发效率；Home Assistant，通过强调本地控制和隐私，为家庭自动化领域提供了强有力的支持；Next.js，则以其强大的特性和众多企业的认可，继续推动现代 Web 应用开发的创新。这些项目不仅解决了当前开发者面临的重要问题，还在各自的领域中展现了巨大的潜力和影响力。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/oven-sh/bun">oven-sh/bun</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端/开发工具 · Rust
+    · +654 today · 94632 stars</div>
+  <p>Bun 是一个快速的 JavaScript 运行时，结合了打包、测试运行和包管理功能，旨在提升开发效率。</p>
+  <p class="why">Bun 通过提供一个快速的 Node.js 替代方案，显著减少启动时间和内存占用，简化了 JavaScript 和 TypeScript 应用的开发流程。 — Bun 的快速性能和一体化工具集为开发者提供了显著的效率提升，特别是在减少依赖和加快开发周期方面，可能改变现代 JavaScript 开发的格局。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/home-assistant/core">home-assistant/core</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">智能家居/物联网 · Python
+    · +404 today · 89034 stars</div>
+  <p>Home Assistant 是一个开源的家庭自动化平台，强调本地控制和隐私保护，为用户提供了强大的设备集成和易用性。</p>
+  <p class="why">解决了家庭自动化系统的隐私和本地控制问题，使用户能够自由地集成和控制家中各类智能设备。 — 项目的模块化设计和强大的社区支持，能够促使家庭自动化领域的创新，改变用户的生活方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/vercel/next.js">vercel/next.js</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端/框架 · JavaScript
+    · +331 today · 141028 stars</div>
+  <p>Next.js 是一个强大的 React 框架，支持全栈 Web 应用的开发，尤其适合需要服务器渲染和静态站点生成的项目。</p>
+  <p class="why">解决了构建复杂 Web 应用中的性能瓶颈和开发效率低下的问题，提供了简单易用的 API 和丰富的功能。 — Next.js 已被许多大型企业采纳，并且不断扩展现代 Web 应用开发的可能性，其影响能显著改变开发者的工作方式和项目架构。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/hashicorp/terraform">hashicorp/terraform</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">基础设施管理 · Go
+    · +229 today · 49450 stars</div>
+  <p>Terraform 是一个基础设施即代码（IaC）工具，能够安全、高效地创建、变更和版本化基础设施。</p>
+  <p class="why">解决了基础设施管理的复杂性，提供可版本控制的基础设施描述，避免人为错误。 — Terraform 的设计和特点使其在基础设施管理领域具有革命性影响，能够显著提升团队协作和自动化操作的效率，适用于各种云服务和自主解决方案，具有广泛的应用场景和社区支持。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/microsoft/TypeScript">microsoft/TypeScript</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端 · TypeScript
+    · +176 today · 109877 stars</div>
+  <p>TypeScript 是一种增强 JavaScript 的语言，提供可选类型，适合中大型应用开发。</p>
+  <p class="why">解决了 JavaScript 在大型应用开发中的类型检查和维护问题，提高了代码的可读性和可维护性。 — TypeScript 的强类型系统和优秀的工具支持使其成为前端开发的主流选择，可能改变开发者的工作方式，尤其是在大型项目中。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/python/cpython">python/cpython</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">编程语言/基础设定 · Python
+    · +158 today · 73767 stars</div>
+  <p>这是Python编程语言的核心实现，具备广泛使用和活跃开发的特性。</p>
+  <p class="why">解决了编程语言的核心实现问题，提供了一种通用的、强大的编程能力。 — 作为一种广泛应用的编程语言，Python对开发者工作方式的影响深远，此项目的进展对于技术生态具有重大意义。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/supabase/supabase">supabase/supabase</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">数据库/后端开发工具 · TypeScript
+    · +158 today · 106255 stars</div>
+  <p>Supabase 是一个基于 Postgres 的开发平台，以开源工具构建 Firebase 的功能，面向 Web、移动和 AI 应用开发。</p>
+  <p class="why">解决了开发者对于易用、高性能的数据库服务的需求，尤其在实时数据处理和 AI 应用的集成上。 — Supabase 提供了一整套开发工具，特别是针对 Postgres 的支持，使得前端开发者可以轻松整合后台数据库，具备变革性的潜力，能够显著提升开发效率。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/mattpocock/skills">mattpocock/skills</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端, AI/开发工具 · Shell
+    · +1728 today · 166746 stars</div>
+  <p>本项目提供了一系列针对实际软件工程的技能，旨在提高与AI编码助手的沟通效率，确保开发过程中的目标对齐。</p>
+  <p class="why">解决了软件开发过程中最常见的目标不匹配问题，提高了与AI编码助手的互动文明度。 — 项目基于真实的工程经验构建，具有实用性和创造性，能够显著提升工程师的工作效率，值得关注和应用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/HKUDS/Vibe-Trading">HKUDS/Vibe-Trading</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">金融科技/人工智能 · Python
+    · +776 today · 20504 stars</div>
+  <p>Vibe-Trading 是一个个人化的交易代理，集成了算法交易、回测以及多代理模型，适合金融科技领域的用户。</p>
+  <p class="why">该项目为用户提供一个高效且可定制的交易工具，帮助用户在金融市场中进行更为智能的交易决策。 — Vibe-Trading 利用 AI 技术和量化分析重新定义个人交易方式，对投资者来说具有颠覆性的潜力，值得深入关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/k1tbyte/Wand-Enhancer">k1tbyte/Wand-Enhancer</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开源工具/用户体验增强 · C#
+    · +603 today · 6921 stars</div>
+  <p>Wand-Enhancer 是一个用于改善 Wand 应用用户体验的开源工具，具备本地配置管理和远程控制功能。</p>
+  <p class="why">提升 Wand 应用的用户体验，简化本地配置管理和增强自定义功能。 — 该项目不仅提供了用户自定义的功能扩展，还引入了远程控制面板，使得用户可以通过手机直接控制应用，提升了使用便捷性和灵活性，具备较大的潜力和创新性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/malisper/pgrust">malisper/pgrust</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">数据库, Rust · Rust
+    · +518 today · 2439 stars</div>
+  <p>pgrust 是一个用 Rust 重写的 Postgres 数据库项目，当前版本已通过 100% 的 Postgres 回归测试, 具有多线程、快速分析能力以及与 Postgres 的兼容性。</p>
+  <p class="why">提供了更易更改、更高效的 Postgres 实现，提升了事务和分析工作负载的性能。 — 该项目通过重写流行的数据库系统 Postgres，采用 Rust 语言实现更高的性能和更好的内部可维护性，展现出较大潜力，未来可能对数据库领域产生深远影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Shubhamsaboo/awesome-llm-apps">Shubhamsaboo/awesome-llm-apps</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +450 today · 118484 stars</div>
+  <p>该项目聚焦于提供100多种AI代理和RAG应用，允许用户直接运行、定制和部署，具有较高的实用性与可访问性。</p>
+  <p class="why">该项目旨在降低AI应用的门槛，使开发者能够快速创建和部署AI应用，同时为用户提供丰富的教学资源，有利于推动AI技术的普及和应用。 — 项目内容丰富且实用，能够显著提高AI应用的开发效率，对开发者有实质性帮助，推动相关技术的普及与应用，故评分为4。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Dicklesworthstone/destructive_command_guard">Dicklesworthstone/destructive_command_guard</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">安全工具/开发者工具 · Rust
+    · +444 today · 2812 stars</div>
+  <p>Destructive Command Guard 是一款用于阻止执行危险 git 和 shell 命令的工具，旨在保护开发者的代码免受意外删除的影响。</p>
+  <p class="why">提供了一种高效的方式，防止 AI 编码代理执行可能导致代码丢失的指令，提升代码安全性。 — 该项目提供了一种创新且实用的解决方案，具有提升开发安全性和效率的潜力，尤其在 AI 编码日益普及的背景下，显得尤为重要。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/public-apis/public-apis">public-apis/public-apis</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具 · Python
+    · +395 today · 449376 stars</div>
+  <p>该项目提供了一个全面的公共API列表，对于开发人员和产品经理来说是一个宝贵的资源，能帮助他们快速找到合适的数据接口，提升开发效率与灵活性。</p>
+  <p class="why">解决了开发者在寻找和整合公共API时的信息碎片化问题，使得开发者更容易获取各种数据和服务。 — 项目对开发者非常有帮助，能够显著提高工作效率，尤其是在数据驱动的应用开发中。其广泛的社区支持和持续更新增加了其价值，因此给予高分。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/iptv-org/iptv">iptv-org/iptv</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开源/IPTV · TypeScript
+    · +329 today · 132609 stars</div>
+  <p>该项目是一个全球范围内公共IPTV频道的集合，为用户提供便捷的直播流观看方式。</p>
+  <p class="why">解决了用户查找和访问全球IPTV频道的便利性问题，同时支持多种播放器格式。 — 项目提供了广泛的IPTV频道集合，大大简化了用户使用流媒体服务的流程，具有较高的实用价值和社会贡献，但是并未彻底改变行业格局，因此评分为4。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/davila7/claude-code-templates">davila7/claude-code-templates</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +274 today · 29226 stars</div>
+  <p>Claude Code Templates 是一个用于配置和监控 Claude Code 的 CLI 工具，适合需要使用 Anthropic Claude 的开发者，有助于提高开发效率。</p>
+  <p class="why">该项目提供了快速配置和管理 Claude Code 的解决方案，简化了开发流程。 — 项目针对当前 AI 领域的需求，提供实际的开发工具，能够有效提升用户工作效率，具有较大的应用潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/前端/设计工具 · CSS
+    · +210 today · 4230 stars</div>
+  <p>Hallmark是一个旨在打破AI生成设计单一风格界限的工具，提供多样化、个性化的设计解决方案。</p>
+  <p class="why">解决了AI生成设计内容同质化的问题，通过不同的主题和结构提升设计的多样性和个性化。 — 该项目针对当前AI生成设计的局限性，提供创新的解决方案，可能改变设计工作流程，是一个值得关注的进展。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/huggingface/speech-to-speech">huggingface/speech-to-speech</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/语音处理/开源模型 · Python
+    · +187 today · 6107 stars</div>
+  <p>该项目是一个开源语音代理管道，支持低延迟和模块化构建，并结合多种语言模型，具备实时语音翻译功能。</p>
+  <p class="why">解决了本地语音代理构建和低延迟语音交互的问题，使得用户能够在本地和云环境中灵活使用语音识别和合成技术。 — 项目提供了一个灵活且模块化的架构，能够通过实时API进行自定义，有潜力在语音交互领域产生实质性影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ATH-MaaS/Pixelle-Video">ATH-MaaS/Pixelle-Video</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/视频生成 · Python
+    · +157 today · 25224 stars</div>
+  <p>Pixelle-Video 是一个全自动化的短视频制作引擎，利用 AI 技术使视频创作变得更加简便和高效。</p>
+  <p class="why">解决了视频制作过程中对复杂技术要求的需求，让任何人都能轻松创建专业级视频内容。 — 项目利用AI技术实现了视频制作的自动化，尤其适合创作者和内容创作者，潜在改变了传统视频制作流程。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/前端/视频渲染 · TypeScript
+    · +157 today · 34471 stars</div>
+  <p>HyperFrames 是一个开源框架，专注于将 HTML、CSS 和媒体内容转化为确定性 MP4 视频，适用于虚拟助手和编码代理的高效视频制作。</p>
+  <p class="why">解决了视频创作过程中的复杂性，特别是通过 AI 编码代理简化了视频生成工作流。 — 项目结合了 AI 技术与视频渲染，大幅提升了内容创作的效率和自动化程度，具有很大的潜力改变视频制作工作流。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/基础设施 · TypeScript
+    · +156 today · 64178 stars</div>
+  <p>Ruflo 是一个强大的智能多代理框架，具备自学习能力和集成多个 AI 系统的能力。</p>
+  <p class="why">解决了分布式智能代理的协调与部署问题，支持多种 AI 系统的集成和自适应学习。 — 该项目提供了多个前沿特性，可能会显著提升工作效率，尤其在需要协作的 AI 应用场景中。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/chen08209/FlClash">chen08209/FlClash</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端 · Dart
+    · +151 today · 45204 stars</div>
+  <p>FlClash是一个多平台的代理客户端，基于ClashMeta构建，强调简单易用，完全开源且无广告。</p>
+  <p class="why">为用户在多平台间提供便捷的代理服务，通过简单的界面和多种主题选项，增强用户体验。 — 该项目实现了用户所需的多平台支持，易用性和现代设计，适应了当前对网络隐私和访问自由的需求，同时其开源特点为开发者提供了可访问的源码，有潜力影响用户的工作和生活方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ChromeDevTools/chrome-devtools-mcp">ChromeDevTools/chrome-devtools-mcp</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/开发工具 · TypeScript
+    · +145 today · 46765 stars</div>
+  <p>一个为人工智能编程助手提供的强大工具，使其可以更精准地与Chrome浏览器进行交互和调试。</p>
+  <p class="why">通过Chrome DevTools自动化和深度调试，提升AI助手的编码和调试效率。 — 该项目为程序员和AI助手之间的协作提供了新的方式，大幅提升了自动化和调试的能力，可能改变开发者的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/par274/sharpemu">par274/sharpemu</a>
+    <span class="sig" role="img" aria-label="关注度 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">模拟器/游戏开发 · C#
+    · +349 today · 1219 stars</div>
+  <p>SharpEmu 是一个实验性的 PlayStation 5 模拟器项目，目前处于早期开发阶段，主要关注于技术研究和教育。</p>
+  <p class="why">解决了PlayStation 5游戏兼容性问题的基础架构，提供了部分内核功能支持。 — 该项目对于希望研究和探索 PS5 体系结构的人士有一定价值，但仍处于开发初期，距离实际使用还有距离。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/vuejs/vue">vuejs/vue</a>
+    <span class="sig" role="img" aria-label="关注度 2/5"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端框架 · TypeScript
+    · +163 today · 210134 stars</div>
+  <p>Vue 2 已进入生命周期的结束，现已不再维护，用户应迁移至 Vue 3。</p>
+  <p class="why">该项目主要用于构建用户界面，提供一个渐进式的框架，已帮助开发者简化开发流程。用户升级至 Vue 3 可以获得更多新特性及更好的支持。 — 尽管 Vue 2 在前端开发中曾产生重大影响，但目前已停止维护，建议用户转向 Vue 3，因此项目价值正在减弱。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
