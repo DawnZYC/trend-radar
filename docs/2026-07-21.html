@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-07-21</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-07-21</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的GitHub Trending项目展现出多个技术领域的活跃趋势，尤其在自动化、AI和开发工具方面。值得关注的三大项目包括CloakBrowser、Dify和Hyprland。CloakBrowser通过源代码级的指纹修改技术提供了防检测浏览器，解决了自动化测试的关键问题；Dify作为低代码平台，具备丰富的AI模型和工具支持，能够极大提高团队工作效率；Hyprland则提供了高度自定义的动态拼贴Wayland合成器，吸引了不少用户的关注，特别是在界面美观和功能方面实现了良好的平衡。这些项目不仅具备创新性，还解决了实际应用中的关键问题，具有广泛的市场潜力。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/CloakHQ/CloakBrowser">CloakHQ/CloakBrowser</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">浏览器自动化/反检测工具 · Python
+    · +102 today · 28837 stars</div>
+  <p>CloakBrowser 是一个基于 Chromium 的浏览器，旨在通过源代码级的指纹修改来规避各类机器人检测，非常适合需要自动化和隐私保护的场景。</p>
+  <p class="why">提供了一个能够成功绕过各种机器人检测机制的浏览器，适用于开发者进行网页抓取和自动化测试。 — 此项目通过先进的 C++ 源代码修改技术实现了防检测浏览器，解决了许多自动化测试中的关键问题，其潜在的使用在多个领域（如数据抓取、安全测试等）具备广泛的影响力，属于突破性技术。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ayghri/i-have-adhd">ayghri/i-have-adhd</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/生产力
+    · +1846 today · 6765 stars</div>
+  <p>该项目提供了一种适合注意力缺乏症患者（ADHD）的编码助手技能，旨在使输出结果更加简洁明了，便于理解和使用。</p>
+  <p class="why">解决了常规编程助手输出冗长的问题，帮助用户更快速地获取关键信息，提高了工作效率。 — 该项目特点鲜明，专门针对ADHD用户优化了编码助手的交互体验，虽然相对细分，但能够显著提升特定用户群体的工作效率，具有潜在的市场价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/oblien/openship">oblien/openship</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/自托管/CI/CD · TypeScript
+    · +1556 today · 6159 stars</div>
+  <p>Openship 是一款自托管的部署平台，旨在简化代码推送和基础设施管理的大部分流程。</p>
+  <p class="why">解决了传统部署过程中的复杂配置问题，提供一站式解决方案，适合个人开发者和团队使用。 — 该项目可以显著提高开发效率，尤其在自动化部署和基础设施管理方面，具备较大的实用价值和应用潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/chrislgarry/Apollo-11">chrislgarry/Apollo-11</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">基础设施设计 · Assembly
+    · +1195 today · 69930 stars</div>
+  <p>该项目包含阿波罗11号的飞行导航计算机原始源代码，展示了早期航天技术的实现与应用。</p>
+  <p class="why">该项目为软件工程师、航天爱好者和历史研究者提供了一手的技术资料，帮助更好地理解航天器导航计算机的运行机制。 — 此项目不仅是航天历史的重要组成部分，还是计算机科学与技术发展的一个标志，适合研究和教育使用，对技术人群有较高的吸引力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/koala73/worldmonitor">koala73/worldmonitor</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/前端 · TypeScript
+    · +1167 today · 65220 stars</div>
+  <p>World Monitor是一个实时全球情报仪表盘，提供AI驱动的新闻聚合、地缘政治监控及基础设施追踪。</p>
+  <p class="why">该项目解决了实时监控全球新闻与地缘政治动态的需求，为用户提供了统一的信息视角。 — 项目结合了AI与实时数据监控，具有较高的实用性和创新性，尤其对需要快速决策和信息洞察的用户群体非常重要。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/msitarzewski/agency-agents">msitarzewski/agency-agents</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Shell
+    · +949 today · 135381 stars</div>
+  <p>这是一个集成多种 AI 专家的工具，旨在提高用户的工作效率和流程，提供个性化和专业化的AI代理选择。</p>
+  <p class="why">为用户提供了专门化的AI代理，解决了传统通用AI工具不足以满足特定需求的问题。 — 项目通过提供高度专业化和个性化的AI代理，能够显著提升用户的工作流程，具有较强的实用性和创新性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/every-app/open-seo">every-app/open-seo</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">SEO工具 · TypeScript
+    · +850 today · 6562 stars</div>
+  <p>OpenSEO 是一款开源的 SEO 工具，旨在提供更为简便且可控的替代方案，能有效满足用户的 SEO 需求。</p>
+  <p class="why">解决了现有商业 SEO 工具（如 Semrush 和 Ahrefs）价格高昂和复杂的问题，使用户能够以较低的成本进行高效的 SEO 分析。 — 此项目针对用户对现有收费工具的痛点，提供可控的开源替代，具备多种实用功能，并支持 AI 助手集成，显示出强大的市场潜力，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/tokio-rs/topcoat">tokio-rs/topcoat</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/后端/基础设施 · Rust
+    · +439 today · 2069 stars</div>
+  <p>Topcoat 是一个适用于 Rust 的全栈框架，注重简单性和高效性，适合快速构建 web 应用。</p>
+  <p class="why">解决了开发全栈应用中的复杂性，减少了传统 API 层的需求，提升了开发效率。 — Topcoat 提供了一种简洁的方式来开发全栈应用，尤其在服务端渲染和前端互动方面表现出色，具有潜力改变开发者的工作方式，尽管目前仍处于早期实验阶段。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/AstrBotDevs/AstrBot">AstrBotDevs/AstrBot</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI / 开发工具 · Python
+    · +416 today · 37442 stars</div>
+  <p>AstrBot 是一个多平台的 AI 助手开发框架，集成了聊天机器人和多种 AI 功能，适合进行各种 IM 平台的应用开发。</p>
+  <p class="why">解决跨平台聊天机器人开发的复杂性，支持多种 AI 接口和插件的集成。 — 该项目提供了广泛的功能集成，能够极大提高开发者在聊天机器人领域的生产效率，是一个比较有潜力的工具。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/handy-computer/transcribe.cpp">handy-computer/transcribe.cpp</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/语音识别 · C++
+    · +401 today · 1473 stars</div>
+  <p>这是一个高性能的语音转文本推理库，支持多种模型族和变体，提供了快速的GPU和CPU推理能力。</p>
+  <p class="why">解决了高效语音转文本的需求，支持多家模型的推理，适用于各种应用场景。 — 项目呈现了高效的语音识别能力，尤其是GPU加速和支持多种模型，能显著提升相关应用的效果，具有潜力改变工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/schollz/croc">schollz/croc</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">基础设施/文件传输 · Go
+    · +396 today · 36758 stars</div>
+  <p>croc 是一个功能强大的文件传输工具，专为安全和跨平台使用而设计。</p>
+  <p class="why">解决了跨平台、便捷且安全的数据传输问题，支持多种操作系统，无需设置服务器或端口转发。 — 项目具备独特的端到端加密和无服务器传输功能，适合用户在多种环境中使用，是现代文件传输领域的有力补充。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/earthtojake/text-to-cad">earthtojake/text-to-cad</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端 · JavaScript
+    · +378 today · 9066 stars</div>
+  <p>这是一个用于生成和处理CAD与机器人描述文档的能力库，通过自然语言或图像请求创建和编辑CAD模型。</p>
+  <p class="why">简化了CAD和机器人设计的工作流程，降低了设计软件的使用门槛，满足了工程师对高效工具的需求。 — 该项目使得CAD模型的创建和编辑更加简单易用，有潜力显著提高CAD设计的效率，同时吸引了大量开发者的关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/JCodesMore/ai-website-cloner-template">JCodesMore/ai-website-cloner-template</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/人工智能 · TypeScript
+    · +358 today · 29457 stars</div>
+  <p>这是一个使用 AI 编码代理一键克隆网站的模板项目，适合开发者自动化重建现代化的网站代码。</p>
+  <p class="why">简化了网站克隆的过程，降低了技术门槛，使得非专业开发者也能快速构建网站。 — 该项目运用AI技术简化了重复性编程任务，具备较大的实用性和创新性，对于开发者工作流程的优化有显著影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/microsoft/Ontology-Playground">microsoft/Ontology-Playground</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">教育工具/智能应用开发 · TypeScript
+    · +355 today · 1989 stars</div>
+  <p>这是一款用于学习本体论的开源网页应用，功能丰富且用户友好，适合教育及实际应用。</p>
+  <p class="why">提供了一个简洁的界面帮助用户学习、设计和分享本体论，支持导入导出多种格式，简化了学习和实际应用的流程。 — 项目具备实际应用价值，功能全面且交互性强，不仅降低了学习门槛，还支持用户自主设计本体，符合现代智能应用的需求。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/agegr/pi-web">agegr/pi-web</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端 · TypeScript
+    · +286 today · 1703 stars</div>
+  <p>Pi Web 是一款为 pi 编程代理提供的本地 Web UI 工具，旨在提升开发者的工作效率和使用体验。</p>
+  <p class="why">解决了开发者在处理 pi 会话时的可视化交互和管理问题，让用户能更方便地回顾会话记录和配置模型。 — 该项目为开发工作提供了更友好的用户界面，允许实时聊天和项目管理，极大地增强了用户体验和工作效率，是一款值得关注的工具。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/moonshine-ai/moonshine">moonshine-ai/moonshine</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/语音识别/文本转语音 · C++
+    · +264 today · 10233 stars</div>
+  <p>Moonshine 项目致力于打造一个高效的实时语音处理工具包，适用于多种设备和平台，具备低延迟和高准确度的特点。</p>
+  <p class="why">解决了实时语音识别和合成的高准确度和低延迟问题，适用于构建语音交互应用。 — 该项目提供了一个开源的全方位语音处理解决方案，特别适合实时应用，同时在技术上具有一定的前瞻性和实用性，可能改变语音接口的开发模式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/DioxusLabs/dioxus">DioxusLabs/dioxus</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端 · Rust
+    · +261 today · 37626 stars</div>
+  <p>Dioxus 是一个全栈应用框架，支持 Web、桌面和移动平台开发，具备零配置设置和热重载功能，适合构建多端应用。</p>
+  <p class="why">解决了多平台开发的一致性问题，简化了应用搭建流程。 — 项目提供全栈支持和简化的开发体验，具有较强的应用前景和实用性，尤其是在提供跨平台开发的场景下。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/nilbuild/developer-roadmap">nilbuild/developer-roadmap</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">教育/开发者资源 · TypeScript
+    · +232 today · 362137 stars</div>
+  <p>该项目提供了互动式的开发者职业发展路线图和资源，支持多种技术栈，有助于开发者明确学习和成长方向。</p>
+  <p class="why">解决了开发者在职业发展中面对的方向不明确和学习路径选择难题，帮助他们更高效地规划职业成长。 — 项目的互动性和社区驱动的内容使其在开发者教育领域具有较高价值，适合各个阶段的开发者使用。虽然不至于改变工作方式，但为开发者的学习和成长提供了强有力的支持。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/tradesdontlie/tradingview-mcp">tradesdontlie/tradingview-mcp</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/金融应用 · JavaScript
+    · +219 today · 4818 stars</div>
+  <p>这是一个为TradingView桌面版提供AI辅助图表分析的工具，通过Chrome DevTools协议连接Claude Code，实现个人工作流自动化。</p>
+  <p class="why">解决了如何将大型语言模型（LLM）与专业交易界面结合，以支持人类决策的问题。 — 该项目探索如何通过AI增强交易分析，尽管不直接执行交易，但为研究AI与金融领域的交互提供了重要的基础，具有潜在的变革性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/AlexsJones/llmfit">AlexsJones/llmfit</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Rust
+    · +194 today · 30167 stars</div>
+  <p>一个值得关注的工具，能够根据用户硬件自动调整和推荐 LLM 模型。</p>
+  <p class="why">帮助用户根据自身硬件配置找到最适合的 LLM 模型，避免资源浪费。 — 项目通过简化 LLM 模型选择过程，提高了用户体验，并且具备一定的创新性，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/langgenius/dify">langgenius/dify</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/低代码平台 · TypeScript
+    · +154 today · 149663 stars</div>
+  <p>Dify 是一个协作工作空间，支持构建智能工作流和RAG管道，旨在减少团队从原型到生产的重建成本。</p>
+  <p class="why">解决了低代码/无代码环境下快速构建和部署智能工作流的问题。提供了丰富的AI模型和工具支持，适合各类团队使用。 — 该项目具有较大的潜力，可以在多个领域内改变团队的工作方式，尤其是在需要快速迭代和修改的环境中。其低代码特性也适应了当前市场对非技术用户的需求。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/browser-use/video-use">browser-use/video-use</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/视频编辑工具 · Python
+    · +122 today · 17463 stars</div>
+  <p>这是一个基于代码的免费视频编辑工具，通过AI助手自动化编辑过程，大大简化了视频制作的复杂性。</p>
+  <p class="why">解决了传统视频编辑中耗时耗力的问题，通过自动化功能提高了效率。 — 项目实现了高度的自动化，使用户能够简单地通过对话与AI进行视频编辑，虽然不是突破性的，但在视频编辑领域具有显著的创新。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/darkroomengineering/lenis">darkroomengineering/lenis</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/性能优化 · TypeScript
+    · +90 today · 14691 stars</div>
+  <p>Lenis 是一个轻量级的平滑滚动库，易于使用且与现代浏览器优化兼容，适合创建流畅的网页滚动体验。</p>
+  <p class="why">解决了网页中流畅滚动体验的复杂性，让开发者更容易实现吸引人的滚动效果。 — 项目具有良好的性能和易用性，能够提升用户在网页中的体验，其真正解决了平滑滚动的技术难题，值得关注和使用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/hyprwm/Hyprland">hyprwm/Hyprland</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开源软件/窗口管理器/Wayland合成器 · C++
+    · +88 today · 37017 stars</div>
+  <p>Hyprland 是一个具有高度自定义功能的动态拼贴Wayland合成器，注重视觉效果和用户体验。</p>
+  <p class="why">解决了传统窗口管理器在功能与美观之间的妥协，提供了用户所需的工具和定制选项。 — 项目提供了独立且高度可定制的特性，吸引了大量开发者和用户，是当前动态拼贴合成器领域的重要进展。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/trycua/cua">trycua/cua</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/基础设计 · HTML
+    · +87 today · 20438 stars</div>
+  <p>该项目致力于为计算机使用提供跨操作系统的开源驱动和基准测试，具有多种应用场景，尤其是在人工智能领域。</p>
+  <p class="why">解决了跨平台计算机使用的驱动适配问题，以及提供训练和评估模型的基准测试工具。 — 项目具有较强的创新性和实际应用价值，能够支持多操作系统的环境使用，但尚需社区反馈和成熟度验证。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
