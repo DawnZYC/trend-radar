@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-07-30</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-07-30</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的GitHub Trending项目显示出人工智能和开发工具领域的蓬勃发展趋势，特别是在高效生成、知识提炼以及文本识别等方面。其中，最值得关注的三个项目分别是：
+
+TRELLIS.2，凭借其创新的3D生成能力与高保真度，可能会显著推动3D资产创作方式的变革，特别是在游戏和动画行业中应用广泛。 
+
+Cangjie Skill，能够将书籍和视频中的方法论转化为可执行的AI能力，赋予用户将知识转化为实际技能的能力，期待其在团队知识管理中的应用。 
+
+PaddleOCR，作为一个强大的光学字符识别工具包，其支持多语言的特性，将对文档数据处理及多语言环境下的应用需求产生重大影响。 
+
+这些项目标志着技术创新在提升工作效率及用户体验方面的潜力，值得开发者持续关注。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/microsoft/TRELLIS.2">microsoft/TRELLIS.2</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/3D生成 · Python
+    · +412 today · 9609 stars</div>
+  <p>TRELLIS.2 是一个前沿的 3D 生成模型，能够高效生成高保真的图像到 3D 资产，具备处理复杂拓扑结构的能力。</p>
+  <p class="why">该项目解决了高效生成复杂 3D 资产的问题，尤其是在质量和效率上有显著提升，同时能够处理非流形几何和丰富的纹理建模。 — TRELLIS.2 的创新 O-Voxel 结构和高保真度的生成能力，可能显著改变 3D 资产的创作方式，尤其在游戏、动画等行业具有广泛的应用前景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/kangarooking/cangjie-skill">kangarooking/cangjie-skill</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/知识提炼 · Python
+    · +196 today · 5506 stars</div>
+  <p>Cangjie Skill 项目提供了一种将书籍、视频和播客中的方法论提炼为可执行的 AI 能力的工具，旨在帮助用户将获取的知识转化为实际可用的技能。</p>
+  <p class="why">解决了知识内容无法被有效使用的问题，用户可以将高价值内容转化为可重复调用的技能，突破了传统阅读和观看的局限。 — 这个项目具备突破性，能够改变个人和团队的知识管理与运用方式，将信息转化为可操作的技能，具有广泛的应用前景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/PaddlePaddle/PaddleOCR">PaddlePaddle/PaddleOCR</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/文本识别 · Python
+    · +71 today · 86593 stars</div>
+  <p>这是一个强大的光学字符识别（OCR）工具包，能够将PDF或图像文件转化为结构化数据，支持超过100种语言。</p>
+  <p class="why">解决了文档数据提取和翻译的问题，特别是在多语言环境下的应用需求。 — 该项目是一项重要的技术进步，对处理图像和文档数据有显著影响，可能会改变相关行业的工作流程。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/microsoft/PowerToys">microsoft/PowerToys</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端/基础设施 · C
+    · +68 today · 137100 stars</div>
+  <p>Microsoft PowerToys 是一组增强 Windows 生产力和定制化的实用工具，功能强大且更新频繁。</p>
+  <p class="why">提供了一系列实用工具，帮助用户优化工作流程和体验，特别是在 Windows 操作系统下，解决了用户自定义和效率的问题。 — 作为一款开源工具集，PowerToys 有助于提升 Windows 用户的工作方式，包含多个实用功能，极大地丰富了系统的可用性和灵活性，符合极具创新性和实用性的标准。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/lightseekorg/tokenspeed">lightseekorg/tokenspeed</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/基础设施/机器学习 · Python
+    · +53 today · 1766 stars</div>
+  <p>TokenSpeed是一个高性能的LLM推理引擎，以实现极低延迟和高吞吐量为目标，专注于代理工作负载。</p>
+  <p class="why">解决了高性能推理引擎的需求，特别是针对代理工作负载的场景，提高了推理速度和资源使用效率。 — TokenSpeed在性能上展现了突破性的潜力，尤其是在处理代理工作负载的场景下，其速度与可用性可能会大幅提升相关领域工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ocornut/imgui">ocornut/imgui</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">图形用户界面开发 · C++
+    · +48 today · 75409 stars</div>
+  <p>一个轻量级且高效的C++图形用户界面库，适用于快速迭代和工具开发。</p>
+  <p class="why">解决了传统UI库复杂性高、依赖多等问题，适用于游戏开发和调试工具。 — 项目具有创新性，专注于简化图形界面的开发过程，广受开发者欢迎，潜力巨大。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/streamlit/streamlit">streamlit/streamlit</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">数据科学/开发工具 · Python
+    · +44 today · 45431 stars</div>
+  <p>Streamlit 是一个快速构建和分享数据应用的开源框架，极大地提升了数据应用的开发效率。</p>
+  <p class="why">解决了传统数据应用开发周期长、交互性差的问题，使开发者可以快速构建交互式数据应用，并能即时反馈和调整。 — Streamlit 通过简化数据应用的构建过程，让数据科学家和开发者能够将数据与用户互动更好地结合，从而非常可能改变数据驱动决策的工作方式。其开源特性和活跃社区也使得其未来发展充满潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/deepfakes/faceswap">deepfakes/faceswap</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/深度学习/图像处理 · Python
+    · +678 today · 56714 stars</div>
+  <p>这是一个强大的面部交换工具，利用深度学习技术，将一种面孔换成另一种面孔，适用于图片和视频。</p>
+  <p class="why">该项目允许用户轻松地进行面部交换，拓展了图像和视频编辑的可能性，同时也引发了对深度伪造技术的广泛讨论和研究。 — 该项目在深度学习和图像处理领域具有开创性，虽然存在争议性，但其技术应用潜力巨大，可能改变媒体创作和娱乐行业的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/microsoft/VibeVoice">microsoft/VibeVoice</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/语音识别 · Python
+    · +531 today · 51612 stars</div>
+  <p>VibeVoice 是一款开源的语音 AI 项目，旨在提供先进的语音识别和文本转换能力，支持多语言及实时推理，开发者可通过其 API 和模型轻松集成到应用中。</p>
+  <p class="why">解决了长音频转换为文本的挑战，并且能够在无 GPU 的情况下进行高效实时推理。 — 此项目在语音识别和文本转换领域具有突破性技术应用，支持多语言和用户自定义场景，显著提升了开发者的工作效率，值得广泛关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/harry0703/MoneyPrinterTurbo">harry0703/MoneyPrinterTurbo</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/视频生成/内容创作 · Python
+    · +438 today · 100657 stars</div>
+  <p>MoneyPrinterTurbo 是一个基于 AI 的自动化短视频生成工具，针对内容创作者提供了一站式解决方案。</p>
+  <p class="why">解决了内容创作者在短视频制作中的时间和精力投入问题，自动生成短视频，提升了工作效率。 — 项目利用 AI 大型模型和自动化工作流进行短视频生成，是当前内容创作领域的一项创新，有助于简化生产流程，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/agavra/tuicr">agavra/tuicr</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">代码审查工具 · Rust
+    · +232 today · 1837 stars</div>
+  <p>一个基于终端的代码审查工具，结合了 Vim 的操作习惯，支持与 GitHub 和 GitLab 的交互。</p>
+  <p class="why">简化了代码审查的流程，提高了代码审查的效率，支持多种版本控制系统。 — 项目通过TUI（文本用户界面）实现代码审查，符合开发者的使用习惯，并支持多种平台，具备良好的应用潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/MoonshotAI/FlashKDA">MoonshotAI/FlashKDA</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/深度学习/性能优化 · Cuda
+    · +216 today · 1100 stars</div>
+  <p>FlashKDA 是一个高性能的 Kimi Delta Attention 核心，主要面向深度学习领域，特别是使用 PyTorch 框架的应用。</p>
+  <p class="why">FlashKDA 解决了深度学习中注意力机制计算效率低下的问题，通过提供高性能的 KDA 核心来加速计算。 — FlashKDA 提供了高性能的计算能力，对需要高效注意力机制的模型优化具有重要意义，尤其是在大规模模型和高性能计算场景下。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/remotion-dev/remotion">remotion-dev/remotion</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">视频开发工具 · TypeScript
+    · +158 today · 54945 stars</div>
+  <p>Remotion 是一个强大的视频制作工具，允许开发者通过 React 编程生成视频，适合自动化和设计系统使用。</p>
+  <p class="why">解决了视频制作中的程序化和自动化问题，特别适合需要大量视频生成的项目。 — 该项目为开发者提供了一个灵活的框架，能够通过代码来生成和编辑视频，比较高效，适合大规模应用，但尚未达到极其革命性的地步。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/JOYCEQL/magic-resume">JOYCEQL/magic-resume</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/前端 · TypeScript
+    · +118 today · 9283 stars</div>
+  <p>这是一个现代化的在线简历编辑工具，提供简单而愉快的简历创建体验，支持实时预览和多种主题选择。</p>
+  <p class="why">解决了用户在创建简历时的设计和交互复杂性问题，让简历编辑变得高效且富有趣味。 — 项目具备良好的设计和功能，特别是实时预览和多种主题支持，符合当前市场对在线简历工具的需求，有潜力影响求职者的简历制作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/microsoft/AI-For-Beginners">microsoft/AI-For-Beginners</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/教育资源 · Jupyter Notebook
+    · +115 today · 53853 stars</div>
+  <p>此项目提供了一个为期12周的人工智能入门课程，内容涵盖机器学习、深度学习及其应用，适合初学者学习。</p>
+  <p class="why">帮助初学者快速入门人工智能领域，为学习者提供结构化的课程体系与实践机会。 — 项目具有系统性和实用性，适合广泛的受众，能有效降低学习门槛，是强化AI教育的一个重要资源。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/lllyasviel/Fooocus">lllyasviel/Fooocus</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/图像生成 · Python
+    · +84 today · 51640 stars</div>
+  <p>Fooocus 是一个基于 Stable Diffusion XL 架构的图像生成软件，旨在简化图像生成过程，使用户只需专注于提示和图像，而无需复杂的参数调整。</p>
+  <p class="why">Fooocus 解决了图像生成过程中用户需要进行复杂设置的问题，提供了直观、简易的使用体验。它允许用户在本地生成高质量的图像，同时避免了对在线服务的依赖。 — 该项目的设计理念创新，能够显著改善用户体验，尤其是在图像生成领域。然而，由于目前处于有限长期支持状态，未来发展的不确定性影响了其长期潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ChromeDevTools/chrome-devtools-mcp">ChromeDevTools/chrome-devtools-mcp</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/前端 · TypeScript
+    · +73 today · 48024 stars</div>
+  <p>这是一个为AI编程助手提供Chrome开发者工具访问权限的项目，旨在增强自动化和调试能力。</p>
+  <p class="why">解决了AI助手在Chrome浏览器中控制、调试和优化网页应用的难题，提升了开发效率。 — 该项目通过引入浏览器调试功能和自动化控制，极大地便利了与AI助手的互操作性，可能会影响开发流程和工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/sgl-project/sglang">sgl-project/sglang</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">深度学习/框架 · Python
+    · +73 today · 30976 stars</div>
+  <p>SGLang 是一个高性能的大型语言模型和多模态模型服务框架，支持快速推断，并且兼容最新的开源模型。</p>
+  <p class="why">提供了高效的服务框架，用于大规模语言模型和多模态模型的推断，提升了模型推断性能，支持多种最新开源模型。 — 项目关注于提升大型模型的推理性能，非常适合深度学习领域的开发者，具备较高的技术价值，有潜力在实际应用中带来显著效率提升。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/directus/directus">directus/directus</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">后端开发/无头 CMS · TypeScript
+    · +64 today · 36938 stars</div>
+  <p>Directus 是一个强大的后端解决方案，可轻松将 SQL 数据库转化为无头 CMS 和自定义应用，为开发者和非技术用户提供了便捷的管理界面和 API。</p>
+  <p class="why">解决了开发者构建可扩展应用时的繁琐后台管理问题，同时为非技术用户提供了直观的数据可视化管理工具。 — 项目提供了即时 REST 和 GraphQL API，结合 AI 的集成，以及灵活的权限控制，能够显著提高开发效率，适合各种规模的项目，具有广泛的应用前景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/refactoringhq/tolaria">refactoringhq/tolaria</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">知识管理工具 · TypeScript
+    · +58 today · 19161 stars</div>
+  <p>Tolaria 是一款用于管理 Markdown 知识库的桌面应用程序，适用于多种操作系统，旨在帮助用户高效组织和利用知识。</p>
+  <p class="why">帮助用户高效管理个人和公司文档，支持 AI 相关的知识整理与存储。 — 项目为用户提供了一种新的知识管理方式，能够提高工作效率，尤其是在个人知识管理和团队协作方面，但在市场上已有类似产品，可能面临竞争。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/github/awesome-copilot">github/awesome-copilot</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/前端 · Python
+    · +56 today · 37255 stars</div>
+  <p>GitHub Copilot的社区贡献项目，旨在帮助用户最大化利用Copilot的能力和功能。</p>
+  <p class="why">提供定制化的Copilot代理、指令、技能和配置，辅助开发者提升效率和代码质量。 — 该项目集合了大量第三方贡献的资源，极大地丰富了GitHub Copilot的使用场景，虽然可能不是突破性的项目，但对开发者提升生产力非常有帮助。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/NanmiCoder/cc-haha">NanmiCoder/cc-haha</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端, AI / 开发工具 · TypeScript
+    · +53 today · 13786 stars</div>
+  <p>该项目提供了一个本地优先的多平台桌面工作空间，旨在提升开发者的协作与代码管理体验。</p>
+  <p class="why">解决了多项目管理和代码审查的复杂性问题，提供了一站式的开发环境与即时通讯整合。 — 项目具备创新性，通过集成多个功能改善了开发者的工作效率，是值得关注的前沿工具。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/linkwarden/linkwarden">linkwarden/linkwarden</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">自托管工具/开源软件 · TypeScript
+    · +52 today · 19230 stars</div>
+  <p>Linkwarden是一个自托管的开源协作书签管理器，旨在收集、阅读和注释重要的网页内容，并确保这些内容的长期可访问性。</p>
+  <p class="why">解决了用户收集和组织网络信息的难题，避免了链接失效导致的内容丢失问题。 — 该项目提供了独特的协作功能和网页保存机制，有助于用户有效管理知识，适用于需要长期保存和共享信息的团队或个人，具有较大的应用潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ag-ui-protocol/ag-ui">ag-ui-protocol/ag-ui</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/AI agents · Python
+    · +48 today · 15066 stars</div>
+  <p>AG-UI 是一种开放、轻量级、事件驱动的协议，旨在简化 AI 代理与用户应用的集成。它提供了灵活的中间件层和多种事件类型，使得开发者能够快速创建交互式应用程序。</p>
+  <p class="why">解决了 AI 代理与用户界面之间的集成复杂性，提供标准化的事件处理机制。 — 项目具有创新性，能够促进 AI 代理与前端应用的高效互动，解决现实开发中的复杂问题，具有广泛的应用潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ScrapeGraphAI/Scrapegraph-ai">ScrapeGraphAI/Scrapegraph-ai</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/数据抽取 · Python
+    · +44 today · 28807 stars</div>
+  <p>ScrapeGraphAI是一个基于Python的AI网络爬虫库，可以轻松构建爬虫管道，具有很好的实用性和扩展性。</p>
+  <p class="why">该项目解决了大规模数据抓取的复杂性，使得用户可以通过简单的指令提取所需信息，有效提高了抓取效率。 — 项目结合了大语言模型和图形逻辑，创新性地简化了数据抓取过程，提升了操作效率，对于数据分析和信息收集的工作方式有潜在的革命性影响。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
