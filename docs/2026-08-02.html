@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-08-02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-08-02</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的GitHub Trending项目集中体现了人工智能、开发工具和信息安全等领域的快速发展。值得关注的三个项目分别是：
+
+首先，Hermes Agent展现了自我学习的AI代理，能够根据用户交互不断优化自己的能力，为人机交互带来了可能的革命。其次，Sherlock通过简化社交媒体用户名的搜索和追踪，极大提升了信息收集的效率，适合安全研究人员和渗透测试人员使用。最后，Whisper作为一个通用语音识别模型，以其强大的多语言和多任务处理能力，可能重新定义语音识别的行业标准。
+
+这些项目不仅在技术上具有突破性，更在实际应用中展现了广泛的潜力，值得深入探索。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/NousResearch/hermes-agent">NousResearch/hermes-agent</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/自我学习/智能代理 · Python
+    · +472 today · 224291 stars</div>
+  <p>Hermes Agent 是一个自我学习的 AI 代理，能根据用户的交互不断成长和改进。</p>
+  <p class="why">解决了如何让 AI 代理根据用户的需求和使用情况不断优化自身技能的问题，提升了人机交互的智能水平。 — 该项目展现了 AI 代理的自主学习能力和多平台适应性，具有突破性潜力，可能改变我们与技术交互的方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/sherlock-project/sherlock">sherlock-project/sherlock</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">信息收集/网络安全 · Python
+    · +404 today · 88000 stars</div>
+  <p>一个强大的工具，用于通过社交媒体用户名搜索和追踪多个平台上的账户。</p>
+  <p class="why">简化了在多个社交媒体平台上寻找特定用户名的过程，极大提高了调查和信息收集的效率。 — 该项目在网络安全和信息搜集领域具有广泛应用，可以帮助安全研究人员、渗透测试人员等进行用户账户的追踪，极大提升效率，具有革命性的潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/openai/whisper">openai/whisper</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/语音识别 · Python
+    · +129 today · 106474 stars</div>
+  <p>Whisper 是一个通用的语音识别模型，适用于多种语言和任务，具备强大的功能。</p>
+  <p class="why">解决了多语种语音识别、语音翻译及语言识别等挑战。大幅度简化了传统语音处理流程。 — 项目通过大规模弱监督学习训练，展现出极佳的多任务性能，可能重塑语音识别领域的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Emily2040/seedance-2.0">Emily2040/seedance-2.0</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/前端 · Python
+    · +101 today · 5901 stars</div>
+  <p>Seedance 2.0 是一种全面的四模态人工智能电影制作管道，旨在提升电影创作的效率和质量。</p>
+  <p class="why">创建了一个新的导演引擎，通过从场景功能出发而非单纯描述来指导镜头和声音，改善了电影制作过程中的创意表达和组织。 — 该项目通过引入导演引擎的概念，重新定义了AI在电影制作中的角色，有潜力革命性地改变视频创作的方式，因此值得重点关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/paperclipai/paperclip">paperclipai/paperclip</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端/AI/开源工具 · TypeScript
+    · +98 today · 75439 stars</div>
+  <p>Paperclip 是一个用于管理工作中 AI 代理的开源应用程序，旨在帮助团队更高效地协调和跟踪项目。</p>
+  <p class="why">解决团队协作中 AI 代理管理混乱的问题，使管理者能更轻松地定义目标并监控进度。 — 该项目致力于增强 AI 劳动力的管理，将传统的业务管理模式与 AI 技术结合，可能会改变工作方式并提升效率。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/0x4m4/hexstrike-ai">0x4m4/hexstrike-ai</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/安全开发工具 · Python
+    · +78 today · 10764 stars</div>
+  <p>HexStrike AI 是一个利用 AI 实现自动化渗透测试的高级平台，整合了超过150种安全工具和多个自主AI代理，以支持网络安全研究和漏洞发现。</p>
+  <p class="why">该项目解决了安全测试的自动化需求，提高了渗透测试的效率和准确性，支持自主决策与工具选择。 — 项目具有创新性，利用AI实现了网络安全领域的自动化，是渗透测试工作方式的重大改变。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/zhaoxuya520/reverse-skill">zhaoxuya520/reverse-skill</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">安全 · PowerShell
+    · +1145 today · 13285 stars</div>
+  <p>该项目为网络安全领域提供了一个智能化的技能路由包，能够根据不同任务自动选择合适的工具和方法。</p>
+  <p class="why">解决了网络安全测试过程中工具选择不当、效率低下的问题，提升了渗透测试的自动化水平。 — 项目利用 AI 技术优化技能路由，虽然尚处于早期，但其潜力巨大，能够提升安全研究人员的工作效率。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/TencentCloud/TencentDB-Agent-Memory">TencentCloud/TencentDB-Agent-Memory</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · TypeScript
+    · +604 today · 10952 stars</div>
+  <p>TencentDB Agent Memory 是一个AI代理使用的记忆中心，旨在简化和优化重复性的工作，通过共享和管理多种记忆资产来提高团队的创造力与效率。</p>
+  <p class="why">解决了AI代理在项目中重复工作的难题，通过提供团队级别的知识管理，增强代理的学习和记忆能力。 — 该项目通过创新的记忆管理机制，有潜力改变AI代理在团队工作中的应用方式，能够有效提升工作效率，是AI领域中的一个重要突破。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/microsoft/generative-ai-for-beginners">microsoft/generative-ai-for-beginners</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/教育 · Jupyter Notebook
+    · +588 today · 114742 stars</div>
+  <p>这是一个帮助初学者构建生成式AI应用程序的学习资源，包含21个课程，适合各类语言背景的学习者。</p>
+  <p class="why">为初学者提供了一个系统化的学习路径，以入门生成式AI应用的开发。 — 此项目涵盖了生成式AI的基础知识，并且通过多语言支持，使其更能普及，适合各类初学者。但是，有突破性影响的可能性较低。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/usekaneo/kaneo">usekaneo/kaneo</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/开源项目管理工具 · TypeScript
+    · +491 today · 6114 stars</div>
+  <p>Kaneo 是一个聚焦于简化项目管理的开源工具，旨在满足用户核心需求，提供清爽的界面与快速的性能。</p>
+  <p class="why">解决了项目管理工具功能过于复杂的问题，提供了一个更专注于用户工作的简洁界面。 — Kaneo 针对现有项目管理工具的不足进行创新，强调用户体验，具有很大的潜力来改变团队的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/anomalyco/opencode">anomalyco/opencode</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · TypeScript
+    · +438 today · 192398 stars</div>
+  <p>OpenCode 是一个开源的 AI 编程助手，旨在提升开发者的编码效率。</p>
+  <p class="why">解决了程序员在编码时效率低下的问题，提供智能辅助功能来加速开发流程。 — 该项目具备较高的实用性和创新性，尤其是在AI辅助编程领域，可能在未来对开发方式产生显著影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/abus-aikorea/voice-pro">abus-aikorea/voice-pro</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/多媒体处理/语音技术 · Python
+    · +401 today · 11977 stars</div>
+  <p>Voice-Pro 是一个综合性的AI语音转换和多语言翻译工具, 启用者可创建语音识别、翻译以及配音。</p>
+  <p class="why">解决了多语言视频处理、语音识别和字幕生成等问题，方便了内容创作者。 — 项目集成了多个先进的语音合成技术，提供了强大的功能组合，适合于多种应用场景，潜力巨大。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/esengine/DeepSeek-Reasonix">esengine/DeepSeek-Reasonix</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Go
+    · +389 today · 29023 stars</div>
+  <p>DeepSeek-Reasonix 是一个高度可配置的 AI 编程代理工具，可以在终端上运行，并以其低成本的令牌管理和插件支持而闻名。</p>
+  <p class="why">解决了开发者在终端环境中高效编码的问题，提供了一种低成本且可扩展的工作方式。 — 项目具备创新的构思和实际应用价值，可以极大地提升开发者的工作效率；同时具备良好的社区支持和插件扩展能力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/bytedance/deer-flow">bytedance/deer-flow</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/多代理系统 · Python
+    · +387 today · 78976 stars</div>
+  <p>DeerFlow 是一个开源的超级代理框架，专注于高效的任务处理和多代理协作。</p>
+  <p class="why">该项目通过模块化的记忆和沙盒结构，有效提升了长时任务的管理效率，可以显著减少手动操作的时间。 — DeerFlow 提供了一种新的方式来组织和管理复杂的 AI 代理任务，特别适合需要处理大量任务和数据的深度学习研究，尽管其影响仍需时间观察，但其潜力显而易见。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/iv-org/invidious">iv-org/invidious</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/开源软件 · Crystal
+    · +307 today · 21964 stars</div>
+  <p>Invidious 提供了一个轻量级、开源的 YouTube 替代界面，注重隐私和用户体验。</p>
+  <p class="why">解决了常规 YouTube 界面的广告和追踪问题，提供更好的隐私保护和用户定制体验。 — 该项目通过提供无广告、无追踪的观看体验，提升了Youtube的使用体验，有潜力影响用户对YouTube的使用方式，但作为替代方案，其影响可能依然有限。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/public-apis/public-apis">public-apis/public-apis</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/基础设施 · Python
+    · +245 today · 454112 stars</div>
+  <p>这个项目是一个社区维护的公共API集合，提供了大量免费的API供开发者使用。</p>
+  <p class="why">为开发者提供了快速查找和集成公共API的资源，简化了API的使用流程。 — 该项目广泛收录各种领域的API，极大丰富了开发者的工具选择，推动了API集成的便利性，具有重要的实用价值和影响力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/yt-dlp/yt-dlp">yt-dlp/yt-dlp</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">多媒体处理工具 · Python
+    · +225 today · 182027 stars</div>
+  <p>yt-dlp 是一个功能丰富的命令行音视频下载工具，支持众多网站，适合需要批量下载或获取多种格式内容的用户。</p>
+  <p class="why">解决了用户从不同网站快速下载音视频内容的问题，提供多种格式选择和高级功能。 — 该项目基于一个已有的流行工具进行扩展，具有强大的功能和活跃的社区，能显著提高用户的下载效率和灵活性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/antirez/ds4">antirez/ds4</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/前端 · C
+    · +187 today · 19978 stars</div>
+  <p>DwarfStar 是一个针对深度学习模型优化的小型推理引擎，专注于个人高端硬件上的本地推理。</p>
+  <p class="why">有效利用个人计算机的资源进行大型模型推理；支持多种后端配置以提升不同硬件性能。 — 该项目可显著提升个人用户和小型企业的 AI 模型使用效率，尤其是在硬件限制下也能提供较好性能。并且，支持不同后端的能力，让它在市场上具备一定竞争力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/LibreTranslate/LibreTranslate">LibreTranslate/LibreTranslate</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">机器翻译 · Python
+    · +179 today · 15844 stars</div>
+  <p>LibreTranslate 是一款免费的开源机器翻译 API，支持自我托管和离线使用。</p>
+  <p class="why">提供一个无需依赖于专有软件的机器翻译解决方案，使用户能够自托管和离线使用翻译服务。 — 该项目提供了开源的机器翻译 API，符合当前对数据隐私和自主掌控的趋势，具备较高的实用价值和创新性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/geo-tp/ESP32-Bit-Pirate">geo-tp/ESP32-Bit-Pirate</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">硬件黑客/通信协议 · C++
+    · +152 today · 5290 stars</div>
+  <p>ESP32 Bit Pirate 是一款开放源代码的硬件黑客工具，通过网络命令行接口支持多种数字协议的开发与分析。</p>
+  <p class="why">解决了不同数字通信协议的开发和调试问题，提供了一站式的协议分析工具。 — 该项目通过高效的多协议支持和简便的用户界面，具备广泛应用能力，适合硬件开发者和黑客极具实用性，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/langchain-ai/deepagents">langchain-ai/deepagents</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +142 today · 27231 stars</div>
+  <p>Deep Agents 是一个开源的智能体框架，具有高度可扩展性和多种实用功能，适用于长期和多步骤的任务。</p>
+  <p class="why">提供一个可扩展的智能体框架，便于集成和管理多种任务处理。 — 该项目以其高度可扩展性、可生产化能力和灵活的多模型支持，切实增强了开发者在构建智能体方面的效率，尤其适合需要复杂任务处理的场景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/iptv-org/iptv">iptv-org/iptv</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/开发工具 · TypeScript
+    · +123 today · 135009 stars</div>
+  <p>该项目为全球公共IPTV频道的集合，使用方便且不断更新，具备实用性和广泛受众。</p>
+  <p class="why">解决了用户获取和观看公共IPTV频道的便利性，提供了一种高效的访问方法。 — 项目提供了丰富的IPTV频道资源，并配有详细的使用指南和API文档，展示了对用户需求的敏锐把握，尽管不属于类别内的创新，但其广泛应用和社区支持使其具有相当的影响力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/fishaudio/fish-speech">fishaudio/fish-speech</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI / 开发工具 · Python
+    · +99 today · 31937 stars</div>
+  <p>Fish Audio项目旨在提供开源的文本到语音（TTS）解决方案，具有现代化的表达性声音克隆技术。</p>
+  <p class="why">解决了高质量文本到语音生成的需求，尤其是在语音克隆方面。 — 项目展示了创新的TTS技术，可能在语音合成领域产生较大影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/karpathy/autoresearch">karpathy/autoresearch</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/研究自动化 · Python
+    · +93 today · 92820 stars</div>
+  <p>该项目实现了基于 AI 代理的自主研究方法，具有创新性和潜在影响力。</p>
+  <p class="why">通过自动化 AI 训练过程，减少了研究者手动干预的需要，提高了效率和探索性。 — 项目创新地利用 AI 代理自主探索和优化 AI 模型，具有潜在的广泛应用和影响，虽然目前还处于实验阶段，但其思路和实现值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/NomaDamas/k-skill">NomaDamas/k-skill</a>
+    <span class="sig" role="img" aria-label="关注度 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/前端 · JavaScript
+    · +179 today · 6879 stars</div>
+  <p>此项目为韩国人提供了多种实用技能的集合，能通过AI代理简化日常生活中的繁琐任务。</p>
+  <p class="why">解决了韩国用户在日常生活中使用各类服务时繁琐的操作问题，提供了一种便捷的自动化方式。 — 针对特定人群（韩国人）提供的工具集，虽然使用场景明确，但在全球范围内的普适性较低。值得关注但影响有限。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
