@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-08-04</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-08-04</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的 GitHub Trending 项目呈现出强烈的 AI 驱动发展趋势，特别是在提高开发效率、系统设计、以及教育资源方面的创新。值得关注的三个项目分别是：
+
+首先是 Build Your Own X，它通过实践重建项目的方式，帮助程序员夯实基础，是学习编程的绝佳资源。其次，System Design Primer 作为系统设计面试的重要工具，汇集了丰富的学习资源，极大方便了工程师们的准备工作。最后，Gstack 项目利用 AI 提升开发者的工作效率，展现了个人开发者在高效协作上的新可能性。
+
+这些项目不仅解决了当前开发中的诸多痛点，也显示出开源社区在推动技术进步和创新方面的重要作用。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/codecrafters-io/build-your-own-x">codecrafters-io/build-your-own-x</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">编程教程 · Markdown
+    · +710 today · 536052 stars</div>
+  <p>该项目提供逐步指导，帮助用户从零开始重建各种技术，是学习编程的优质资源。</p>
+  <p class="why">通过实践重建技术，帮助用户加深对编程和技术的理解。 — 项目通过实用的重建练习，促进了编程学习中的深度理解，具备了改变学习方式的潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/donnemartin/system-design-primer">donnemartin/system-design-primer</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">开发工具/面试准备 · Python
+    · +630 today · 360971 stars</div>
+  <p>这是一个用于学习如何设计大规模系统的项目，适合准备系统设计面试的工程师.</p>
+  <p class="why">解决了工程师在系统设计方面的学习资源散乱的问题，帮助用户准备系统设计面试。 — 该项目集合了大量系统设计知识与面试题，是针对巨型系统设计学习与面试准备的重要资源，且开源社区持续更新，实用性强。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/garrytan/gstack">garrytan/gstack</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/生产力提升 · TypeScript
+    · +201 today · 126278 stars</div>
+  <p>gstack 是一个利用 AI 工具集实现高效开发的开源项目，提供多种角色的工具以提升生产力。</p>
+  <p class="why">解决了在快速开发中如何有效分配角色和管理任务的问题，使个人开发者能够像团队一样高效工作。 — 这是一个突破性的项目，通过 AI 助手提高个人开发者的工作效率，可能改变传统软件开发的工作方式，有助于推广智能工具的应用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/K-Dense-AI/scientific-agent-skills">K-Dense-AI/scientific-agent-skills</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/基础设施 · Python
+    · +126 today · 32635 stars</div>
+  <p>该项目致力于将任何 AI 代理转变为 AI 科学家，提供了丰富的技能和科学数据库，广泛应用于科学研究。</p>
+  <p class="why">解决了科学研究中对 AI 技能的需求，为 17 万多科学家提供支持，促进了科研的数字化和智能化。 — 项目具备强大的实用性和广泛的应用场景，有潜力在科学研究领域引发创新和变革。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/alirezarezvani/claude-skills">alirezarezvani/claude-skills</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +85 today · 23812 stars</div>
+  <p>一个全面的开源库，提供多种编程代理的技能和插件，用于提升日常生产力和专业操作。</p>
+  <p class="why">解决了开发者在编程工作中的各类需求，提高了不同领域的工作效率。 — 项目内容丰富、适用范围广，能够显著改变开发者的工作方式和提高生产力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/firecrawl/pdf-inspector">firecrawl/pdf-inspector</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">PDF处理/文本提取 · Rust
+    · +2524 today · 9943 stars</div>
+  <p>这是一个高性能的 Rust 库，专注于 PDF 文件检测、分类和文本提取，能够智能区分扫描与文本型 PDF 无需 OCR，提供多种格式的支持。</p>
+  <p class="why">解决了 PDF 文档中内容提取的效率与准确性问题，提供了快速且准确的 PDF 分类与文本提取方法。 — 该项目提供了突破性的 PDF 处理效率，是处理文本型与扫描型 PDF 的有效工具，对需要大量文档处理的行业具有实际应用潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/lyogavin/airllm">lyogavin/airllm</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开源模型 · Jupyter Notebook
+    · +1716 today · 28335 stars</div>
+  <p>AirLLM 是一款创新的开源大语言模型推理项目，能够在单个 4GB GPU 上运行高达 70B 的模型，显著降低内存使用。</p>
+  <p class="why">解决了在资源受限的环境中运行大规模语言模型的障碍，使更多开发者能够利用先进的 AI 技术。 — 项目展示了重大技术突破，尤其是在硬件资源优化方面，能使深度学习模型的门槛降低，对开发者和研究者都具有很高的吸引力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Graphify-Labs/graphify">Graphify-Labs/graphify</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/知识图谱 · Python
+    · +882 today · 102483 stars</div>
+  <p>Graphify是一个将代码库及其文档转化为可查询知识图谱的工具，支持多种场景的代码分析和搜索，具有较高的实用价值。</p>
+  <p class="why">解决了开发过程中信息提取与知识管理的难题，特别是在大规模项目中提升了查询效率。 — 该项目创新性地将代码、文档与配置文件结合，形成交互性强的知识图谱，能显著提升开发效率，适合大规模团队使用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/huangruiteng/loopx">huangruiteng/loopx</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/持续改进 · Python
+    · +618 today · 1555 stars</div>
+  <p>LoopX 是一个轻量级的循环工程状态内核，专为长时间运行的AI代理团队设计，能够保持目标和任务的稳定性并方便管理。</p>
+  <p class="why">提升长时间运行的AI任务的管理效率，避免目标的不断变化和信息的过时问题。 — LoopX提供了一种创新的方法来管理长时间运行的工作流，对AI代理的实际应用场景具有显著的促进作用。它的设计可以提高团队成员间的协作效率，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/livekit/agents">livekit/agents</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/实时语音处理 · Python
+    · +432 today · 12386 stars</div>
+  <p>这是一个用于构建实时语音AI代理的框架，支持多种集成和功能，适合需要语音交互和实时处理的应用场景。</p>
+  <p class="why">提供了一种便捷的方式来创建支持语音和视频交互的智能代理，增强用户体验和交互能力。 — 该项目结合了多种现代技术（如语音识别、实时通讯等），并提供了丰富的集成功能，具有很高的实用价值和应用潜力，能够大幅提升相关行业的工作效率。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Shubhamsaboo/awesome-llm-apps">Shubhamsaboo/awesome-llm-apps</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +365 today · 130508 stars</div>
+  <p>该项目提供了100多个开源AI代理及其技能，旨在推动AI应用的开发及创新。</p>
+  <p class="why">解决了开发者需要快速获取和使用AI代理及技能的问题，帮助他们更高效地构建AI应用。 — 项目对于希望利用现有AI模型的开发者来说极具价值，提供了实用的解决方案与便捷的使用方式，具备一定的创新潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/uber/ADR">uber/ADR</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/安全 · Python
+    · +140 today · 663 stars</div>
+  <p>ADR 项目致力于增强企业级AI代理的安全性，支持多个环境和工具，通过可观察性、基准测试和威胁检测技术解决AI安全问题。</p>
+  <p class="why">解决了企业AI代理的安全威胁检测及防护问题。可以有效监控和评估AI代理的行为，预防潜在风险。 — 项目在行业内具有较高的实用性和创新性，尤其是应用在Uber生产环境中，表明其技术成熟且具备实际场景的应用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/toeverything/AFFiNE">toeverything/AFFiNE</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">知识管理工具 · TypeScript
+    · +120 today · 71194 stars</div>
+  <p>AFFiNE 提供了一款集成知识管理、项目规划及创作的开放源代码平台，强调隐私和可定制性，是 Notion 和 Miro 的一种高效替代方案。</p>
+  <p class="why">解决了传统生产力工具功能分散的问题，将文档编辑、白板及知识管理整合到一个平台中，提高用户的生产效率和创作体验。 — AFFiNE 在知识管理和协作工具领域中通过集成多种功能（如编辑、规划和创作）明确区分于现有解决方案，具备较高的创新性和实用价值，有潜力改变用户的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/czlonkowski/n8n-mcp">czlonkowski/n8n-mcp</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/自动化工具 · TypeScript
+    · +89 today · 22594 stars</div>
+  <p>n8n-mcp 项目为 n8n 的工作流自动化平台提供了 AI 辅助工具的接入，有助于提升开发者的工作效率与自动化程度。</p>
+  <p class="why">项目为 AI 助手与 n8n 工作流的有效集成提供了接口，增强了工作流自动化的易用性与扩展性。 — 该项目通过将 AI 与工作流自动化结合，为开发者提供了丰富的支持与资源，具备较高的实用性与应用潜力，具有提升工作方式的可能性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI">RVC-Project/Retrieval-based-Voice-Conversion-WebUI</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/音频处理 · Python
+    · +80 today · 37084 stars</div>
+  <p>这是一个简单易用的语音音色转换框架，致力于降低使用门槛并提高模型训练效率。</p>
+  <p class="why">解决了普通用户在语音音色转换方面的技术门槛，特别是小数据量训练的需求。 — 项目具有一定的创新性和实用性，尤其是在其简易的界面与快速训练响应方面，使得更多用户能够接触和应用音色转换技术，虽然它在领域内并不是首个类似解决方案，但其用户友好的设计及优化性能值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ashishpatel26/500-AI-Agents-Projects">ashishpatel26/500-AI-Agents-Projects</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +75 today · 35727 stars</div>
+  <p>这是一个优秀的人工智能代理项目集合，涵盖多个行业及应用场景，适合开发者、研究人员和学生使用。</p>
+  <p class="why">为开发者提供了大量实践案例和教程，帮助快速上手人工智能代理的构建与应用。 — 该项目汇集了500多个实际应用范例，能够有效促进AI代理技术的应用与推广，具有较高的实用价值和行业影响力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/unslothai/unsloth">unslothai/unsloth</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开源工具/前端 · Python
+    · +73 today · 69567 stars</div>
+  <p>Unsloth是一个便于本地训练和运行多种模型的UI，旨在简化用户的操作体验。</p>
+  <p class="why">解决了用户对多种AI模型的训练与运行过程的复杂性问题，同时支持本地部署，增强了用户对模型使用的灵活性和控制力。 — 该项目提供了强大的本地模型训练与运行功能，促进了AI开发者的效率，具有较高的技术创新性与实际应用潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/SimplifyJobs/Summer2027-Internships">SimplifyJobs/Summer2027-Internships</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/求职工具 · Python
+    · +70 today · 45847 stars</div>
+  <p>该项目旨在集中发布和更新2027年夏季技术类实习岗位，涵盖多个领域，为求职者提供便利。</p>
+  <p class="why">解决了求职者寻找实习岗位时信息分散的问题，提供实时更新的信息资源。 — 此项目通过集成和维护实习岗位信息，极大地方便了求职者，并有助于他们快速找到适合的实习机会。虽然不是技术突破，但在提高求职效率方面具有重要意义。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/gitroomhq/postiz-app">gitroomhq/postiz-app</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">社交媒体管理工具 · TypeScript
+    · +70 today · 34267 stars</div>
+  <p>Postiz是一个社交媒体调度工具，旨在帮助用户高效管理社交媒体内容，提升业务增长。</p>
+  <p class="why">解决了社交媒体内容调度的复杂性，提高了社交媒体管理的效率。 — 这个项目提供了一个全面的社交媒体管理解决方案，尤其是针对当今社交媒体环境中用户需要有效调度和发布内容的痛点，具有很好的市场前景和实用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Z4nzu/hackingtool">Z4nzu/hackingtool</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">安全工具 / 渗透测试 · Python
+    · +68 today · 78779 stars</div>
+  <p>这是一个全方位的黑客工具包，旨在支持合法的安全测试和网络攻防。</p>
+  <p class="why">提供了215种工具，针对多种攻击类型，为渗透测试人员、红队和蓝队分析师、OSINT研究人员等提供了有效的工具资源。 — 结合AI层通过自然语言指导用户选择和使用工具，提高了渗透测试的效率，具有较高的应用价值和市场潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/github/gh-stack">github/gh-stack</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/版本控制 · Go
+    · +67 today · 1047 stars</div>
+  <p>该项目提供了一种简化 GitHub 上 stacked PR 管理的工具，能够自动化许多繁琐的操作，提高开发效率。</p>
+  <p class="why">解决了管理多个依赖性拉取请求的复杂性，使得大规模更改可以被拆分为更小的、可审核的 PR。 — 项目具有高度实用性，尤其是对于需要进行复杂变更的团队，有助于改善代码审查流程，提升协作效率.</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Zipstack/unstract">Zipstack/unstract</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/数据工程/文档 AI · Python
+    · +61 today · 7116 stars</div>
+  <p>Unstract 是一个利用大型语言模型 (LLM) 从非结构化文档中提取结构化数据的工具，特别适用于 API 部署和 ETL 流程。</p>
+  <p class="why">解决了从非结构化文档（如 PDF 和图像）中提取有用数据的问题，极大地提升了数据处理效率。 — 此项目展示了利用 LLM 提取数据的创新方法，很可能改变企业处理文档数据的方式，适合需要进行数据提取和分析的各种应用场景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/karakeep-app/karakeep">karakeep-app/karakeep</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/自托管应用 · TypeScript
+    · +56 today · 28092 stars</div>
+  <p>Karakeep 是一个自托管的书签管理应用，支持 AI 自动标记和全文搜索，具有多种实用功能。</p>
+  <p class="why">解决了用户对文档、书签和图片的有效管理问题，以AI技术提供更智能的标记与搜索体验。 — 该项目实现了书签管理与AI技术的结合，适合需要管理大量信息的用户，并提供了自托管的选择，具有广泛的无障碍使用潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/wonderwhy-er/DesktopCommanderMCP">wonderwhy-er/DesktopCommanderMCP</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/人工智能 · TypeScript
+    · +53 today · 9160 stars</div>
+  <p>此项目是一个AI驱动的桌面命令控制工具，提供文件管理、终端命令执行和自动化功能，利用MCP协议提升开发效率。</p>
+  <p class="why">简化了开发者与计算机系统的交互，实时编辑和管理文件，降低了传统API调用的复杂性。 — 该项目融合了AI与终端操作，显著提升了开发效率，可能改变开发者的工作方式和工具使用习惯，是值得关注的创新。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/HarbourMasters/Lighthouse">HarbourMasters/Lighthouse</a>
+    <span class="sig" role="img" aria-label="关注度 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">游戏模拟器/跨平台工具 · C
+    · +62 today · 308 stars</div>
+  <p>这是一个用于运行经典游戏《Banjo Kazooie》的模拟器项目。</p>
+  <p class="why">该项目提供了一个无版权游戏资产的模拟器，让用户能够在现代操作系统上体验旧游戏。 — 项目在游戏模拟领域具有一定的参考价值，尤其是对于复古游戏爱好者，但在功能和用户群体规模上尚显局限。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
