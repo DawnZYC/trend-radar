@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-08-07</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-08-07</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的 GitHub Trending 展现出AI技术与自动化工具的强劲势头，开发者们正逐步采纳这些工具来提升生产力和效率。在这个数字化快速发展的时代，开源项目提供了丰富的解决方案，涵盖从代码质量、用户界面构建到安全性和任务管理等多个领域。其中，最值得关注的三个项目分别是：
+
+1. agent-skills：该项目为AI编码代理提供了系统化的开发技能，显著提升了软件开发的一致性和代码质量，具有颠覆传统开发方式的潜力。
+   
+2. tailwindcss：作为一种实用优先的CSS框架，Tailwind CSS大幅提高了开发效率，成为许多知名项目的首选，标志着现代前端开发的重要趋势。
+
+3. vscode：这款灵活的代码编辑器，通过丰富的插件支持和活跃的社区极大地促进了开发效率，已成为开发者工具中的佼佼者。 
+
+这些项目不仅体现了技术的创新，也反映了现阶段开发领域的主流需求和未来发展方向。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/自动化 · JavaScript
+    · +593 today · 82965 stars</div>
+  <p>该项目为 AI 编码代理提供了一套成熟的工程技能，旨在提高软件开发过程中的一致性与质量。</p>
+  <p class="why">解决了 AI 编码代理在软件开发中的工作流不一致、质量把关不足等问题，通过定义清晰的开发过程与标准化的操作，提升代码质量。 — 项目通过自动化和标准化开发过程中的多个环节，提高了开发效率和代码质量，具有潜在的颠覆性影响，可能改变传统软件开发方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/tailwindlabs/tailwindcss">tailwindlabs/tailwindcss</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端/基础设施 · TypeScript
+    · +408 today · 97037 stars</div>
+  <p>Tailwind CSS 是一个实用优先的 CSS 框架，旨在快速构建自定义用户界面。</p>
+  <p class="why">Tailwind CSS 解决了传统 CSS 框架在大众化使用中遇到的定制性和效率问题，允许开发者以更快的速度实现响应式设计。 — Tailwind CSS 提供了一种新的方法来构建用户界面，通过实用优先的理念极大地提高了开发效率，是现代前端开发的重要工具。当下众多知名项目和公司都在使用该框架，说明其在行业内的广泛认可和影响力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/microsoft/vscode">microsoft/vscode</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">编辑器 · TypeScript
+    · +86 today · 188454 stars</div>
+  <p>Visual Studio Code 是一个强大且灵活的代码编辑器，具有广泛的插件支持和活跃的社区贡献。</p>
+  <p class="why">解决了代码编辑与调试之间的效率问题，降低了开发门槛。 — 作为一款开源且不断更新的代码编辑器，VS Code 不仅功能强大，还拥有庞大的社区和插件生态，极大地促进了开发效率，是开发者工具中的佼佼者。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Unclecheng-li/VulnClaw">Unclecheng-li/VulnClaw</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">安全工具/渗透测试 · Python
+    · +64 today · 2607 stars</div>
+  <p>VulnClaw 是一种AI驱动的渗透测试工具，能够依据用户的自然语言输入自动化完成渗透测试的各个环节，从信息收集到报告生成。</p>
+  <p class="why">解决了传统渗透测试过程中的复杂操作，通过自然语言指令简化了测试流程，提升了渗透测试的效率和可操作性。 — VulnClaw 通过AI技术实现了渗透测试的高度自动化，潜在改变安全测试的工作方式，适合安全研究人员和开发团队。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/vercel/next.js">vercel/next.js</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端/开发工具 · JavaScript
+    · +58 today · 141658 stars</div>
+  <p>Next.js 是一个强大的 React 框架，致力于提高全栈 Web 应用程序的开发效率，吸引了大量的开发者和企业使用。</p>
+  <p class="why">提供了一种高效的方式来构建服务器渲染和静态生成的 Web 应用，解决了复杂的配置和构建流程问题。 — 作为现代 Web 开发的主流框架之一，Next.js 不仅提升了开发者的工作效率，还优化了应用的性能，具有广泛的应用场景和良好的社区支持，值得高度关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/blader/humanizer">blader/humanizer</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI工具 · Python
+    · +397 today · 34030 stars</div>
+  <p>这是一个用于去除 AI 生成文本特征的工具，使文本听起来更自然人性化的项目。</p>
+  <p class="why">解决了 AI 生成的文本在专业场合使用时不自然的问题，帮助用户提升文本的可读性和人性化程度。 — 该项目针对 AI 文本的最大挑战之一：可读性进行了创新，实用性强，能够改变部分写作流程，尤其是在需要创造性写作的领域。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/CherryHQ/cherry-studio">CherryHQ/cherry-studio</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/生产力工具 · TypeScript
+    · +328 today · 49907 stars</div>
+  <p>CherryHQ/cherry-studio 是一个集成多种 AI 助手与智能聊天的生产力工具，旨在提升工作效率和用户体验。</p>
+  <p class="why">解决了不同 AI 助手的碎片化访问问题，通过统一的接口使用户能够高效利用多种前沿的语言模型。 — 该项目通过整合多个 AI 辅助工具并提供智能聊天体验，有潜力显著提升用户工作效率，适合对生产力提升有较高需求的用户群体。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/tirth8205/code-review-graph">tirth8205/code-review-graph</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +237 today · 29035 stars</div>
+  <p>一个面向代码审查的智能图分析工具，为人工智能编程助手提供精确上下文，提升代码审查效率。</p>
+  <p class="why">解决了AI编程工具在代码审查任务中过度读取代码的问题，通过构建代码结构图来提供必要的上下文。 — 项目通过优化代码审查过程，显著提高了效率和准确性，具有实用价值，可能对开发流程产生积极影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Comfy-Org/ComfyUI">Comfy-Org/ComfyUI</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/内容创作工具 · Python
+    · +234 today · 124399 stars</div>
+  <p>ComfyUI 是一个功能强大且模块化的 AI 创作引擎，专为视觉专业人士设计，支持多种创作形式，并提供灵活的图形化界面。</p>
+  <p class="why">解决了视觉创作过程中对各种模型和参数的严密控制需求，极大提升了创作者的工作效率。 — 该项目通过模块化的图形界面与多种模型的支持，满足了创作者对于灵活性和控制力的需求，具有较大的实际应用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/browser-use/video-use">browser-use/video-use</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/视频处理 · Python
+    · +185 today · 19883 stars</div>
+  <p>这是一个开源的视频编辑工具，利用人工智能代理来处理视频，无需繁琐的菜单和预设，适合各种视频格式和内容。</p>
+  <p class="why">通过自动化处理视频编辑流程，节省创作者的时间和精力，提高了视频制作效率。 — 该项目利用AI技术简化视频编辑流程，具有广泛的应用潜力，尤其对内容创作者和营销人员来说，是一种高效的工具，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/facebook/astryx">facebook/astryx</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/开源设计系统 · TypeScript
+    · +162 today · 11797 stars</div>
+  <p>Astryx 是一个开源设计系统，具有高度可定制性，主要面向人类用户和 AI 助手，促进无缝协作。</p>
+  <p class="why">解决了设计系统的可重用性和可定制性问题，支持开发者和设计师的高效协作。 — 项目具备很高的实用性和创新性，支持 AI 助手使用，使其在开发与设计工作中可能大幅提升效率，不过仍处于 Beta 阶段，需观察其稳定性和用户反馈。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/goauthentik/authentik">goauthentik/authentik</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">身份验证/单点登录/安全性 · Python
+    · +138 today · 23134 stars</div>
+  <p>authentik 是一个现代单点登录的开源身份提供者，支持多种身份验证协议，旨在为各种规模的环境提供灵活的自托管解决方案。</p>
+  <p class="why">解决传统身份提供者（如 Okta 和 Auth0）在身份管理中的局限性，为企业提供自托管的解决方案。 — 作为一个开源身份提供者，authentik 在身份管理方面的灵活性和自托管功能大大降低了企业的依赖性，对大规模身份管理具有重要意义，评级 4 是基于其在企业身份管理中的潜在影响力和技术创新。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/TapXWorld/ChinaTextbook">TapXWorld/ChinaTextbook</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">教育资源共享 · Roff
+    · +134 today · 77119 stars</div>
+  <p>这是一个开源项目，旨在提供中国教育教材的PDF版本，以促进教育资源的平等化和普及。</p>
+  <p class="why">解决普通用户获取中国教育教材的困难，推动教育公平，尤其是针对地区之间的教育差异。 — 该项目在教育领域的影响力和对促进教育公平的贡献，使其不仅值得关注，且有可能改变教育资源的获取方式，尤其是在教育资源相对匮乏的地区。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/roboflow/supervision">roboflow/supervision</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">计算机视觉工具 · Python
+    · +132 today · 49136 stars</div>
+  <p>Supervision 是一个高效、低代码的计算机视觉工具，旨在提高开发者在不同模型上的工作效率。</p>
+  <p class="why">提供了统一的工具集，简化计算机视觉任务的实现，特别是在数据处理和模型构建方面。 — 项目充分展示了低代码实践的潜力，能够推动计算机视觉开发的效率，是值得关注的工具。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/anandprtp/Antra">anandprtp/Antra</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">音频工具 / 音乐管理 · Python
+    · +110 today · 1871 stars</div>
+  <p>Antra 是一款桌面音乐库构建工具，支持多种流媒体音乐平台，能够将其链接转换为本地存储的音乐文件，且自动进行标签化处理。这为用户提供了便捷的音乐管理体验。</p>
+  <p class="why">解决了用户在多个平台获取音乐时的管理和标签化问题，使本地音乐库的建设变得简单高效。 — Antra 提供了一种无缝整合多种流媒体服务的解决方案，极大简化了用户在音乐库管理上的复杂度，是一个极具潜力的音乐管理工具。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/BerriAI/litellm">BerriAI/litellm</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +105 today · 55752 stars</div>
+  <p>LiteLLM是一个开源的AI网关，专注于快速便捷地调用多种大型语言模型（LLM），支持自托管并具备企业级功能。</p>
+  <p class="why">解决了对多种LLM的高效调用及管理问题，提供了成本追踪与负载平衡等功能。 — 项目在AI领域中具备广泛应用潜力，能够简化开发者与不同LLM之间的集成过程，有可能显著改善开发效率。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/iOfficeAI/AionUi">iOfficeAI/AionUi</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/协作工具 · TypeScript
+    · +105 today · 31603 stars</div>
+  <p>AionUi 是一款开源的协作应用，支持多种人工智能代理的协作与定制，可以实现全天候自动化，适用于多个平台。</p>
+  <p class="why">该项目解决了团队在使用多种 AI 代理时的协作问题，简化了设置流程，支持实时互动与自动化。 — 该项目在现代工作环境中引入了多代理协作模式，能够极大提高团队的工作效率，为技术发展提供了新的思路，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/makeplane/plane">makeplane/plane</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">项目管理工具 · TypeScript
+    · +95 today · 55651 stars</div>
+  <p>Plane 是一款现代化的开源项目管理工具，旨在提高团队工作效率，简化任务管理和项目规划。</p>
+  <p class="why">提供了一个开源替代方案来管理项目和任务，满足不同团队的需求。用户可以选择自我托管或使用云服务，灵活管理数据和基础设施。 — 项目展示了现代工作管理的需求，已具备一定用户基础和关注度，值得深入探讨其对项目管理领域的潜在影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/KnockOutEZ/wigolo">KnockOutEZ/wigolo</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/基础设施 · TypeScript
+    · +88 today · 4370 stars</div>
+  <p>wigolo 是一个面向 AI 代理的本地优先搜索和研究工具，支持多种集成和无 API 密钥使用。</p>
+  <p class="why">解决了使用AI代理进行在线搜索、抓取和研究的复杂性，支持本地操作且无需调用云服务。 — 该项目提供了直接在本地进行智能搜索和自动化的数据获取能力，这在提高开发效率和数据隐私方面具有重要意义。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/QwenLM/qwen-code">QwenLM/qwen-code</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/命令行工具 · TypeScript
+    · +58 today · 26798 stars</div>
+  <p>QwenLM/qwen-code 是一个开源的人工智能编码代理，旨在提升开发者在终端环境中的编码效率。</p>
+  <p class="why">通过提供一个集成的AI编码助手，帮助开发者在终端中更高效地编写和管理代码，减少开发时间和错误。 — 该项目的独特之处在于它结合了开源AI能力与终端工具，为开发者提供了动态、无缝的编码体验，同时避免了厂商锁定，具有很大的潜力改变开发工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ever-co/ever-gauzy">ever-co/ever-gauzy</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开源商业管理平台 / ERP/CRM/Human Resource Management · TypeScript
+    · +52 today · 4293 stars</div>
+  <p>Ever Gauzy 是一个开源的商业管理平台，提供全面的企业资源计划、客户关系管理和人力资源管理功能。</p>
+  <p class="why">解决了企业在资源计划、客户关系管理及人力资源管理中遇到的效率低下和信息孤岛的问题。 — 作为一个功能全面的开源平台，Ever Gauzy 对于希望提高管理效率的企业具有重要意义，适用于各种行业，实用性强。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/frappe/hrms">frappe/hrms</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">人力资源管理软件 · Python
+    · +49 today · 8518 stars</div>
+  <p>Frappe HR 是一个开源的现代人力资源和工资管理软件，提供全面的员工管理解决方案。</p>
+  <p class="why">解决了现代企业对高效人力资源管理和薪资处理的需求，尤其是在缺乏真正开源解决方案的背景下。 — 该项目为人力资源管理领域提供了一个功能全面的开源解决方案，能够有效提高企业的管理效率，适合各类公司使用，具有很好的市场应用潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/promptfoo/promptfoo">promptfoo/promptfoo</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/评估框架 · TypeScript
+    · +48 today · 24019 stars</div>
+  <p>Promptfoo 是一个针对大型语言模型的评估和红队工具，旨在帮助开发者测试、验证和增强 AI 应用程序的安全性。</p>
+  <p class="why">解决了 AI 应用程序的安全性和可靠性测试问题，通过集成 CI/CD 流程简化了开发者的工作。 — 功能全面，并且得到了 OpenAI 和 Anthropic 的支持，具有实际应用价值，能够显著提高 AI 代码的安全性和评估效率。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/cloudflare/computer">cloudflare/computer</a>
+    <span class="sig" role="img" aria-label="关注度 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">云计算/前端/开发工具 · TypeScript
+    · +2802 today · 4827 stars</div>
+  <p>Cloudflare Computer 是一个虚拟文件系统，允许用户在隔离环境中执行 Shell 命令及 JavaScript，具备实验性与探索性，尚未适合生产环境。</p>
+  <p class="why">解决了在云环境中管理和执行代码的问题，提供了多种后端的灵活性，适合用于原型开发与实验。 — 项目具备创新的概念和多样的执行方式，但目前处于预览阶段，API 不稳定，不适合生产使用，主要用于反馈和实验，整体影响较小。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ln-dev7/circle">ln-dev7/circle</a>
+    <span class="sig" role="img" aria-label="关注度 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/项目管理工具 · TypeScript
+    · +85 today · 3106 stars</div>
+  <p>Circle 是一个受 Linear 启发的现代化项目管理界面，支持问题、项目和团队的跟踪。</p>
+  <p class="why">提供了一个响应式的用户界面来管理项目，提高了团队协作和项目可视化的效率。 — 作为一个现代项目管理工具，它在功能和用户体验上具备一定的潜力，但在行业内竞争激烈，尚需时间观察其真正影响力。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
