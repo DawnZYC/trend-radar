@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-08-11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-08-11</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的技术趋势主要集中在人工智能和自动化领域。特别是个性化学习和工作流管理工具的出现，为用户提供了更高效的解决方案。值得关注的三大项目是DeepTutor、n8n和RuView。DeepTutor通过AI技术提供个性化学习服务，提升学习效率；n8n则是一个灵活的工作流自动化平台，能够支持多种AI功能，适合企业落地应用；而RuView创新性地利用WiFi信号进行空间智能监测，为生命体征监测提供了隐私保护的解决方案。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/HKUDS/DeepTutor">HKUDS/DeepTutor</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">ai-tutor/互动学习 · Python
+    · +829 today · 34668 stars</div>
+  <p>DeepTutor 是一个基于 AI 的个性化学习平台，致力于提供终身个性化辅导服务。</p>
+  <p class="why">解决了个性化学习的需求，特别是在自动化和持续学习方面的应用。 — 该项目通过 AI 技术实现个性化辅导，能显著提高学习效率和体验，具有潜在的颠覆性影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/3b1b/manim">3b1b/manim</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端 · Python
+    · +246 today · 90145 stars</div>
+  <p>Manim 是一个用于创建数学视频的动画引擎，特别适合用于解释性数学视频的制作。</p>
+  <p class="why">解决了数学教育中对动画表达的需求，使得复杂的数学概念更容易被理解和呈现。 — Manim 提供了精确的程序化动画工具，能够显著提升教育内容的表现力，改变了教学方式，适合广泛应用于教育领域。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/n8n-io/n8n">n8n-io/n8n</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">自动化/工作流管理平台 · TypeScript
+    · +162 today · 200261 stars</div>
+  <p>n8n 是一个支持 AI 功能的工作流自动化平台，强调可视化构建与自定义编码的结合，适合自托管或云端使用，拥有超过 1500 种集成。</p>
+  <p class="why">解决了跨应用自动化工作流的构建与管理问题，并使得 AI 集成变得更加灵活与安全。 — n8n 提供了可扩展的工作流自动化解决方案，并具备多种 AI 与集成能力，有潜力对工作方法产生深远影响，尤其是在企业应用中。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ruvnet/RuView">ruvnet/RuView</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">智能家居/IOT/生命体征监测 · Rust
+    · +156 today · 89662 stars</div>
+  <p>RuView 项目通过利用 WiFi 信号转化为空间智能，提供实时的生命体征监测及存在检测，具有广泛的应用前景。</p>
+  <p class="why">该项目解决了在无监控设备的情况下（如摄像头）监测人类活动与健康指标的问题，提升了隐私保护。 — RuView 的创新方法利用现有的 WiFi 信号实现空间智能，具有改变传统监测方式的潜力，是一个突破性项目。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/vllm-project/vllm">vllm-project/vllm</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/基础设施 · Python
+    · +87 today · 88796 stars</div>
+  <p>vLLM是一个高效的LLM推理和服务引擎，具有高吞吐量和内存利用效率，易于使用，适合广泛的应用场景。</p>
+  <p class="why">解决了大型语言模型（LLM）在推理过程中的高效性和可扩展性问题，优化了内存管理和计算效率。 — 该项目兼顾了高效性与灵活性，并与众多主流框架兼容，具有显著的行业应用潜力和技术创新。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/vectorize-io/hindsight">vectorize-io/hindsight</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/智能代理/记忆系统 · Python
+    · +81 today · 19677 stars</div>
+  <p>Hindsight 是一种智能代理记忆系统，致力于使代理能够随着时间的推移进行学习，而不仅仅是记忆，具有出色的性能表现。</p>
+  <p class="why">优化了代理的记忆能力，使其不仅能记住对话历史，还能进行学习，适应用户需求。 — 项目解决了智能代理的记忆短板，实现了先进的记忆性能，可能会革命性地改变 AI 的交互方式，尤以商业和客户服务场景为重。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/stablyai/orca">stablyai/orca</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · TypeScript
+    · +881 today · 42710 stars</div>
+  <p>Orca是一个用于管理多个并行AI代理的开发环境，支持桌面和移动设备，提升了AI编程的效率与便捷性。</p>
+  <p class="why">解决了如何高效利用多种AI编程代理的难题，特别是在需要比较不同代理输出的场景。 — 该项目提供了一个创新的平台，整合了多种AI工具，使得用户可以并行使用和管理多个代理，适合需要进行大量代码生成和测试的开发者，具备较高的实用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/brightdata/cli">brightdata/cli</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/数据抓取 · TypeScript
+    · +558 today · 4148 stars</div>
+  <p>Bright Data CLI 是一个用于从终端直接抓取和提取结构化网页数据的工具。</p>
+  <p class="why">解决了从多种网站抓取数据的复杂性，包括绕过反扒机制和进行AI驱动的网页发现。 — 该项目实现了多种强大的数据抓取功能，特别是利用AI增强的能力，极大地提升了开发者在数据获取方面的效率，尤其适合需要从复杂网站提取信息的用户。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/corsairdev/corsair">corsairdev/corsair</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端 · TypeScript
+    · +489 today · 8889 stars</div>
+  <p>Corsair 是一个允许用户安全集成多种应用的层，提供了灵活的权限管理，确保在代理自动化任务时，用户能够保持对敏感操作的控制。</p>
+  <p class="why">解决了代理进行自动化任务时需要传递敏感凭据的安全问题，同时通过权限管理避免误操作。 — 该项目通过提供安全的集成层来颠覆用户与应用之间的交互方式，具有较大的使用潜力和行业影响力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/anthropics/skills">anthropics/skills</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +468 today · 168093 stars</div>
+  <p>该项目主要是为Claude提供的技能实现，旨在增强AI在特定任务上的表现和能力。</p>
+  <p class="why">通过引入自定义技能，帮助用户提高AI在特定领域的作业效率和执行能力，尤其在企业和创造性任务中的应用。 — 项目展现了AI自定义能力的重要性，并提供了一系列具体应用示例，对于推动AI技术在实际工作中的应用具有潜在的突破性影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/jaywcjlove/awesome-mac">jaywcjlove/awesome-mac</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">软件开发/应用程序 · Swift
+    · +334 today · 110445 stars</div>
+  <p>该项目是一个高质量的macOS软件汇总资源，提高了用户找到适合其需求软件的效率。</p>
+  <p class="why">帮助用户快速找到和使用优质的macOS应用程序，提升工作和生活效率。 — 项目综合了大量优秀软件，便于用户进行选择，适合macOS用户，具有较好的参考价值，不至于改变行业格局，但在macOS生态中非常实用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/AWeirdDev/flights">AWeirdDev/flights</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/后端/数据抓取工具 · Python
+    · +231 today · 1860 stars</div>
+  <p>该项目提供了一个快速且可靠的Google航班抓取API，支持Python语言，能够有效提高用户在航班搜索时的效率和灵活性。</p>
+  <p class="why">解决了获取Google航班信息的不便，特别是在需要频繁查询航班信息的场景中，提供了一个简便的API接口。 — 该项目以API的形式集成了复杂的航班搜索功能，具备良好的实用性和灵活性，虽然并非完全颠覆工作方式，但在航班信息获取上提升了效率，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/cactus-compute/needle">cactus-compute/needle</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/基础设计 · Python
+    · +179 today · 3723 stars</div>
+  <p>Needle 2是一个针对小型设备优化的开放源代码模型，具备高效的内存管理与工具调动能力，为移动端和物联网设备提供智能化支持。</p>
+  <p class="why">解决了在资源受限设备上运行大型模型的存储与性能瓶颈问题，能够在手机、可穿戴设备等上进行复杂的推理与操作。 — 作为一个小型但功能完善的AI模型，Needle 2引入了低内存、高效能的创新设计，极具市场潜力与实用价值，尤其是在移动端和嵌入式应用中。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/openclaw/openclaw">openclaw/openclaw</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/个人助手 · TypeScript
+    · +170 today · 385956 stars</div>
+  <p>OpenClaw 是一个旨在为用户提供全面个性化体验的个人 AI 助手，支持多平台运行，允许在用户已有的通讯渠道中使用。</p>
+  <p class="why">解决了传统 AI 助手依赖云服务的问题，用户可以在本地设备上安全地运行并控制其数据。 — 本项目通过在用户设备上本地运行 AI 助手，增强了数据隐私和用户自主性，具有突破性的潜力，能改变个人助手的使用方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/vercel-labs/skills">vercel-labs/skills</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/CLI工具 · TypeScript
+    · +129 today · 28675 stars</div>
+  <p>这是一个用于开放代理技能生态系统的命令行工具，支持多种编码代理，允许用户轻松添加和使用技能。</p>
+  <p class="why">简化了开发者在不同代理间使用和管理技能的流程，提高了开发效率。 — 项目充满创新性，通过命令行工具整合多个技能，能极大地提升开发者的使用体验和工作效率，有潜力影响工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/对话式AI · TypeScript
+    · +114 today · 67668 stars</div>
+  <p>Ruflo项目提供了一个智能多玩家群体的部署平台，通过自主工作流和对话式AI系统的集成，展现了强大的自适应记忆和自学习智能特性。</p>
+  <p class="why">该项目主要解决了复杂任务的协调与自主决策问题，使得多智能体能够更高效地协同工作，提升了AI助手的能力与灵活性。 — 该项目具备较高创新性，并在智能体协作与自主学习方面展现出较大潜力，可能改变某些领域的工作方式，但尚需观察其实际应用效果与落地情况。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/LLMQuant/quant-mind">LLMQuant/quant-mind</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">量化金融, 知识提取, 数据处理 · Python
+    · +105 today · 2473 stars</div>
+  <p>QuantMind 提供了一种将原始金融信息精炼为结构化金融知识的框架，旨在帮助量化金融领域的知识提取和检索。</p>
+  <p class="why">解决了金融信息的提取和结构化的问题，提升了信息的可用性和准确性。 — 该项目具有独特的代理导向设计，适合量化金融专业人士，并且有潜力改变传统金融数据处理方式，因此值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/code-yeongyu/oh-my-openagent">code-yeongyu/oh-my-openagent</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · TypeScript
+    · +104 today · 67710 stars</div>
+  <p>该项目旨在集成多个AI代码生成器，为开发者提供更高效的编程工具。</p>
+  <p class="why">解决了复杂代码库的管理和多个AI接口的集成问题，简化了开发环境的配置。 — 项目结合多种AI技术，具备较高的实用性与创新性，特别是在代码生成和开发助手方面。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/KunAgent/Kun">KunAgent/Kun</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/生产力工具 · TypeScript
+    · +89 today · 6077 stars</div>
+  <p>Kun 是一款本地优先的 AI 助手工作台，支持编码、写作、设计等多个领域，旨在提高工作效率和任务管理的可见性。</p>
+  <p class="why">解决了多任务、多领域协同工作效率低下的问题，提供了一个集成化的工作流和任务管理平台。 — 项目整合了多种工作方式和行业需求，是一个具有潜力和创新性的工具，可以显著改变开发、写作和设计的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Mininglamp-OSS/octo-web">Mininglamp-OSS/octo-web</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/桌面应用/人工智能 · TypeScript
+    · +82 today · 644 stars</div>
+  <p>OCTO Web 是一个结合了 Web 和桌面客户端的开源消息平台，利用 TypeScript 和 React 构建，支持 AI 代理和双语功能。</p>
+  <p class="why">提供一个统一的客户端体验，减少了维护两个代码库的复杂性，并且优化了 AI 代理的用户交互流程。 — 项目整合了多平台的用户体验，以高效的方式增进了人机交互，具有实际应用价值，显示出较高的灵活性和创新性能。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/garrytan/gbrain">garrytan/gbrain</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/知识管理 · TypeScript
+    · +82 today · 28225 stars</div>
+  <p>GBrain 是一种用于 AI 代理的知识合成脑层，支持图遍历和缺口分析，旨在提升团队的信息整合与学习能力。</p>
+  <p class="why">GBrain 解决了如何高效整合与检索信息的问题，提升了团队成员的记忆与信息共享能力。 — GBrain 结合了知识合成和结构化知识图谱，在团队知识管理和个人知识系统方面具有突破性的潜力，值得深入关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/browseros-ai/BrowserOS">browseros-ai/BrowserOS</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/应用开发/基础设施 · TypeScript
+    · +81 today · 13165 stars</div>
+  <p>BrowserOS 是一个专为 AI 代理而设计的开源浏览器，提供了一种新的浏览器使用方式。</p>
+  <p class="why">旨在改善用户与 AI代理的互动效率，允许多个代理同时执行任务并进行操作回放。 — 该项目通过提供一个针对 AI 代理优化的浏览体验，改变了我们与浏览器之间的互动方式，值得关注。虽然目前处于较新阶段，但其潜力不容小觑。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/yikart/AiToEarn">yikart/AiToEarn</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/内容创作工具 · TypeScript
+    · +77 today · 25044 stars</div>
+  <p>AiToEarn 是一个通过 AI 技术支持内容创作和变现的一站式平台，尤其面向个人和品牌。</p>
+  <p class="why">它帮助用户自动生成和分发内容，提高内容创作的效率与变现能力。 — 该项目集成了多平台的支持，致力于简化创作者的内容生产和发布流程，解决了个体创作者及小企业在内容营销中的痛点，具有较大的市场潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/LadybirdBrowser/ladybird">LadybirdBrowser/ladybird</a>
+    <span class="sig" role="img" aria-label="关注度 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/浏览器 · C++
+    · +190 today · 65402 stars</div>
+  <p>Ladybird是一个独立且基于现代网络标准的新型浏览器，当前处于开发早期阶段，适合开发者使用。</p>
+  <p class="why">解决了浏览器在多进程架构下的安全性和稳定性问题，具备独立的网页渲染和内容处理能力。 — 项目展现了创新的浏览器架构，值得关注，但由于仍在早期开发阶段，实际应用潜力尚未验证。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/opa334/Dopamine">opa334/Dopamine</a>
+    <span class="sig" role="img" aria-label="关注度 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">越狱工具 · C
+    · +95 today · 6177 stars</div>
+  <p>Dopamine 是一个针对 iOS 的半不完全集成越狱工具，支持多个 iOS 版本。</p>
+  <p class="why">为用户提供了在不完全解锁设备的情况下，安装和使用未经过 App Store 审核的应用。 — 该项目提供了对 iOS 系统更深层次的自定义能力，尽管在越狱社区中有一定影响力，但应用场景相对细分，不会对主流用户的工作方式产生大规模影响。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
