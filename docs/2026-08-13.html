@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-08-13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-08-13</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的GitHub Trending榜单中，技术趋势显示出团队协作软件、视频制作工具和AI文本生成等多个领域的活跃发展。其中，Macro以其模块化工作流和AI记忆功能，解决了工具孤岛问题，提升了团队协作效率，值得关注。OpenMontage项目通过结合多种AI工具简化视频制作流程，有望改变传统创作模式，展现出极大的潜力。此外，Hugging Face的Transformers库在自然语言处理领域内已经成为行业标准，凭借其强大的模型库支持，助力开发者高效构建多模态应用。这三项项目不仅创新性十足，更在各自领域中展现出广泛的应用前景。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/macro-inc/macro">macro-inc/macro</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">工作空间软件/团队协作 · Rust
+    · +1180 today · 2572 stars</div>
+  <p>Macro是一个面向团队的统一工作空间，集成了电子邮件、聊天、文档、任务、代理、电话和客户关系管理等功能，通过共享的AI记忆实现了模块化的工作流。</p>
+  <p class="why">解决了团队工作中工具孤岛的问题，通过一个平台整合多种工作功能，提高了协作效率。 — 该项目以创新的方式重新设计工作软件，针对团队的多样化需求整合了多个功能，具有强大的应用潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/calesthio/OpenMontage">calesthio/OpenMontage</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">视频制作/开源软件/人工智能 · Python
+    · +740 today · 47963 stars</div>
+  <p>OpenMontage 是一个开源的智能视频制作系统，提供了丰富的生产工具和技能文件，旨在将 AI 助手转变成完整的视频制作工作室。</p>
+  <p class="why">简化视频制作流程，实现多人协作，提升创作效率。 — 该项目通过整合多个 AI 工具和视频制作管道，可能彻底改变传统视频创作方式，具有非常高的应用潜力和前瞻性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/huggingface/transformers">huggingface/transformers</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">深度学习/自然语言处理/NLP · Python
+    · +413 today · 164078 stars</div>
+  <p>Hugging Face 的 Transformers 库为文本、视觉、音频和多模态模型提供了先进的机器学习模型定义框架，支持推理和训练。</p>
+  <p class="why">解决语言模型和多模态模型的构建与训练问题，提升了开发效率和效果。 — 该项目在自然语言处理领域具有显著影响力，促进了多种应用的开发，提供了灵活且强大的模型库，已成为行业标准。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/smicallef/spiderfoot">smicallef/spiderfoot</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">网络安全/开源情报 · Python
+    · +278 today · 20648 stars</div>
+  <p>SpiderFoot 是一个强大的开源情报工具，专注于自动化 OSINT （开放源信息收集），为安全专家提供了多种数据分析和可视化功能。</p>
+  <p class="why">自动化开放源信息收集，节省了安全专家在规划和评估攻击面所需的大量时间和精力。 — 该项目能显著改变网络安全领域的工作方式，通过全面的模块化设计和简易的用户界面，提升了 OSINT 的效率，适用于各类安全团队。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Lightricks/LTX-2">Lightricks/LTX-2</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">生成式人工智能 · Python
+    · +201 today · 8900 stars</div>
+  <p>LTX-2 是一款先进的音频视频生成基础模型，具备现代视频生成所需的核心能力，提供同步的音频和视频，适合生产环境，且支持 API 访问。</p>
+  <p class="why">解决了音频与视频高质量生成与同步的问题，适用于多种表现模式。 — 这是一个突破性项目，能够改变视频生成领域的工作方式，整合多个核心功能，提高了生成效果和实用性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/index-tts/index-tts">index-tts/index-tts</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/文本转语音/语音克隆 · Python
+    · +101 today · 22825 stars</div>
+  <p>这是一个工业级的可控高效的零样本文本转语音系统，支持多种语言并具备语音克隆功能。</p>
+  <p class="why">解决了如何从单个参考音频片段克隆声音的问题，并且提供了对情感、语速和发音的精细化控制。 — 该项目在文本转语音领域具有重要的突破性，尤其是在多个语言和零样本学习的支持上，能够在工业应用中产生深远影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/fastapi/full-stack-fastapi-template">fastapi/full-stack-fastapi-template</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">全栈开发/框架/快速开发工具 · TypeScript
+    · +90 today · 44837 stars</div>
+  <p>该项目是一个完整的全栈Web应用程序模板，结合了FastAPI和React，适合快速开发现代Web应用。</p>
+  <p class="why">提供了一个一站式解决方案，简化全栈应用的开发流程，集成后端API和前端界面，降低了开发门槛。 — 该项目集成了现今流行的技术栈，支持快速部署和开发，具备现代Web开发所需的众多功能，是十分实用的工具，适合开发者使用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端 · HTML
+    · +4504 today · 14300 stars</div>
+  <p>该项目提供了一种自包含的HTML + SVG方案，允许用户快速创建高质量的编辑性图表，解决了现有工具生成图表时缺乏个性化的问题。</p>
+  <p class="why">用户在制作图表时常常受到工具限制，本项目提供的27种视觉类型能够满足快速、个性化的图表需求，避免了繁琐的设计过程。 — 项目通过简化视觉图表绘制流程，且强调与品牌一致性，对于需要快速生成高质量示意图的开发者和设计师具有很大吸引力，有助于改变他们的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/hugohe3/ppt-master">hugohe3/ppt-master</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/应用开发/办公工具 · Python
+    · +1141 today · 46492 stars</div>
+  <p>该项目通过AI技术实现将文件或主题转化为本地可编辑的PowerPoint演示文稿，具有丰富的功能和定制选项。</p>
+  <p class="why">极大简化了PPT制作的过程，尤其适用于需要快速生成演示文稿的场合。 — 该项目通过AI生成演示文稿的能力，能够有效提升工作效率，尤其是商业和教育领域的专业人士，因此有较强的应用前景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/NanmiCoder/MediaCrawler">NanmiCoder/MediaCrawler</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">数据采集/爬虫 · Python
+    · +855 today · 62318 stars</div>
+  <p>一个功能强大的自媒体数据采集工具，支持多个流行平台的信息抓取，降低了数据采集的技术门槛。</p>
+  <p class="why">解决了自媒体平台上数据采集难、门槛高的问题，使得用户能够方便快捷地获取数据. — 项目具备丰富的功能特性，适用于多个热门平台，能够在数据收集及分析领域产生积极影响。尽管存在法律风险，但该工具简化了复杂的技术流程，提升了使用便捷性，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/infiniflow/ragflow">infiniflow/ragflow</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/生成模型 · Go
+    · +473 today · 87996 stars</div>
+  <p>RAGFlow是一个开源的检索增强生成引擎，结合了代理能力，为大语言模型提供了优越的上下文层。</p>
+  <p class="why">RAGFlow解决了在使用大语言模型时，如何有效检索和增强上下文的信息获取能力。 — 该项目结合了最新的RAG技术与智能代理，具有潜在的广泛应用价值，尤其是在AI领域的上下文处理与生成任务上。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ZuodaoTech/everyone-can-use-english">ZuodaoTech/everyone-can-use-english</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/教育技术 · TypeScript
+    · +441 today · 36398 stars</div>
+  <p>这是一个致力于帮助用户学习英语的项目，通过AI辅助的方式，让每个人都能更轻松地掌握英语。</p>
+  <p class="why">解决了许多人在学习英语过程中遇到的困难，特别是靠传统方法学习的用户。 — 虽然不算突破性技术，但其结合AI和多平台应用的方式能够有效提升学习效率，具有较大的实用价值和市场潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/kepano/obsidian-skills">kepano/obsidian-skills</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具
+    · +411 today · 45689 stars</div>
+  <p>一个面向 Obsidian 的代理技能工具包，增强了与 Obsidian 软件交互的能力和灵活性。</p>
+  <p class="why">提供了多种代理技能，使得用户可以更加高效地利用 Obsidian 进行文本编辑和信息处理，尤其是对于依赖于 Markdown 格式的用户。 — 这个项目为 Obsidian 用户提供了丰富的功能扩展，提升了操作便捷性，同时结合了现代代理技能标准，对文本处理和信息管理领域具有较大的影响潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/koala73/worldmonitor">koala73/worldmonitor</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/数据可视化/监测 · TypeScript
+    · +410 today · 81575 stars</div>
+  <p>World Monitor 是一个实时的全球情报仪表盘，集成了 AI 驱动的新闻聚合、地缘政治监测和基础设施跟踪，提供统一的情境感知界面。</p>
+  <p class="why">提供全球范围内实时信息，帮助用户对地缘政治和基础设施动向进行监测与分析。 — 该项目利用 AI 技术在信息聚合和监测中的应用，可能改变用户获取和分析全球资讯的方式，尤其适合分析师和决策者使用，因此具备很高的潜力和应用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/NVIDIA-NeMo/Switchyard">NVIDIA-NeMo/Switchyard</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/基础设施 · Rust
+    · +408 today · 1187 stars</div>
+  <p>Switchyard 是一个用于 LLM 流量路由的 Rust 代理库，可以在模型和服务供应商之间灵活转发请求，并优化成本与性能。</p>
+  <p class="why">解决了不同 API 之间的协议转换与流量路由优化问题，提升了 LLM 应用的灵活性与性能。 — 该项目通过提供多模型适配能力和灵活的路由算法，有潜力改变企业在 LLM 应用中的架构与效率，是一个值得关注的进展。虽然目前仍在快速迭代中，未来可能会对市场产生显著影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/holaboss-ai/holaOS">holaboss-ai/holaOS</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/基础设施 · TypeScript
+    · +380 today · 6556 stars</div>
+  <p>holaOS 是一个一体化的 AI 代理工作空间，支持多种集成和共享记忆，具备潜在的高效工作优势。</p>
+  <p class="why">解决了用户在多工具环境中管理和运行 AI 代理的复杂性，从而提升工作效率和工具整合度。 — 该项目的多集成能力和灵活性使其不仅充满潜力，还能够有效改变用户的工作方式，是一个值得关注的重要工具。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/OpenCut-app/OpenCut">OpenCut-app/OpenCut</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开源软件 / 视频编辑工具 · TypeScript
+    · +228 today · 82770 stars</div>
+  <p>这是一个开源的视频编辑器，旨在成为CapCut的替代品，正在重写中并计划推出多种新功能。</p>
+  <p class="why">提供一个免费的CapCut替代品，降低视频编辑的门槛，使普通用户也能轻松创作和编辑视频。 — 项目是一个经过重新设计的开源视频编辑器，具备丰富的功能扩展性和多平台支持，具有改变用户视频编辑体验的潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/lightningpixel/modly">lightningpixel/modly</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/3D建模工具 · TypeScript
+    · +221 today · 5376 stars</div>
+  <p>这是一个用本地 AI 将图像转换为 3D 模型的桌面应用程序，具有开源性质，且完全支持 GPU 运算。</p>
+  <p class="why">解决了将图像转换为 3D 模型的难题，同时支持本地运行，避免了对外部云服务的依赖。 — 该项目展示了在本地机器上使用 AI 技术生成 3D 模型的可能性，具有创新性和实用性，可以对设计师、艺术家等相关用户的工作方式带来积极影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/altic-dev/FluidVoice">altic-dev/FluidVoice</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/前端/应用程序 · Swift
+    · +187 today · 9832 stars</div>
+  <p>FluidVoice 是一款开源的 macOS 语音转文本应用程序，具有快速的本地智能增强功能。</p>
+  <p class="why">解决了对隐私敏感用户的语音转文本需求，提供了无需云服务的本地处理选项，适应快速的实时输入。 — FluidVoice 依赖于本地机器学习模型，具备快速无延迟的实时识别功能，尤其更适合需要高隐私保护的专业用户，具有很大的实用性和应用前景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/megadose/holehe">megadose/holehe</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">OSINT/信息收集工具 · Python
+    · +166 today · 12396 stars</div>
+  <p>Holehe 是一个高效的邮箱账户查询工具，主要用于开放源代码情报(OSINT)领域，支持多平台的社交媒体账号检查。</p>
+  <p class="why">解决了通过电子邮箱快速查询社交媒体账号的需求，适用于安全研究和信息收集。 — 该项目提供了一种便捷的方式来检索社交媒体账户信息，能帮助安全分析师和研究人员进行更高效的信息收集，具有较高的实用价值和潜在应用场景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/omnigent-ai/omnigent">omnigent-ai/omnigent</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +160 today · 8806 stars</div>
+  <p>Omnigent是一个开源的AI代理框架，支持多种AI模型的管理与协作，具有跨设备实时协作和安全管理等功能。</p>
+  <p class="why">解决了在不同设备和不同AI代理之间协作及政策管理的问题，提升开发者的工作效率与灵活性。 — 项目提供了多种AI模型的协作管理功能，具有较强的应用前景和创新性，在开发者工具领域具有一定突破性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/localsend/localsend">localsend/localsend</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">文件共享/开源软件 · Dart
+    · +159 today · 88216 stars</div>
+  <p>LocalSend 是一个开源的跨平台文件共享工具，提供了类似 AirDrop 的功能，使用户能够在本地网络中安全地分享文件和信息，且无需互联网连接。</p>
+  <p class="why">提供了一个不依赖于云服务的本地文件共享解决方案，解决了在没有网络连接时文件传输的需求。 — 项目具有创新性和实用性，使得文件传输更加私密与安全，尤其适用于不想依赖互联网或第三方服务器的用户。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/apify/apify-mcp-server">apify/apify-mcp-server</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">数据提取/AI · TypeScript
+    · +151 today · 3546 stars</div>
+  <p>Apify MCP Server 提供了一站式的数据提取解决方案，助力用户利用人工智能代理高效抓取各类网站数据。</p>
+  <p class="why">解决了从多个网站自动提取数据的需求，允许用户通过预制的抓取工具实现自动化。 — 项目结合了AI和数据抓取技术，具备较高的扩展性和实用性，对数据驱动应用尤为重要。其便捷性和多样性使其在相关领域内具备一定的革新潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/antvis/Infographic">antvis/Infographic</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/数据可视化 · TypeScript
+    · +82 today · 6255 stars</div>
+  <p>AntV Infographic 是一个用于生成和渲染信息图的框架，利用 AI 提高了信息呈现的效率。</p>
+  <p class="why">解决了信息图生成难、效果不佳的问题，使用户能够快速制作高质量的信息图。 — 项目具有创新性，结合 AI 技术提供了便捷的信息图生成工具，适合需要快速和高质量数据展示的领域。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/golbin/hop">golbin/hop</a>
+    <span class="sig" role="img" aria-label="关注度 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开源工具 · TypeScript
+    · +87 today · 1707 stars</div>
+  <p>HOP 是一款支持 HWP/HWPX 文档查看和编辑的跨平台桌面应用，结合了文档解析与渲染的功能。</p>
+  <p class="why">解决了对 HWP/HWPX 文档的跨平台查看与编辑问题，支持保存与导出为 PDF。 — 作为一个专注于 HWP/HWPX 文件格式的编辑工具，在特定市场具有一定的需求，值得关注。在文档编辑领域提供了一种开源解决方案。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
