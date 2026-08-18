@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-08-18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-08-18</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的GitHub Trending项目中，网络安全和人工智能领域的交集备受关注，令人瞩目的项目层出不穷。尤其是 AI 驱动的工具和解决方案，正在迅速改变开发者的工作方式和信息获取的模式。
+
+最值得关注的项目包括：Anthropic-Cybersecurity-Skills，它提供了全面的AI代理技能库，提升网络安全防护能力；last30days-skill，通过整合多平台数据，极大地改善了信息检索效率；而hexstrike-ai则利用自动化渗透测试技术，显著提升网络安全研究的工作效率。这些项目不仅有助于提升各自领域的技术水平，还展示了AI在实际应用中的强大潜力。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills">mukul975/Anthropic-Cybersecurity-Skills</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">网络安全/人工智能 · Python
+    · +726 today · 29140 stars</div>
+  <p>该项目在网络安全方面提供了全面且结构化的AI代理技能库，有助于提升安全防护能力。</p>
+  <p class="why">为AI代理提供了817种生产级网络安全技能，整合多种安全框架，支持多种平台，促进了安全领域的自动化和智能化。 — 该项目是开放源码的网络安全技能库，适用于多个AI平台，具有广泛的应用潜力，可能会显著改变网络安全从业者的工作方式，对于提升安全防护能力至关重要。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/mvanhorn/last30days-skill">mvanhorn/last30days-skill</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/搜索引擎 · Python
+    · +145 today · 58623 stars</div>
+  <p>该项目提供一种通过 AI 代理综合搜索 Reddit、X、YouTube、Hacker News 和 Polymarket 的方式，形成一个基于人类互动评判的搜索引擎。</p>
+  <p class="why">解决了信息源分散的问题，允许用户贯通不同平台获取信息，提升了信息检索的全面性与时效性。 — 该项目通过整合多平台的实时数据，有潜力改变用户信息获取的方式，提升信息检索的效率，是一个具有突破性的产品。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/0x4m4/hexstrike-ai">0x4m4/hexstrike-ai</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/网络安全 · Python
+    · +55 today · 11181 stars</div>
+  <p>HexStrike AI 是一个先进的MCP网络安全自动化平台，结合了12个自主AI代理和150多个安全工具，旨在实现自动化渗透测试和漏洞发现。</p>
+  <p class="why">解决了传统渗透测试中人工操作繁杂、效率低下的问题，通过AI代理自动执行多种安全工具，提升了网络安全研究和漏洞发现的效率。 — 项目创新性强，应用现代AI技术来提升网络安全自动化水平，可能会显著改变网络安全行业的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/public-apis/public-apis">public-apis/public-apis</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/API · Python
+    · +1139 today · 464463 stars</div>
+  <p>该项目提供了一系列免费的公共API，方便开发者在应用中集成多种服务，具有较高的参考价值和实用性。</p>
+  <p class="why">解决了开发者寻找和整合公共API的困难，提升了开发效率和资源利用率。 — 该项目为开发者提供了广泛的公共API资源，具有一定的生态影响力，适合各种开发场景，虽然不是极具突破性的技术，但仍然非常实用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/akitaonrails/ai-memory">akitaonrails/ai-memory</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Rust
+    · +730 today · 2682 stars</div>
+  <p>此项目提供了AI编程代理的长时记忆解决方案，使其能够在不同的代理之间无缝过渡，省去重复解释的过程。</p>
+  <p class="why">解决了在使用不同AI编程工具时，用户需要重复解释项目的架构和状态的问题，显著提高了多代理协作的效率。 — 项目通过提供长时记忆功能，能够帮助开发者在多种AI工具间顺利切换，优化工作流程，具有较高的实用价值和创新性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/agalwood/Motrix">agalwood/Motrix</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">下载管理工具 · TypeScript
+    · +607 today · 53633 stars</div>
+  <p>Motrix是一款现代化的全功能下载管理器，兼容多种操作系统，并提供了简洁直观的用户界面。</p>
+  <p class="why">解决了多种文件下载方式的统一管理，提供高效、用户友好的下载体验。 — Motrix项目结合了强大的后端与用户友好的界面，尤其是其支持多平台和多种协议的特性，使其在下载管理领域具备了广泛的应用潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/bojieli/ai-agent-book">bojieli/ai-agent-book</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开源书籍 · Python
+    · +556 today · 39077 stars</div>
+  <p>这是一本关于 AI Agent 的系统性书籍，涵盖了从基本原理到工程实践的各个方面，并提供了大量的配套实验，可以帮助开发者深入理解和应用 AI Agent 的设计与实现。</p>
+  <p class="why">通过深入浅出的讲解和实际代码示例，帮助开发者掌握 AI Agent 的设计理念与技术实现，并为研究和实践提供必要的支持。 — 该项目提供了系统的学习资料和实际案例，有助于推动 AI Agent 技术的普及和应用，具备相当高的学习价值和实用性，尤其在 AI 领域的快速发展中具有重要意义。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/genlayerlabs/genlayer-project-boilerplate">genlayerlabs/genlayer-project-boilerplate</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">基础设施/区块链开发 · TypeScript
+    · +543 today · 15899 stars</div>
+  <p>这是一个用于创建足球博彩智能合约的项目模板，提供快速开发和测试支持。</p>
+  <p class="why">解决了智能合约开发中的集成测试和静态分析问题，提高了部署的安全性和效率。 — 项目提供了完整的开发工具链，包括测试，静态分析和生产准备的前端，非常适合智能合约开发者，是一个有潜力改变开发方式的工具。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/jundot/omlx">jundot/omlx</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/推理服务器 · Python
+    · +366 today · 19374 stars</div>
+  <p>oMLX 是一个为 Apple Silicon 优化的 LLM 推理服务器，提供简便的本地管理方式。</p>
+  <p class="why">解决了 Apple Silicon 上大模型推理的便捷性和效率问题。 — 该项目针对特定硬件优化，简化了大模型的使用和管理，可在实际工作中显著提升效率，具有较大的应用潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/D4Vinci/Scrapling">D4Vinci/Scrapling</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">爬虫/Web爬取工具 · Python
+    · +338 today · 74977 stars</div>
+  <p>Scrapling是一个适应性的网络爬虫框架，可用于从单个请求到全规模抓取的各种场景。</p>
+  <p class="why">解决了数据抓取的复杂性，提供了一个易于使用的框架来获取网络数据。 — 该项目通过简化网络爬虫的构建过程，具有较高的实用价值，尤其是对于数据分析和AI应用场景，可能会显著提高开发效率。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/yt-dlp/yt-dlp">yt-dlp/yt-dlp</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">多媒体处理工具/命令行工具 · Python
+    · +216 today · 185389 stars</div>
+  <p>yt-dlp 是一个功能丰富的命令行音频/视频下载器，尤其适合需要下载各种网站内容的用户。</p>
+  <p class="why">提供了一种高效且灵活的方法来下载音频和视频内容，特别是支持多个网站的下载需求。 — 项目的功能强大，针对用户需求满足快速下载的需求，适合广泛应用，但因依赖于已有网站内容，而非创新技术，评分为4。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/NawfalMotii79/PLFM_RADAR">NawfalMotii79/PLFM_RADAR</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">硬件/开源硬件 · PLSQL
+    · +204 today · 24277 stars</div>
+  <p>AERIS-10 是一个开源的低成本10.5 GHz相控阵雷达系统，旨在推动雷达技术的普及与实验性探索。</p>
+  <p class="why">该项目解决了雷达技术高昂成本的问题，提供了可用于研究和开发的工具。同时，它为开发者和研究人员提供了丰富的实验平台。 — 该项目具有创新的特点，开放源码和模块化设计使得雷达技术变得更易于获取和操作，可能在学术研究和无人机开发领域产生广泛影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/AlexsJones/llmfit">AlexsJones/llmfit</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Rust
+    · +187 today · 32711 stars</div>
+  <p>llmfit 是一个能够根据用户的硬件配置，帮助用户选择和调优大型语言模型的工具，具有实用价值和创新性。</p>
+  <p class="why">解决了用户在多种硬件环境下如何选择合适的 LLM 模型的问题，降低了用户的配置和使用门槛。 — 项目通过综合用户硬件特性与模型性能，使得大型语言模型的使用变得更加灵活和高效，有潜力改变当前 LLM 应用的使用方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/anthropics/defending-code-reference-harness">anthropics/defending-code-reference-harness</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">安全 · Python
+    · +176 today · 7315 stars</div>
+  <p>该项目提供了一种自主漏洞发现与修复的参考实现，结合了多个组织的安全团队经验，旨在加强源代码的安全性。</p>
+  <p class="why">帮助开发者自动扫描及修复代码中的漏洞，提高软件安全性。 — 项目基于开源实现，结合最新的AI技术，能显著提高代码安全性，具备广泛适用性，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/santifer/career-ops">santifer/career-ops</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/求职工具 · JavaScript
+    · +147 today · 65328 stars</div>
+  <p>这是一个开源AI求职工具，能够帮助用户评估职位信息和个性化简历，提升求职效率。</p>
+  <p class="why">解决了求职者在海量职位信息中筛选和评估的痛点，并提供了简历定制的功能。 — 该项目利用AI增强求职体验，尤其是在职位筛选和简历优化方面，可能改变人们找工作的方式，具有较高的实际应用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/immich-app/immich">immich-app/immich</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/移动应用 · TypeScript
+    · +140 today · 111560 stars</div>
+  <p>高性能的自托管照片和视频管理解决方案，提供用户友好的体验和多样化的功能。</p>
+  <p class="why">解决了传统照片和视频管理工具的隐私和数据存储问题，满足用户自托管需求。 — 该项目作为自托管解决方案，响应了用户对数据隐私的需求，同时提供高效的照片和视频管理功能，具有较大的市场潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/docling-project/docling">docling-project/docling</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/文档处理 · Python
+    · +133 today · 65074 stars</div>
+  <p>Docling 是一个高效的文档处理工具，旨在将多种格式的文档准备好以供生成式人工智能使用。</p>
+  <p class="why">解决了处理不同文件格式、解析和转换文档内容以方便AI利用的问题。 — 项目提供了强大的PDF理解和多种文档格式解析功能，对文档处理效率和精准度都有显著提升，尤其在生成式AI的应用场景中具有重要价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/bia-pain-bache/BPB-Worker-Panel">bia-pain-bache/BPB-Worker-Panel</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">网络工具/代理服务器 · TypeScript
+    · +79 today · 13085 stars</div>
+  <p>BPB-Worker-Panel 是一个提供多种代理和工具的用户面板，支持用户跨平台安全连接，适合需要稳定和隐私的用户群体。</p>
+  <p class="why">解决了 ISP 阻碍的连接问题，为用户提供免费的安全代理服务，保证隐私。 — 该项目在网络安全和隐私保护方面具有较大的实用价值，适合广泛用户，尤其在受到审查的地区，能够有效改善用户的上网体验，虽然 UDP 支持有限，但其他功能完善且界面友好。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/rmyndharis/OpenWA">rmyndharis/OpenWA</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">API/自托管 · TypeScript
+    · +79 today · 12941 stars</div>
+  <p>OpenWA 是一个开源的 WhatsApp API 网关，致力于为开发者提供完全控制其消息基础设施的能力。</p>
+  <p class="why">解决了开发者对 WhatsApp API 的使用限制和依赖问题，提供了可扩展和灵活的解决方案。 — 项目具备高灵活性和可扩展性，尤其适合希望避免供应商锁定的开发者，能够较大程度上改变与 WhatsApp 通信的方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/microsoft/qlib">microsoft/qlib</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/金融科技/量化投资 · Python
+    · +66 today · 47710 stars</div>
+  <p>Qlib项目通过AI技术赋能量化投资研究，提供了丰富的机器学习模型和工具，助力投资研发流程的自动化。</p>
+  <p class="why">解决传统量化研究中人工干预多、效率低的问题，带来了更高效的自动化模型优化和因子挖掘。 — 该项目提供了一个完整的解决方案以提升金融领域的量化研究效率，是一个具有前瞻性的应用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Gitlawb/openclaude">Gitlawb/openclaude</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/CLI · TypeScript
+    · +65 today · 30760 stars</div>
+  <p>OpenClaude 是一个开放源码的 CLI 工具，旨在简化各种语言模型的使用流程。</p>
+  <p class="why">解决了开发者在交互过程中使用多个语言模型的复杂性，提供了统一的终端体验。 — 该项目设计良好，能够提高开发效率，随着 AI 工具的广泛应用，可能对开发方式产生重大影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/nautechsystems/nautilus_trader">nautechsystems/nautilus_trader</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">交易平台/算法交易 · Rust
+    · +58 today · 26253 stars</div>
+  <p>Nautilus Trader 是一个用于交易的 Rust 原生引擎，具有确定性的事件驱动架构，支持多种交易类型，适合算法交易和机器学习应用。</p>
+  <p class="why">提供高效、安全的交易引擎，适用于多种金融市场，支持实时数据处理和决策。 — 技术上具有先进性，展示了 Rust 在高性能交易引擎领域的潜力，能够满足对低延迟和高并发处理的需求。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/evershopcommerce/evershop">evershopcommerce/evershop</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/电商平台 · TypeScript
+    · +51 today · 10395 stars</div>
+  <p>EverShop 是一个现代化的电子商务平台，支持 TypeScript 和 GraphQL，适合开发者使用。</p>
+  <p class="why">简化了电子商务平台的开发流程，提供可定制的购物体验。 — 项目提供了模块化和完全可定制的架构，支持开发者快速构建和迭代，具有较大的市场潜力和实用性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/pipeshub-ai/pipeshub-ai">pipeshub-ai/pipeshub-ai</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/工作流自动化 · Python
+    · +50 today · 3422 stars</div>
+  <p>PipesHub 是一个开放源代码的 AI 上下文层，旨在统一企业数据以实现可解释的企业搜索和自动化工作流程。</p>
+  <p class="why">提供一种方法来整合和解释企业内部的各种数据，提升搜索体验和工作流程的效率。 — PipesHub 通过提供灵活的 AI 上下文层，能够显著改善数据检索和工作流程自动化，很可能会在企业级应用中引发广泛关注和采用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/nexmoe/VidBee">nexmoe/VidBee</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">下载工具 · TypeScript
+    · +47 today · 10235 stars</div>
+  <p>VidBee 是一款现代化的开源视频下载器，支持从 1000 多个网站下载视频和音频，具备自动下载功能。</p>
+  <p class="why">解决了用户从多个网站下载视频的需求，提供了便捷的自动下载与管理方式。 — 作为一款功能强大的开源下载工具，VidBee 可以满足广泛用户的需求，尤其是其自动化下载特性提升了用户体验，具有显著的市场潜力。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
