@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-08-20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-08-20</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的技术趋势显著集中在AI与前端开发工具的创新上，多款项目均致力于提升用户体验和安全性，特别是在数据隐私和操作便捷性方面，反映出开发者对高效解决方案的迫切需求。在众多新上榜项目中，最值得关注的有：首先是turbovec，它通过优化向量搜索的内存效率和性能，改变了传统向量搜索实践。其次是ODS项目，使个人电脑能转变为AI服务器，简化了本地AI模型的搭建过程，具有重要的应用价值。最后是browser-use，这一工具显著改善了AI代理在网页上的操作能力，预计将推动自动化任务的便捷执行。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/RyanCodrai/turbovec">RyanCodrai/turbovec</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端 · Rust
+    · +251 today · 15919 stars</div>
+  <p>turbovec是一个基于TurboQuant构建的高效向量索引库, 具有优良的性能和内存效率。</p>
+  <p class="why">解决了在高内存和高性能要求下的向量搜索问题, 提供低内存占用与快速搜索的良好平衡。 — 项目实现了数据隐私、安全、高效向量搜索的整合, 并大幅度降低了内存占用, 有潜力改变现有向量搜索实践。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Osmantic/ODS">Osmantic/ODS</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/前端/自托管 · Python
+    · +168 today · 4592 stars</div>
+  <p>ODS项目通过将个人电脑转变为AI服务器，提供了本地AI模型推理、聊天界面、声音交互等多种功能，在数据隐私和操作便捷性方面具有显著优势。</p>
+  <p class="why">解决了本地运行AI模型的复杂设置问题，使用户能够在无需云服务的情况下，轻松搭建AI应用。 — 该项目大幅简化了AI服务的搭建过程，降低了AI技术的使用门槛，对于希望在本地私有环境中运行AI应用的开发者和企业具有重要的应用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/browser-use/browser-use">browser-use/browser-use</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/自动化工具 · Python
+    · +146 today · 109884 stars</div>
+  <p>一个旨在使AI代理能够高效访问和操作网页的工具，提升了在浏览器中执行任务的能力。</p>
+  <p class="why">解决了AI代理在网页操作中受限的问题，使得AI能像人类一样通过浏览器处理信息。 — 这一项目能显著改善AI与网页互动的方式，从而有潜力改变工作流程，使得复杂自动化任务的执行更为便捷，具有突破性意义。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ATH-MaaS/Pixelle-Video">ATH-MaaS/Pixelle-Video</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/视频生成工具 · Python
+    · +125 today · 27105 stars</div>
+  <p>Pixelle-Video 是一款全自动短视频生成引擎，利用 AI 技术简化视频制作流程，适合任何具备基础主题输入能力的用户。</p>
+  <p class="why">解决了视频制作的专业门槛问题，使普通用户也能轻松创作高质量短视频。 — 作为一款 AI 驱动的全自动视频生成工具，Pixelle-Video 可能显著改变内容创作的方式，使视频制作变得高效且无需专业技能，具有广泛的应用前景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/cline/cline">cline/cline</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · TypeScript
+    · +79 today · 66549 stars</div>
+  <p>Cline 是一个开源的自主编码代理，支持多种集成方式，包括 SDK、IDE 扩展和 CLI 助手，旨在提高编程的效率和便捷性。</p>
+  <p class="why">Cline 旨在通过提供全面的编码助手，提高开发者的工作效率，减少重复性工作。它还支持多种平台，使得开发者可以在不同环境下无缝工作。 — Cline 的多功能性和开源特性，结合其在 IDE 和 CLI 中的广泛应用潜力，能够显著改变开发者的工作方式，特别是在自动化和智能化方面。其能力不仅限于代码生成，还支持 CI/CD 流程，使其在开发工具领域具备突破性影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/angular/angular">angular/angular</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端框架 · TypeScript
+    · +39 today · 101003 stars</div>
+  <p>Angular 是一个现代化的前端开发平台，专为构建移动和桌面 Web 应用而设计，广受开发者欢迎。</p>
+  <p class="why">Angular 提供了一个全面的解决方案，帮助开发者高效构建性能优越的 Web 应用，同时简化了项目管理和开发流程。 — 作为一个成熟的框架，Angular 提供了强大的工具和生态系统，能够显著提升开发效率，是现代 Web 开发的重要力量。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/AprilNEA/OpenLogi">AprilNEA/OpenLogi</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端，开源工具 · Rust
+    · +1540 today · 11779 stars</div>
+  <p>一个本地化、无账户和无监控的替代方案，允许用户深度定制Logitech设备，提高了隐私性和可控性。</p>
+  <p class="why">解决了用户对Logitech Options+的依赖，同时提供了更好的隐私保护和设备自定义功能。 — 项目功能强大，支持多平台并允许用户精细化配置，对于需要定制鼠标和键盘功能的用户而言，具有极大吸引力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/mahlernim/google-timeline-visualizer">mahlernim/google-timeline-visualizer</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">移动应用/数据可视化 · Kotlin
+    · +575 today · 1497 stars</div>
+  <p>该项目允许用户可视化他们的谷歌位置历史，通过创建旅行视频来展示旅行经历，用户可以选择日期和自定义视频内容。</p>
+  <p class="why">解决了用户如何将谷歌位置历史数据转化为直观的可视化内容的问题，增强了用户对其旅行数据的理解和分享方式。 — 项目特别适合希望更好地记录与分享个人旅行经历的用户，能够通过简单的操作将生硬的数据转化为可视化的内容，具有较大的实用价值和吸引力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/apache/maka">apache/maka</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · TypeScript
+    · +364 today · 1881 stars</div>
+  <p>Apache Maka 是一个本地优先的 AI 代理工作区，提供了一系列工具和功能，以支持基于事件的执行和模型连接的灵活性。</p>
+  <p class="why">解决了传统云服务带来的隐私和性能问题, 提供本地运行的能力并保持数据的控制权。 — 项目展示了对本地优先计算的深刻理解，结合 AI 代理的工作流程，有潜力显著影响开发者的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/modular/modular">modular/modular</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/编程语言/开发工具 · Mojo
+    · +340 today · 27888 stars</div>
+  <p>Modular Platform 是一个综合性的 AI 开发与部署平台，包含 MAX 框架与 Mojo 语言，适合编程语言的开发者与 AI 专业人员使用。</p>
+  <p class="why">提供了一个统一的平台来简化 AI 模型的开发与部署，尤其是针对机器学习与深度学习的应用场景。 — 项目围绕 AI 的开发与部署构建，具有较强的实用性与创新性，尤其是在编程语言 Mojo 的设计上，通过优化性能与易用性，可能推动 AI 开发的方式和效率，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/JuliusBrussee/caveman">JuliusBrussee/caveman</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/前端/基础设计 · Go
+    · +309 today · 99593 stars</div>
+  <p>这是一个旨在降低使用规模和提高效率的有趣项目，通过减少交流中所需的token数来精简AI交互，值得关注。</p>
+  <p class="why">该项目通过采用一种简化的交流方式，显著减少了与AI交互时所需的tokens，优化了资源使用效率。 — 项目独特之处在于它强调了优化技术，通过降低token的使用，提升了AI的交互效率，这在实践中具有实际应用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/bookorbit/bookorbit">bookorbit/bookorbit</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">数字图书馆 · TypeScript
+    · +208 today · 2606 stars</div>
+  <p>BookOrbit 是一个自托管的图书和阅读平台，支持电子书、PDF、音频书和漫画的管理与播放。</p>
+  <p class="why">解决了用户在不同设备间同步电子书阅读进度和状态的问题，同时支持多用户管理及各类元数据处理。 — 该项目提供了丰富的功能，并允许用户自托管，保护数据隐私，适合热爱阅读和数字图书管理的用户，因此在该领域具有较大潜力和影响力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/magnitudedev/magnitude">magnitudedev/magnitude</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端, 开源软件 · TypeScript
+    · +134 today · 1452 stars</div>
+  <p>Magnitude 是一款开源的本地模型代理工具，能够在任何硬件上独立、私密地运行，具有良好的扩展性和用户友好性。</p>
+  <p class="why">解决了用户对隐私和离线能力的需求，同时提供了即插即用的运行体验。 — Magnitude 的本地模型和离线工作能力在当前数据隐私日益重要的趋势中，提供了有效的解决方案，适合广泛应用场景，具有较大影响力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/PostHog/posthog">PostHog/posthog</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/数据分析 · Python
+    · +100 today · 37968 stars</div>
+  <p>PostHog 是一个开源平台，旨在帮助团队构建自驱动产品，提供一系列开发者工具，包括 AI 可观察性、分析、会话重放等。</p>
+  <p class="why">解决了产品数据分析、用户行为监测、错误跟踪等多个关键问题，助力企业提高产品决策效率。 — 这个项目在自驱动产品的构建方面提供了全面的解决方案，具有较高的应用价值和市场潜力，虽然没有达到行业急需的突破性，但在细分领域内非常具有竞争力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/microsoft/agent-framework">microsoft/agent-framework</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/基础设施 · Python
+    · +85 today · 13008 stars</div>
+  <p>Microsoft Agent Framework是一个支持Python和.NET的开放多语言框架，旨在构建、编排和部署AI代理及多代理工作流程，从而促进AI代理系统的生产力。</p>
+  <p class="why">解决了AI代理从原型到生产的落地难题，并提供了一致的架构支持，使得代理系统在多种情况下都能有效运行，特别是在需要复杂调度和持久化的场景。 — 此项目具有较高的实用价值和创新性，能够帮助开发者构建复杂的AI系统，因此在AI和自动化领域内具有潜在的影响力，值得重点关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/agent-substrate/substrate">agent-substrate/substrate</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">基础设施/云计算/容器技术 · Go
+    · +66 today · 1378 stars</div>
+  <p>Agent Substrate 是一个旨在高效管理大规模代理应用的运行环境，提供低延迟和高密度的资源利用方案。</p>
+  <p class="why">解决了大规模代理应用的生命周期管理问题，提供了高性能的代理执行环境，显著提高了资源的利用效率。 — 项目展示了在大量代理应用管理中的突破性能力，能够在 Kubernetes 上实现低延迟和高密度的资源分配，适合大规模部署场景，具有较高的实际应用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI">RVC-Project/Retrieval-based-Voice-Conversion-WebUI</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/语音处理/语音转换 · Python
+    · +65 today · 37707 stars</div>
+  <p>新一代基于检索的语音转换工具, 简化了语音变声的过程, 提供了强大的功能支持.</p>
+  <p class="why">使用户能够在少量的语音数据上快速训练出高质量的语音转换模型, 解决了音色泄漏问题和训练时间长的问题。 — 该项目提供了便捷的界面和先进的技术支持，大大降低了语音转换的使用门槛，具有广泛的应用潜力，能够在创作、游戏和其他领域中改变工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/pipecat-ai/pipecat">pipecat-ai/pipecat</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/对话系统 · Python
+    · +48 today · 14357 stars</div>
+  <p>Pipecat 是一个开源的 Python 框架，旨在创建实时语音和多模态对话代理，支持音频、视频和 AI 服务的无缝集成和调度，符合当下对自然交互性的需求。</p>
+  <p class="why">解决了实时语音交互和多模态应用开发的复杂性，让开发者可以轻松构建复杂对话系统。 — 项目支持多种功能的模块化组合，适应性强，具有高度的实用性，是对现有对话系统开发的重要补充，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/HKUDS/LightRAG">HKUDS/LightRAG</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/基础设施 · Python
+    · +40 today · 39023 stars</div>
+  <p>LightRAG是一个简洁快速的检索增强生成模型，旨在提高信息检索和文本生成的效率，具有较好的应用前景。</p>
+  <p class="why">解决了信息检索在生成任务中的效率问题，同时简化了模型的使用与集成。 — 该项目结合了检索与生成的最新趋势，有潜力在自然语言处理领域产生深远影响，融资、教育等多领域均可应用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/CyberTimon/RapidRAW">CyberTimon/RapidRAW</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">图像处理/编辑/editing · TypeScript
+    · +31 today · 9459 stars</div>
+  <p>RapidRAW 是一款高性能的 RAW 图像编辑器，能够提供良好的编辑体验，适用于多平台。</p>
+  <p class="why">解决了高性能图像编辑工具可负担和跨平台的需求，尤其是对摄影师或设计师。 — 项目提供了优雅且非破坏性的图像编辑解决方案，具有潜力挑战 Adobe Lightroom 的市场，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/AdguardTeam/AdGuardHome">AdguardTeam/AdGuardHome</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/隐私保护工具 · TypeScript
+    · +30 today · 36262 stars</div>
+  <p>AdGuard Home 是一款强大的网络级广告及追踪阻止 DNS 服务器，致力于提高用户的隐私保护能力。</p>
+  <p class="why">通过建立网络级的 DNS 服务器，有效阻止家庭所有设备上的广告和追踪请求，增强用户的隐私保护。 — 该项目通过简化广告屏蔽的方式，改善用户体验，吸引了较高关注度，且长期以来保持活跃和稳定更新，是隐私保护工具的优秀代表之一。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Tencent/AI-Infra-Guard">Tencent/AI-Infra-Guard</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">安全工具 / AI / 开发工具 · Python
+    · +28 today · 4922 stars</div>
+  <p>AI-Infra-Guard 是全面的 AI 红队平台，旨在通过多种扫描方式确保 AI 生态系统的安全性。</p>
+  <p class="why">帮助用户识别和评估 AI 系统的安全漏洞，防止潜在的 AI 攻击和数据泄露。 — 项目关注安全，尤其是 AI 领域，对企业和开发者尤为重要，具备一定的创新性和实用性，适合在安全尤为关键的场景中使用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/marceloprates/prettymaps">marceloprates/prettymaps</a>
+    <span class="sig" role="img" aria-label="关注度 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/数据可视化 · Python
+    · +627 today · 13454 stars</div>
+  <p>这是一个基于OpenStreetMap数据自定义绘制地图的Python库，结合了多个流行的可视化工具，适合需要地图生成和设计的开发者和设计师。</p>
+  <p class="why">解决了生成美观和个性化地图的需求，方便用户在项目中灵活使用地理数据。 — 项目在地图可视化和生成艺术领域具有创新性，适合细分兴趣用户群体，但对整体工作方式的改变不如重大项目明显。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/foru17/neko-master">foru17/neko-master</a>
+    <span class="sig" role="img" aria-label="关注度 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">网络监控/可视化工具 · TypeScript
+    · +231 today · 3703 stars</div>
+  <p>Neko Master 是一个现代优雅的网络流量可视化与分析仪表盘，具有实时监控、流量审计等功能。</p>
+  <p class="why">解决了专业用户在本地网关环境中实时监测网络流量和数据审计的需求，提升了网络使用的透明度和管理效率。 — 该项目在细分的网络流量监测领域内具有一定的实际应用价值，但尚未达到颠覆性改变工作方式的程度。能为用户提供清晰的流量视图，但市场已有类似工具。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/jewbetcha/openflight">jewbetcha/openflight</a>
+    <span class="sig" role="img" aria-label="关注度 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开源软件/硬件 · Python
+    · +15 today · 929 stars</div>
+  <p>一个开源的高尔夫发射监测器项目，基于Doppler雷达技术，适合DIY玩家和高尔夫爱好者。</p>
+  <p class="why">提供一个成本相对较低的解决方案，用于高尔夫球速和击球参数的测量，适合个人及小型高尔夫俱乐部使用。 — 项目具有一定的市场潜力，尤其是在DIY社群和高尔夫运动中，但仍在活跃开发中，功能可能不稳定。并且对一般用户的吸引力可能有限。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
