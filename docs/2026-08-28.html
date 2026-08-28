@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-08-28</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-08-28</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的GitHub Trending项目展示出几个显著的技术趋势，特别是在AI、后端开发和地理信息系统领域。其中，AI相关的项目明显受到关注，许多工具和技能致力于提升开发效率和用户体验。最值得关注的三个项目包括：首先是“gods-eye-view”，它通过友好的界面实时可视化卫星和航班数据，极大地提升了空间数据的获取方式；其次，“godogen”利用AI实现自主游戏开发，降低了游戏开发的技术门槛，可能会重新定义游戏创造的流程；最后是“supabase”，作为一个强大的后端开发平台，它结合了多种开源工具，简化了数据库管理和用户认证，为开发者提供了灵活的解决方案。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/bilawalsidhu/gods-eye-view">bilawalsidhu/gods-eye-view</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">地理信息系统 (GIS) · JavaScript
+    · +1984 today · 8928 stars</div>
+  <p>该项目是一个开放源代码的实时卫星模拟器，允许用户在浏览器中可视化和跟踪世界中的航班、船舶、卫星等数据，结合了空间智能技术和现实数据。</p>
+  <p class="why">该项目解决了开放源情报数据使用界面不友好的问题，使得用户可以轻松地实时地跟踪和可视化各种地理信息，提升了空间数据的可达性和实用性。 — 该项目将实时空间数据通过易于使用的界面呈现，具有强大的应用潜力和技术创新性，可能将彻底改变用户获取和分析地理信息的方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/htdt/godogen">htdt/godogen</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">游戏开发/人工智能 · Python
+    · +131 today · 6449 stars</div>
+  <p>该项目提供了一种自主游戏开发的工具，整合了多个现代游戏引擎，实现了通过AI生成游戏的能力。</p>
+  <p class="why">解决了传统游戏开发过程中繁琐的资源生成和项目构建的问题，降低了开发门槛。 — 该项目通过利用AI技术（如Claude和Codex）实现了自动化的游戏构建与测试，可能会极大改变游戏开发的方式，并推动游戏开发工具的创新。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/supabase/supabase">supabase/supabase</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">后端开发/数据库 · TypeScript
+    · +45 today · 108508 stars</div>
+  <p>Supabase是一个基于Postgres的开发平台，提供与Firebase类似的功能，支持数据库、认证、实时API等，旨在使用开源工具改善开发者体验。</p>
+  <p class="why">解决了开发者在构建应用时对实时数据库和认证的需求，同时提供了开源和自托管的灵活选择。 — Supabase通过结合多个开源工具，简化了开发过程，具备广泛的应用前景和支持，可能会显著改变后端开发的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/netbox-community/netbox">netbox-community/netbox</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">网络管理/自动化 · Python
+    · +35 today · 21404 stars</div>
+  <p>NetBox 是自动化网络管理的核心工具，广泛用于建模和文档化网络基础设施。</p>
+  <p class="why">解决了网络基础设施管理中的信息孤岛问题，提供了集中的数据模型与API，促进网络自动化和监控工具的发展。 — NetBox 通过提供统一的用户界面和可编程API，极大提高了网络工程师的工作效率，能够显著改变网络管理和自动化的方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/tt-a1i/archify">tt-a1i/archify</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端 / 开发工具 / 代码可视化工具 · JavaScript
+    · +4239 today · 24462 stars</div>
+  <p>Archify 是一个创新的可视化工具，能够将代码库或系统描述转化为交互式的系统地图，提升软件架构可视化与管理的效率。</p>
+  <p class="why">解决了软件架构复杂性的可视化问题，让开发者能够快速理解和沟通系统架构。通过交互式图形界面减少了人工文档及沟通的时间。 — 项目具备高度实用性，增强了团队协作与架构审查的效率，适合提高开发过程中的架构管理，对于开发者来说是一个非常有价值的工具。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ConardLi/garden-skills">ConardLi/garden-skills</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/前端 · CSS
+    · +415 today · 11406 stars</div>
+  <p>这是一个开放源代码的技能集合，专注于AI编程代理的生产就绪技能，涵盖了网页设计、知识检索和图像生成等多个领域。</p>
+  <p class="why">解决了在AI编程中搭建高效便捷的技能模块的问题，助力开发者在项目中快速实现智能功能。 — 项目在AI领域特别是智能编程方面提供了生产级技能，具有广泛的应用潜力，能显著提高开发效率，值得关注和试用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/JetBrains/go-modern-guidelines">JetBrains/go-modern-guidelines</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/AI · Go
+    · +300 today · 2269 stars</div>
+  <p>该项目旨在为AI编码代理提供现代Go编程的指导纲领，以帮助编写更符合现代标准的Go代码。</p>
+  <p class="why">解决了AI模型生成过时Go代码的问题，通过提供明确的现代编程指导，帮助生成更符合最新版标准的代码。 — 项目提供了有益的指导，弥补了AI模型在Go语言新特性方面的不足，具有较大的实用价值和潜力，能够显著提高代码质量和现代化程度。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/anthropics/skills">anthropics/skills</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/智能助手 · Python
+    · +274 today · 172115 stars</div>
+  <p>该项目提供了“Claude”智能助手的技能实现，允许用户通过动态加载技能来优化特定任务的执行。</p>
+  <p class="why">通过动态技能管理，解决了AI在特定任务上的灵活性与精确性问题，提高了AI在企业及个人应用中的实用性和效率。 — 该项目展示了AI助手的可扩展性与定制能力，可能改变企业工作流程，但目前应用范围仍需扩大。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/AgriciDaniel/claude-seo">AgriciDaniel/claude-seo</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/营销自动化/开源 · Python
+    · +245 today · 15589 stars</div>
+  <p>这是一个开源的SEO分析插件，专为Claude Code设计，具备多种SEO技能，优化了技术SEO及内容质量。</p>
+  <p class="why">解决了高效进行SEO分析和优化的问题，提升了网站审计的速度和准确性。 — 该项目结合了AI技术与SEO，能够在短时间内提供可行的优化建议，符合现代搜索引擎的发展趋势，具有较强的实际应用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ZhuLinsen/daily_stock_analysis">ZhuLinsen/daily_stock_analysis</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">量化金融/数据分析 · Python
+    · +148 today · 64155 stars</div>
+  <p>这是一个高效的股票智能分析系统，结合了多市场数据和实时新闻，利用LLM提炼分析结论，为用户提供决策支持。</p>
+  <p class="why">解决了分析多市场股票的复杂性，并将实时数据整合简化为可操作的信息，便于用户快速决策。 — 该项目通过AI驱动的多市场分析功能，为投资者提供了一种全新的智能决策工具，可能改变传统的股票分析方式，具有较高的应用价值和影响力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/人工智能/记忆系统 · JavaScript
+    · +143 today · 92365 stars</div>
+  <p>该项目为AI代理提供持久化记忆支持，通过捕捉和压缩会话信息，增强未来会话的上下文理解能力。</p>
+  <p class="why">解决AI代理在多轮交互中缺乏持续上下文的问题，提升用户体验和交互效率。 — 该项目提出的记忆压缩系统有潜力显著提升AI代理的智能表现，但处于较早阶段，尚需验证其实际应用效果。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/1weiho/open-slide">1weiho/open-slide</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/开发工具 · TypeScript
+    · +142 today · 7206 stars</div>
+  <p>open-slide 是一个专为代码代理设计的演示框架，可通过自然语言描述幻灯片内容，代理程序自动生成 React 组件，显著提高演示文档创建效率。</p>
+  <p class="why">解决了幻灯片快速创建和灵活编辑的问题，尤其适合需要生成专业演示的用户与团队。 — 该项目通过结合 AI 代码生成和可视化编辑，提供了一种新颖高效的演示文稿创作方式，能够极大提升工作效率和创作灵活性，具备潜在的行业影响力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ComposioHQ/awesome-claude-skills">ComposioHQ/awesome-claude-skills</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/工作流自动化 · Python
+    · +130 today · 73694 stars</div>
+  <p>ComposioHQ的Awesome Claude Skills项目提供了一系列Claude AI技能和工具，有助于提升工作流自动化，支持1000多种应用的集成。</p>
+  <p class="why">项目帮助开发者高效地利用Claude AI进行自动化操作，如发送电子邮件、创建问题等，提高了Claude AI的功能性和应用范围。 — 项目整合了大量有实用价值的工具和技能，为AI开发者提供了极大的便利，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/open-webui/open-webui">open-webui/open-webui</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +128 today · 150180 stars</div>
+  <p>Open WebUI是一个用户友好的自托管AI平台，支持多种大型语言模型和API，具有丰富的插件支持，易于设置，适合开源AI爱好者。</p>
+  <p class="why">为用户提供了一个可以自托管的AI接口，支持多种类型的语言模型，从而简化了AI应用的部署和使用。 — Open WebUI以其丰富的功能和易用性，可能改变用户与AI工具的交互方式，推动了自托管AI平台的发展，是值得关注的项目。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/tickernelz/opencode-mem">tickernelz/opencode-mem</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · TypeScript
+    · +124 today · 1575 stars</div>
+  <p>该项目为 AI 编程代理提供持久化Memory系统，有助于增强上下文记忆能力。</p>
+  <p class="why">解决了长期上下文记忆缺失的问题，提升了编程助手的智能性和用户体验。 — 项目具有创新性，通过利用本地向量数据库技术提升了 AI 代理的性能，值得关注，可能会影响开发效率和工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/rohitg00/agentmemory">rohitg00/agentmemory</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · TypeScript
+    · +117 today · 27637 stars</div>
+  <p>agentmemory 是一个旨在为AI编码代理提供持久记忆的项目，能够有效提高代码相关交互的效率。</p>
+  <p class="why">解决了AI编码代理在多次交互中需要反复解释上下文的问题，提升了使用体验和效率。 — 该项目具有较强的实用性和创新性，能够大幅度改善程序员与AI之间的交互方式，有潜力影响开发流程。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/directus/directus">directus/directus</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">后端开发工具/无头 CMS · TypeScript
+    · +111 today · 37634 stars</div>
+  <p>Directus 是一个灵活的后端解决方案，可以将数据库转变为无头 CMS、管理面板或应用程序，支持即时 API 和集成 AI 功能。</p>
+  <p class="why">解决了非技术团队成员与数据库交互的难题，简化了数据管理和访问权限控制。 — 该项目具有很强的创新性，特别是其集成的 AI 助手功能和对各种 SQL 数据库的支持，可以显著提升团队协作效率，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/perixtar/Tech-OA-Interview-Questions">perixtar/Tech-OA-Interview-Questions</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">职业发展/求职准备 · Python
+    · +98 today · 4640 stars</div>
+  <p>这是一个每日更新的技术公司在线评估和面试问题库。</p>
+  <p class="why">提供结构化的面试准备资料，节省求职者查找问题的时间。 — 项目内容详实且持续更新，能有效帮助求职者提高面试通过率。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/piratuks/invoice-builder">piratuks/invoice-builder</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">应用程序/发票管理 · TypeScript
+    · +88 today · 960 stars</div>
+  <p>一个针对小企业和自由职业者的离线发票和报价生成工具, 强调数据隐私和所有权。</p>
+  <p class="why">解决了小企业和自由职业者数据隐私和安全的问题, 提供离线数据处理和强大的PDF自定义功能。 — 该项目提供了一个重要的功能，尤其在隐私保护和离线可用性方面，对于不想依赖云服务的用户而言十分有价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/zedeus/nitter">zedeus/nitter</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开源项目/社交网络工具 · Nim
+    · +71 today · 13966 stars</div>
+  <p>Nitter 项目提供了一个不使用 JavaScript 的 Twitter 前端，专注于用户隐私与性能，成为了一个值得关注的替代品。</p>
+  <p class="why">Nitter 解决了用户在访问 Twitter 时面临的隐私问题，同时降低了网页的加载时间，改善了用户体验。 — 该项目不仅满足隐私保护需求，还通过快速和轻量化的性能吸引用户，是社交媒体领域的一个有益尝试。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/tutti-os/tutti">tutti-os/tutti</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · TypeScript
+    · +52 today · 3544 stars</div>
+  <p>Tutti是一个促进人类与智能代理协作的实时共享工作空间，旨在提高工作效率，减少信息传递的麻烦。</p>
+  <p class="why">解决了在多代理间传递信息和上下文的繁琐工作，使得不同的AI工具可以无缝协同工作。 — 具有提高工作效率的潜力，尤其是在使用多个AI代理的情况下，能够显著简化开发流程，因此值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/EveryInc/compound-engineering-plugin">EveryInc/compound-engineering-plugin</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · TypeScript
+    · +39 today · 24623 stars</div>
+  <p>这是一个为多种AI编码代理提供的插件，通过结构化工作流程提升工程效率与知识积累。</p>
+  <p class="why">该项目提供了一套工具，帮助用户在工程工作中有效地进行计划、构建与复习，促进知识的积累与共享。 — 项目整合了多种AI编码代理的功能，提升了工程流程的效率，具有较大影响力，尤其在提升开发效率方面。但是，由于还处于初期发展，尚需观察其实际应用效果。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/janhq/jan">janhq/jan</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开源软件/前端 · TypeScript
+    · +38 today · 44217 stars</div>
+  <p>Jan是一款开源的离线聊天生成模型替代品，强调用户隐私与控制。</p>
+  <p class="why">解决了用户对数据隐私的担忧，可以在本地运行而无需连接互联网，以及减少对云服务的依赖。 — 该项目为用户提供了在本地使用AI技术的能力，结合了流行的技术趋势，具有较高的实用性和影响力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/software-mansion/argent">software-mansion/argent</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/移动应用 · TypeScript
+    · +36 today · 2265 stars</div>
+  <p>Argent是一个用于控制、调试和分析移动及桌面应用程序的工具包，具有高度自主性和易用性。</p>
+  <p class="why">解决了在多平台应用中进行调试和自动化测试的问题，提供了全面的UI交互控制和流程录制回放功能。 — 该项目通过提供一个统一的工具包，极大地提高了移动及桌面应用程序开发和测试的效率，能够改变开发人员的工作方式，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/backnotprop/plannotator">backnotprop/plannotator</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/代码审查 · TypeScript
+    · +35 today · 8129 stars</div>
+  <p>Plannotator 是一个用于可视化注释和审查 AI 编码代理计划及代码差异的工具，致力于提高开发团队的协作效率。</p>
+  <p class="why">解决了开发过程中与 AI 编码代理的沟通问题，通过简单的注释和反馈机制，提升了团队协作效率。 — 该项目通过增强与 AI 编码代理的交互，提升软件开发过程中的可视化审查与反馈机制，对于开发团队而言具有实际的实用价值和影响力。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
