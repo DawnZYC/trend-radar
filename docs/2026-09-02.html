@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-09-02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-09-02</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的 GitHub Trending 项目中，人工智能和安全工具继续引领技术趋势，特别是在降低 AI 技术的使用门槛和提升安全性方面表现突出。其中，Minimind 项目获得了最受关注，旨在让普通开发者能够低成本地训练小型语言模型，推动 AI 技术普及。其次，SkillSpector 作为一种 AI 代理技能安全性扫描工具，能有效降低安全风险，是当今 AI 安全领域的重要工具。最后，SpiderFoot 通过自动化威胁情报收集和攻击面映射，提升网络安全分析效率，对企业和安全研究人员具有重要应用价值。这些项目不仅体现了当前技术发展的核心关注点，还为开发者提供了实用工具和便利，值得持续关注。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/jingyaogong/minimind">jingyaogong/minimind</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">人工智能/大语言模型 · Python
+    · +1005 today · 57037 stars</div>
+  <p>Minimind项目旨在通过低成本与短时间内，让普通开发者能够训练小型语言模型，从而推动AI技术的普及和理解。</p>
+  <p class="why">解决了大语言模型训练门槛高的问题，使更多人能参与到模型训练与理解的过程中。 — 该项目具备革命性，能显著降低个体在大语言模型领域的进入门槛，具有潜在广泛的应用价值与教育意义。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/NVIDIA/SkillSpector">NVIDIA/SkillSpector</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">安全工具/AI安全 · Python
+    · +113 today · 15547 stars</div>
+  <p>SkillSpector 是一个专注于 AI 代理技能安全性扫描的工具，可有效检测和降低安全风险。</p>
+  <p class="why">解决了 AI 代理技能在安装前可能存在的安全风险和漏洞问题，帮助用户判断技能的安全性。 — 该项目通过提供详尽的安全扫描和风险评估，能够显著提升 AI 代理技能的安全标准，是当前 AI 安全领域的重要工具，具有突破性的潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/smicallef/spiderfoot">smicallef/spiderfoot</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">安全工具/开源情报 · Python
+    · +93 today · 21675 stars</div>
+  <p>SpiderFoot 是一款开源的 OSINT 自动化工具，帮助用户进行威胁情报收集和攻击面映射。</p>
+  <p class="why">该项目自动化了信息收集过程，大幅提高了网络安全分析效率，支持多种数据源和分析方式。 — SpiderFoot 的强大功能和广泛的模块支持，使其在网络安全领域具有重要的应用价值，特别是对企业和安全研究人员而言，有助于提升安全防护能力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/paperclipai/paperclip">paperclipai/paperclip</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · TypeScript
+    · +77 today · 79833 stars</div>
+  <p>Paperclip是一个开源应用，旨在通过AI代理来管理团队工作，实现业务目标。</p>
+  <p class="why">解决了企业在管理AI代理和工作任务中的复杂性问题，提供集中化的协调和管理方式。 — 此项目通过整合多个AI代理，提供全面的业务管理解决方案，具有很高的实用价值和创新性，可能会显著改变企业的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/zhaoxuya520/reverse-skill">zhaoxuya520/reverse-skill</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">网络安全/人工智能 · PowerShell
+    · +1439 today · 33754 stars</div>
+  <p>该项目是一个针对网络安全领域的人工智能驱动的技能路由包，旨在提升逆向工程与渗透测试的效率。</p>
+  <p class="why">解决了在复杂的安全测试中如何快速定位合适技术与方法论的问题，自动化程度高，能显著提升工作效率。 — 利用人工智能进行技能路由与工具链自举的创新方法非常值得关注，虽然领域内已有类似工具，但该项目通过更加智能化与自动化的处理流程，有潜力改变安全测试的工作方式，但尚需验证其实际应用效果。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/k1tbyte/Wand-Enhancer">k1tbyte/Wand-Enhancer</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/用户体验增强 · C#
+    · +718 today · 23778 stars</div>
+  <p>Wand-Enhancer 是一个用于改善 Wand 应用程序用户体验和互操作性的开源工具，具有许多增强功能，特别是支持移动设备的远程控制。</p>
+  <p class="why">解决了 Wand 应用的配置管理和用户界面改进问题，同时增加了移动设备的远程控制功能。 — 该项目显著改善了现有 Wand 应用的功能，通过增强用户体验和互操作性，具备潜在影响力，尤其在开源社区内具有吸引力。虽然是一个细分工具，但其功能的拓展性和用户便利性使其值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/iv-org/invidious">iv-org/invidious</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">视频/前端开发工具 · Crystal
+    · +577 today · 23759 stars</div>
+  <p>Invidious 是一个开源的 YouTube 替代前端，提供无广告和无跟踪的观看体验。</p>
+  <p class="why">解决了 YouTube 的广告和隐私问题，提供了更轻量级的观看体验。 — 该项目提供了一个创新的方式来观看 YouTube 视频，同时保护用户隐私，具备良好的用户体验，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/firecrawl/pdf-inspector">firecrawl/pdf-inspector</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端 · Rust
+    · +541 today · 17911 stars</div>
+  <p>pdf-inspector 是一个高效的 Rust 库，用于 PDF 分类和文本提取，能够智能区分文本型和扫描型 PDF，极大提高了处理速度和准确率。</p>
+  <p class="why">提供快速的 PDF 处理能力，减少对昂贵 OCR 服务的依赖，适用于高频率文本提取的场景。 — 此项目展示了强大的 PDF 分类和提取能力，特别是对于需要快速处理大量文档的场景，具有广泛的应用潜力。虽然不是绝对的突破，但其技术实现和效率提升对于相关领域有显著启发。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/handsomestWei/patent-disclosure-skill">handsomestWei/patent-disclosure-skill</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">基础建设 · Python
+    · +501 today · 6682 stars</div>
+  <p>该项目致力于提高专利交底书的编写效率和可理解性，具有重要的应用价值。</p>
+  <p class="why">解决了专利交底书编写复杂和晦涩难懂的问题，提高了技术贡献的记录效率。 — 项目提供了专利交底的自动生成和通俗解读功能，能有效提升研发团队的专利管理能力，具备较强的实用性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/hieunc229/mailflare">hieunc229/mailflare</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">云服务/电子邮件管理 · TypeScript
+    · +450 today · 2305 stars</div>
+  <p>Mailflare 是一个基于 Cloudflare 的自托管电子邮件解决方案，适合个人和团队使用。</p>
+  <p class="why">提供一个定制化的电子邮件解决方案，支持个人和团队管理邮箱，提高工作效率。 — 该项目优化了电子邮件管理流程且允许用户自行托管，具有较大的实用性和影响力，适合现代团队的需求。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/majd/ipatool">majd/ipatool</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/命令行工具 · Go
+    · +376 today · 10728 stars</div>
+  <p>IPATool 是一款命令行工具，允许用户从 App Store 搜索和下载 iOS 及其他 Apple 平台的应用包。</p>
+  <p class="why">解决了开发者和研究者无法便捷下载或管理 iOS 应用包的问题。它支持直接从 App Store 获取应用，方便实现自动化和批量操作。 — 该项目在 iOS 应用下载和管理上提供了便捷的命令行工具，大幅提高了开发者的工作效率，有潜力改变特定工作流程。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/VoltAgent/awesome-design-md">VoltAgent/awesome-design-md</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/设计系统
+    · +323 today · 112718 stars</div>
+  <p>该项目通过提供易于使用的设计文件，助力开发者快速生成高质量、符合设计语言的用户界面，推动了设计与编码的无缝连接。</p>
+  <p class="why">解决了传统设计工具繁琐和复杂的问题，使开发者能够快速构建一致的UI，降低了开发门槛。 — 项目创新性强，能够有效提升UI开发效率，并且具备潜在的广泛应用场景，尤其是在快速迭代的产品开发中。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/HKUDS/DeepTutor">HKUDS/DeepTutor</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/教育技术 · Python
+    · +197 today · 38273 stars</div>
+  <p>DeepTutor 项目致力于提供个性化的终身学习辅导，利用先进的 AI 技术。</p>
+  <p class="why">解决了个性化教育资源匮乏的问题，并提升了学习效率。 — 项目利用了最新的 AI 技术为学习者提供个性化辅导，有较大的应用潜力，对教育领域的变革有积极影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Imbad0202/academic-research-skills">Imbad0202/academic-research-skills</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/基础设施/研究工具 · Python
+    · +193 today · 44877 stars</div>
+  <p>该项目提供了一整套针对学术研究的工具，帮助研究人员从研究到发表贯穿整个流程，核心是发挥人类研究者与AI的协作优势。</p>
+  <p class="why">简化了学术研究过程中的文献查找、引用格式化、数据验证等繁琐工作，使研究人员能够更专注于核心分析与写作工作。 — 项目将AI与人类研究者结合，提升了学术研究的效率和质量，潜力巨大，是学术界的创新工具，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/securo-finance/securo">securo-finance/securo</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">个人财务管理 · Python
+    · +125 today · 2938 stars</div>
+  <p>Securo 是一个开源的个人财务管理工具，致力于用户数据的隐私保护。</p>
+  <p class="why">解决了用户对个人财务数据隐私的担忧, 提供了自行托管的财务管理方案。 — 项目关注用户数据隐私，具备多账户管理和丰富的财务分析功能，适合面向需要安全和隐私的用户群体，有潜力改变用户的财务管理方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/apurvsinghgautam/robin">apurvsinghgautam/robin</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开源工具/基础设施/前端 · Python
+    · +113 today · 6923 stars</div>
+  <p>Robin 是一种用于深网开源情报(OSINT)调查的人工智能工具，具有强大的搜索和分析能力。</p>
+  <p class="why">提供了一种高效的方式来搜索和分析深网信息，满足信息安全和反欺诈领域的需求。 — 项目功能丰富，具有多模型支持和模块化架构，能够显著提升深网情报的获取和分析效率，适合专业调查人员使用，潜在影响较大。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/langgenius/dify">langgenius/dify</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/自动化工具 · TypeScript
+    · +113 today · 154124 stars</div>
+  <p>Dify 是一个基于 AI 的自动化工作流构建平台，能够支持丰富的 AI 模型和工具，旨在帮助团队快速从原型转移到生产环境。</p>
+  <p class="why">简化了 AI 工作流的构建，提供无代码或低代码解决方案，解决团队在原型与生产转换中的技术障碍。 — Dify 在 AI 自动化领域具有广泛的应用潜力，能够优化工作流，提升团队效率，是一个值得关注的前沿项目。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/3b1b/manim">3b1b/manim</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">动画/教育工具 · Python
+    · +86 today · 92544 stars</div>
+  <p>Manim 是一个强大的动画引擎，专为创建数学视频而设计，能够程序化地生成精确的动画效果。</p>
+  <p class="why">解决了高质量数学视频制作的技术难题，适用于教育内容创作者。 — 作为一个专注于教育的动画工具，Manim 鼓励可视化数学概念，潜在改变教学方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Gitlawb/openclaude">Gitlawb/openclaude</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/命令行 · TypeScript
+    · +80 today · 31277 stars</div>
+  <p>OpenClaude 是一个命令行界面的开源代码代理，旨在通过统一的工作流程访问各种 AI 模型和 API。</p>
+  <p class="why">简化了不同 AI 模型和 API 的访问，提升了开发者的工作效率。 — 该项目为开发者提供了一个集中式的工具，以便更便捷地使用多种 AI 技术，具有明显的实用性和提升工作效率的潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ionic-team/capacitor">ionic-team/capacitor</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">基础设施 · TypeScript
+    · +79 today · 16541 stars</div>
+  <p>Capacitor 是一个跨平台的原生渐进式 Web 应用开发框架，支持 iOS、Android 和 Web，使得使用单一代码库构建应用变得简单。</p>
+  <p class="why">解决了使用单一代码基础开发多平台应用的复杂性，同时提供了与原生 SDK 的互操作性。 — Capacitor 提供了一种现代的方法来构建跨平台应用，明显提升了开发者的效率，适合在快速变化的市场中使用，因此值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/mobile-next/mobile-mcp">mobile-next/mobile-mcp</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">移动开发/自动化工具 · TypeScript
+    · +72 today · 6294 stars</div>
+  <p>该项目提供了一个平台无关的模型上下文协议服务器，实现了移动自动化和开发的可扩展解决方案，支持 iOS 和 Android 的应用交互。</p>
+  <p class="why">简化了针对 iOS 和 Android 的移动自动化过程，减少了对特定平台知识的需求。支持多种类型设备的操作，并能够与大型语言模型 (LLMs) 交互。 — 该项目有潜力改变移动应用开发和测试的工作方式，尤其是在跨平台自动化方面，整合了最新的技术和工具，具有较强的应用前景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/warpdotdev/common-skills">warpdotdev/common-skills</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具 · Python
+    · +71 today · 505 stars</div>
+  <p>这是一个专注于共享和复用技能的项目，通过定义和管理通用技能来提升多个代码库之间的工作效率。</p>
+  <p class="why">解决了在多个代码仓库中复用工作流程和操作程序的问题，简化了开发过程中的协作与技能共享。 — 该项目提供了系统的技能管理和复用框架，有助于提升团队的开发效率和规范，具备较高的实用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/nashsu/llm_wiki">nashsu/llm_wiki</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/知识管理 · TypeScript
+    · +66 today · 17227 stars</div>
+  <p>LLM Wiki 是一款自动构建个人知识库的跨平台桌面应用，能够将文档信息组织成有序的维基知识，提供持续更新和多元化信息检索。</p>
+  <p class="why">解决了文档信息组织与管理的繁琐过程，帮助用户自动化生成结构化知识库。 — 此项目具有极高的创新性和实用性，通过自动化构建知识库来提高信息管理效率，可能会显著改变用户的工作方式，但尚需进一步验证其在实际应用中的有效性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/happycola233/tchMaterial-parser">happycola233/tchMaterial-parser</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">教育工具 · Python
+    · +64 today · 6471 stars</div>
+  <p>该项目为国家中小学智慧教育平台提供的电子课本下载工具，支持批量下载并优化用户体验。</p>
+  <p class="why">提供便利的电子课本下载方式，解决了从智慧教育平台获取课本内容的难题。 — 此项目在教育领域有实用价值，且因其易用性和支持多平台，吸引了不少用户关注，展示了其潜在的影响力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/inkeep/open-knowledge">inkeep/open-knowledge</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/基础设施 · TypeScript
+    · +58 today · 3872 stars</div>
+  <p>OpenKnowledge 是一个强大的 AI 驱动的 Markdown 编辑器，集成了多种智能算法，适用于知识管理和文档编辑。</p>
+  <p class="why">通过集成 AI 助手简化了文档编辑和知识管理的过程。 — 项目提供了 WYSIWYG 编辑和 AI 辅助功能，是知识管理领域的有趣新尝试，具有较高的实用性。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
