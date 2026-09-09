@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-09-09</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-09-09</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的 GitHub Trending 项目展现了在自动化和人工智能领域的强劲增长趋势，尤其是在无头浏览器和开发工具方面。在众多新上榜项目中，camofox-browser 是一个突破性的无头浏览器，专为 AI 代理设计，能够更好地应对各种网页检测机制，是开发者们值得关注的创新工具。另一值得一提的项目是 awesome-python，它作为一份全面的 Python 资源库，大大提升了开发者的工作效率，促进了 Python 生态的完善。最后，ComfyUI 以其强大的模块化设计和灵活的功能，为内容创作者提供了便捷的工具，值得大家深入了解。这些项目不仅反映了当前技术的前沿动态，也可能为未来的开发创造无限可能。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/jo-inc/camofox-browser">jo-inc/camofox-browser</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端/自动化工具/基本设施 · JavaScript
+    · +871 today · 10481 stars</div>
+  <p>camofox-browser 是一款隐形无头浏览器，专为 AI 代理而设计，能够有效绕过 Cloudflare 和常见的机器人检测，提供一种新的自动化浏览解决方案。</p>
+  <p class="why">解决了 AI 代理在浏览真实网页中遭遇的检测和限制问题，提供高效、稳定的网页交互方式。 — 该项目在无头浏览器领域具有突破性，与现有的 Puppeteer 和 Playwright 解决方案相比，能更好地应对各种检测机制，契合AI应用的需求，具有广阔的应用前景和市场潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/vinta/awesome-python">vinta/awesome-python</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">Python/工具汇总 · Python
+    · +335 today · 319385 stars</div>
+  <p>这是一个汇总Python框架、库和工具的社区资源库，非常适合Python开发者使用。</p>
+  <p class="why">帮助开发者快速找到适合的工具和框架，提升开发效率。 — 该项目作为最受欢迎的Python资源库之一，提供了全面的工具分类和推荐，极大方便了开发者的选择，同时也促进了Python生态的完善。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Comfy-Org/ComfyUI">Comfy-Org/ComfyUI</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +181 today · 132101 stars</div>
+  <p>ComfyUI 是一个强大的模块化扩散模型 GUI，专为内容创作者设计，提供灵活的操作界面和丰富的功能。</p>
+  <p class="why">简化了内容创作过程中对模型参数的控制，提高了工作效率和创作自由度。 — ComfyUI 作为一个强大的 AI 创作引擎，具备极高的灵活性和控制能力，可能会显著改变创作者的工作方式。其模块化设计和对多种任务的支持使其在行业中脱颖而出，具有广泛的应用场景和深远的影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/n8n-io/n8n">n8n-io/n8n</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">工作流自动化、低代码平台、AI · TypeScript
+    · +120 today · 203774 stars</div>
+  <p>n8n 是一个支持本地和云端的工作流自动化平台，具备 AI 能力，适合构建复杂的工作流并具有多个集成选项。</p>
+  <p class="why">解决了工作流自动化及 AI 应用的复杂性，支持用户灵活地集成现有工具和系统。 — n8n 通过提供高度可定制的工作流和与多种 AI 模型的连接能力，实现了工作方式的重大转变，适合从小型开发到企业级部署的广泛应用，具有很大的商业价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/0x4m4/hexstrike-ai">0x4m4/hexstrike-ai</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/安全工具 · Python
+    · +66 today · 11703 stars</div>
+  <p>HexStrike AI 是一个高级的自动化渗透测试平台，利用人工智能代理结合 150 多种网络安全工具，提升渗透测试和安全研究的效率。</p>
+  <p class="why">解决了自动化渗透测试和漏洞发现的复杂性，提升了安全研究的自动化程度与效率。 — 该项目通过集成多个 AI 代理和丰富的安全工具，显著改变了网络安全行业的工作方式，具备重要的行业应用潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/microsoft/markitdown">microsoft/markitdown</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/文档处理 · Python
+    · +2047 today · 181665 stars</div>
+  <p>MarkItDown 是一个轻量级的 Python 工具，旨在将各种文件格式转换为 Markdown，以便于大型语言模型（LLM）和相关的文本分析流程使用。</p>
+  <p class="why">解决了将多种常见文档格式（如 PDF、Office 文档等）转换为易于处理的 Markdown 格式的问题，为文本分析工具提供了更好的文件输入形式。 — 该项目在文档转换和处理方面具有实用性，尤其是在与人工智能和大规模文本分析相关的场景中使用，具有广泛的应用前景和潜力。其功能定位清晰，使用场景丰富，适合开发者和数据科学家使用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Tencent/teamai-cli">Tencent/teamai-cli</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · TypeScript
+    · +1083 today · 2330 stars</div>
+  <p>TeamAI 旨在通过集成多种 AI 助手，提升团队的协同效率和知识管理，是一个潜力巨大的工具。</p>
+  <p class="why">解决团队在使用不同 AI 助手时的协调和知识分享问题，优化团队执行和学习过程。 — 项目具备创新性，可以改变团队使用 AI 的方式，尤其在构建高效协同工作环境方面将发挥重要作用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ayghri/i-have-adhd">ayghri/i-have-adhd</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具 · Python
+    · +656 today · 30381 stars</div>
+  <p>这个项目提供了一个以 ADHD 为导向的编程助手插件，使得输出更加简洁明了，有助于提升开发者的工作效率。</p>
+  <p class="why">该项目旨在改善 ADHD 用户在编程时的信息获取困难，提供清晰、直接的反馈，并减少不必要的旁枝末节。 — 项目通过针对性改善程序输出，更加符合 ADHD 用户的需求，可望改善相应群体的工作方式，具有较强的实用性和市场潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/pascalorg/editor">pascalorg/editor</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/3D 建筑设计 · TypeScript
+    · +442 today · 22623 stars</div>
+  <p>Pascal Editor 是一款基于 React Three Fiber 和 WebGPU 的 3D 建筑编辑器，专注于建筑设计的可视化和共享。</p>
+  <p class="why">解决了 3D 建筑设计的协作与可视化问题，使得用户能够直观地创建和共享建筑项目。 — 该项目使用现代技术栈 (React, WebGPU) 提供了创新的建筑设计解决方案，并且具有较好的市场潜力，对建筑设计领域可能带来积极的影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/multica-ai/andrej-karpathy-skills">multica-ai/andrej-karpathy-skills</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具
+    · +333 today · 211441 stars</div>
+  <p>这是一个基于 Andrey Karpathy 观察的 LLM 编程陷阱而开发的指南文件，旨在提高 Claude 代码行为，提供了改进 LLM 编程规范的四个原则。</p>
+  <p class="why">解决了大型语言模型在编码中的错误假设、繁琐抽象和冗余代码问题，使得自动化编码更加高效和清晰。 — 项目提供了基于实际观察的具体指导原则，有潜力改变 LLM 的开发和使用方式，但尚需观察其影响力和应用广度。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/advaitpaliwal/feynman">advaitpaliwal/feynman</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开源工具 · TypeScript
+    · +262 today · 9236 stars</div>
+  <p>Feynman 是一个开源的 AI 研究代理，旨在降低 AI 研究的门槛和复杂度。</p>
+  <p class="why">提供一个方便的工具用于 AI 研究和开发，简化了模型的安装和管理过程。 — 该项目的开源特性和专注于 AI 研究的能力，使其在一定程度上能改变 AI 领域的工作方式，尤其对于研究者和开发者来说具有较高的实用性与潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/bytedance/deer-flow">bytedance/deer-flow</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/基础设施 · Python
+    · +188 today · 82078 stars</div>
+  <p>DeerFlow是一个开源的超级代理框架，旨在通过子代理、内存和沙箱等功能来高效执行各种任务，适合长时间复杂任务的处理。</p>
+  <p class="why">DeerFlow解决了复杂任务的执行和管理问题，帮助开发者更有效地组合和使用不同的代理与工具。 — DeerFlow作为一个全新的开源框架，具备高度扩展性和强大的功能，能够改变开发者处理复杂任务的方式，在AI和自动化领域有较高的价值和潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/hpcaitech/Open-Sora">hpcaitech/Open-Sora</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/视频生成 · Python
+    · +181 today · 29699 stars</div>
+  <p>Open-Sora 旨在通过开放源代码的方式，使高效的视频制作技术对所有人可及，推动创意和包容性。</p>
+  <p class="why">解决了高质量视频制作的复杂性，使得更多人能够便利地进行视频创作。 — 该项目推动了视频生成技术的普及，具有潜在的行业变革能力，尤其是在内容创作领域。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/viarotel-org/escrcpy">viarotel-org/escrcpy</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端 · JavaScript
+    · +178 today · 11384 stars</div>
+  <p>Escrcpy 是一个用于图形显示和控制 Android 设备的工具，具备稳定的集成架构和多种高级功能。</p>
+  <p class="why">解决了 Android 设备在计算机上画面显示和控制的问题，支持多设备同时操作。 — 具备丰富的功能和良好的用户体验，适合开发者和用户同时使用，可能改变 Android 设备的使用方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/lightpanda-io/browser">lightpanda-io/browser</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">浏览器/自动化工具 · Zig
+    · +116 today · 35161 stars</div>
+  <p>Lightpanda是一个专为AI代理和自动化设计的全新无头浏览器，采用Zig语言开发。</p>
+  <p class="why">相比现有的无头浏览器（如Chrome），Lightpanda提供了更低的内存消耗和更快的执行速度，对于需要大规模网页抓取和自动化测试的应用场景大有裨益。 — 作为新兴项目，Lightpanda在性能和资源利用率上具有显著优势，能够有效支持AI和自动化的需求，潜在改变开发者在网页自动化测试方面的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/openai/plugins">openai/plugins</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · JavaScript
+    · +105 today · 5783 stars</div>
+  <p>此项目为OpenAI的插件集合，与Codex相关，旨在扩展其功能与应用场景。</p>
+  <p class="why">解决了Codex功能扩展需求，提供多样化使用场景的插件示例。 — 该项目提供了大量实用插件示例，能够有效增强开发者在不同平台下的工作效率，具有较大潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/shareAI-lab/learn-claude-code">shareAI-lab/learn-claude-code</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/教育 · Python
+    · +87 today · 76348 stars</div>
+  <p>该项目提供了从零开始构建智能体的框架教学，适合对AI智能体开发感兴趣的学习者和开发者。</p>
+  <p class="why">帮助学习者理解AI智能体的工作原理，并教导如何从模型到实现的完整开发过程。 — 项目内容深入浅出，对于学习AI智能体的开发有重要意义，且为开发者提供了具体实现的指导。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/AgriciDaniel/claude-ads">AgriciDaniel/claude-ads</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/广告技术 · Python
+    · +73 today · 9057 stars</div>
+  <p>Claude Ads 是一个基于 Claude 的广告平台操作工具，支持多达十二个广告平台的操作和审计，其主要功能包括创建和监控广告活动，并确保所有变更在经过验证后的安全性。</p>
+  <p class="why">解决了多平台广告管理的复杂性，降低了人力参与错误的风险，并提供清晰的审计和报告功能。 — 该项目结合了人工智能与广告操作，尤其在合规和安全性上提供新的解决方案，具备一定的创新性和实用价值，能够优化广告管理的流程。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/sooryathejas/METATRON">sooryathejas/METATRON</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">安全 · Python
+    · +68 today · 4079 stars</div>
+  <p>METATRON 是一个本地部署的 AI 渗透测试助手，能自动化进行安全漏洞分析，适用于 Linux 环境，尤其是 Parrot OS。</p>
+  <p class="why">解决了传统渗透测试工具需依赖云服务或API的问题，提高了隐私性与便捷性，简化了漏洞识别和修复的流程。 — 项目将 AI 应用于渗透测试，并具备离线功能，有潜力显著改变安全行业的工作方式，其创造性和实用性较强。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/getopenscreen/openscreen">getopenscreen/openscreen</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/开源软件/视频编辑 · TypeScript
+    · +63 today · 2595 stars</div>
+  <p>这是一个有助于录制和编辑屏幕录像的开源应用程序，提供自由与多平台支持。</p>
+  <p class="why">解决了高质量屏幕录制难题，并支持制作精美产品演示。 — 项目功能丰富，能够满足不同用户的需求，无水印、免费且持续开发，值得深入关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/maotoumao/MusicFree">maotoumao/MusicFree</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/音乐播放器 · TypeScript
+    · +49 today · 26718 stars</div>
+  <p>MusicFree 是一款无广告、插件化的免费音乐播放器，支持用户自定义插件以扩展功能。</p>
+  <p class="why">解放用户免受广告和收费内容的困扰，同时提供灵活的插件化扩展方式。 — 项目聚焦于无广告的音乐体验和灵活的插件机制，满足用户对个性化与隐私的需求，具有较强的市场潜力，但因缺少桌面版本的稳定性和广泛的平台支持，未达到绝对突破性的水平。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/nowork-studio/notfair-plugin">nowork-studio/notfair-plugin</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/市场营销 · TypeScript
+    · +40 today · 3680 stars</div>
+  <p>NotFair插件为AI代理提供了一系列专注于SEO、GEO和市场营销的技能，能够帮助用户实现低投入高产出的营销工作流。</p>
+  <p class="why">解决了AI代理在执行市场营销任务时缺乏针对性的工作流问题，提供了一种系统化的方式来进行SEO审计、广告分析和内容优化等。 — 该项目提供的技能覆盖了多个营销领域，并且通过开源方式使得用户能够根据自己的需求进行定制，极大提升了营销工作的效率和效果。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/MoonTechLab/LunaTV">MoonTechLab/LunaTV</a>
+    <span class="sig" role="img" aria-label="关注度 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端 · TypeScript
+    · +505 today · 10155 stars</div>
+  <p>MoonTV 是一款功能全面的跨平台影视聚合播放器，提供丰富的影视资源和便捷的用户体验。</p>
+  <p class="why">解决了用户在多平台间寻找和播放影视资源的困扰，实现了资源的聚合与管理，便于用户随时观看。 — 项目采用前沿技术栈构建，且提供丰富功能，值得关注，但尚需用户自行收集资源，限制了其市场应用潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Free-TV/IPTV">Free-TV/IPTV</a>
+    <span class="sig" role="img" aria-label="关注度 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/开源软件 · Python
+    · +44 today · 20427 stars</div>
+  <p>这是一个为全球免费电视频道提供的M3U播放列表项目。</p>
+  <p class="why">解决了寻找和访问免费电视频道的问题，使用户更容易获取多样化的内容。 — 虽然项目内容丰富，但在内容合规性及用户体验上可能还存在一定的挑战。值得关注，但不具有颠覆性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/openai/skills">openai/skills</a>
+    <span class="sig" role="img" aria-label="关注度 2/5"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/基础设施 · Python
+    · +490 today · 26503 stars</div>
+  <p>该项目为Codex的技能目录，旨在记录可供AI代理使用的技能，然而已被弃用。</p>
+  <p class="why">提供了AI代理可重复使用的技能集，虽已不再维护，但为AI学习和集成提供了基础框架。 — 虽然这是一个有用的概念，但由于项目已被弃用，实际应用价值有限，且引导用户转向其他项目。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
