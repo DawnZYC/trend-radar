@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-09-18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-09-18</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的GitHub Trending项目展示了技术领域的多样性和创新，特别是在后端开发、AI工具和视频制作等方向。随着开发效率和安全性的日益重视，越来越多的项目致力于提供简化和优化的解决方案。在众多新项目中，值得关注的有Supabase，它为开发者提供了一种可快速构建后端服务的解决方案，显著简化开发流程；Cline则是一个自助编码代理工具，大幅提升了开发者的编码效率和协作方式，改变了传统的工作模式；而Remotion创新性地将视频制作与编程结合，能够高效生成视频内容，为内容创作开辟了新思路。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/supabase/supabase">supabase/supabase</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">后端/数据库/开源 · TypeScript
+    · +586 today · 109920 stars</div>
+  <p>Supabase 是一个基于 Postgres 的开发平台，旨在为开发者提供类似 Firebase 的体验，同时利用开源工具。</p>
+  <p class="why">Supabase 提供了一整套后端服务（数据库、身份验证、实时 API 等），使开发者可以快速构建和扩展 web、移动和 AI 应用；解决了传统后端开发复杂，时间消耗大等问题。 — 作为一个企业级的开源解决方案，Supabase 聚合了多种强大的功能，如实时数据库、自动生成 API、存储等，显著简化了开发流程，对开发者的工作方式有潜在的改变。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/cline/cline">cline/cline</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/IDE 扩展 · TypeScript
+    · +380 today · 68551 stars</div>
+  <p>Cline 是一个开放源代码的自主编码代理，支持 SDK、IDE 扩展和命令行助手，旨在提升开发者的编码效率和协作方式。</p>
+  <p class="why">解决了开发过程中的自动化和智能化需求，帮助开发者提高工作效率与降低重复性劳动。 — 项目具备强大的功能集成，能够显著提升开发者的编码体验，并可能改变传统编码方式，尤其是在团队协作和自动化方面。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/remotion-dev/remotion">remotion-dev/remotion</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端 · TypeScript
+    · +143 today · 59606 stars</div>
+  <p>Remotion 是一个基于 React 的视频制作工具，允许开发者通过编程方式创建和自动化视频内容。</p>
+  <p class="why">解决了视频制作过程中的复杂性，可以通过代码自动化生成视频，适用于需要大量视频内容的团队和个人。 — Remotion 通过将视频制作与编程结合，开拓了视频内容创作的新方式，尤其适合在机器学习和数据驱动内容日益增长的背景下，为团队提供了高效生成视频的能力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/meituan-longcat/LongCat-Video">meituan-longcat/LongCat-Video</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/视频生成 · Python
+    · +138 today · 8267 stars</div>
+  <p>LongCat-Video 是一个基础的视频生成模型，具备强大的文本到视频、图像到视频及视频续集生成能力，特别在长视频生成中表现出色。</p>
+  <p class="why">解决了短视频生成中常见的颜色漂移和质量下降问题，能够高效生成长达数分钟的视频。 — 该项目引入了统一的多任务视频生成架构，具有重大突破潜力，有望在视频内容创作和生成领域带来显著改变。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/cilium/cilium">cilium/cilium</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">网络安全与可观测性 · Go
+    · +111 today · 25262 stars</div>
+  <p>Cilium 是一款基于 eBPF 的网络、安全与可观测性解决方案，学院与业界的认可使其在 Kubernetes 生态系统中发挥了重要作用。</p>
+  <p class="why">解决容器网络性能和安全性的问题，提供分布式负载均衡与网络监控。 — Cilium 通过 eBPF 提供高效的网络解决方案，能够显著提高 Kubernetes 环境下的性能、可扩展性与安全性，具有改变技术运作方式的潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/freeCodeCamp/freeCodeCamp">freeCodeCamp/freeCodeCamp</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">教育/在线学习 · TypeScript
+    · +111 today · 455692 stars</div>
+  <p>freeCodeCamp 是一个开放源代码的在线学习平台，旨在让人们免费学习编程和计算机科学，帮助他们转型进入科技行业。</p>
+  <p class="why">解决了缺乏优质编程教育资源的问题，为需要学习编程的用户提供了免费的课程和认证帮助他们获得开发者职位。 — 该项目不仅教育性强，而且社区活跃，已帮助超过 10 万人成功转型，这种影响力能大幅改变人们的学习和职业路径。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/openobserve/openobserve">openobserve/openobserve</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端/观察性平台/开源工具 · TypeScript
+    · +100 today · 21994 stars</div>
+  <p>OpenObserve 是一个成本效益高的开源可观察性平台，提供全面的日志、指标和追踪监控，适用于需要简化复杂性或降低成本的团队。</p>
+  <p class="why">解决了数据监控和分析过程中的高存储成本与复杂部署问题。提供 140 倍的存储成本降低和单一二进制部署方式，大幅减少了团队的运维负担。 — 项目展示了显著的成本优势和优秀的性能，挑战了市场上主流产品（如 Datadog 和 Splunk），具有潜力改变团队的数据监控和分析方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">安全审计工具 · JavaScript
+    · +3607 today · 10595 stars</div>
+  <p>这是一个为安全审计开发的技能，可以对软件架构进行多阶段的结构性审计，优化漏洞发现的流程。</p>
+  <p class="why">提高了安全审计的效率和准确性，能够系统性地识别和验证漏洞。 — 这个项目通过将安全审计流程模块化，可能在软件安全领域内引领新的审计方法，有效地填补了现有工具的不足，具有较高的实用价值和前景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Tencent/BrowserSkill">Tencent/BrowserSkill</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/自动化工具 · TypeScript
+    · +1302 today · 4109 stars</div>
+  <p>BrowserSkill 使 AI 代理能够使用用户已登录的浏览器进行无干扰的任务处理，提升了自动化效率和用户体验。</p>
+  <p class="why">解决了 AI 代理在进行网络任务时无法使用用户已登录状态的问题，避免了重复登录和测试账户的困扰，同时保持用户的工作不受干扰。 — 该项目通过支持现有登录状态和无干扰的浏览器操作，显著提升了 AI 代理的实用性，有潜力改变用户与浏览器交互的方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Tencent/WeKnora">Tencent/WeKnora</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">知识管理/人工智能 · Go
+    · +1125 today · 26183 stars</div>
+  <p>WeKnora 是一个开源的知识平台，旨在将文档转化为可查询的知识，通过自主推理与自我维护的维基功能提供智能支持。</p>
+  <p class="why">解决了文档理解、语义检索与自主推理的难题，帮助企业更高效地利用信息资源。 — 该项目结合了最新的LMM技术，适用于多种复杂任务，具有改变工作方式的潜力。虽然不是突破性的创新，但在信息处理领域具有较大可能的影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Lakr233/vphone-cli">Lakr233/vphone-cli</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/虚拟化 · Swift
+    · +907 today · 13777 stars</div>
+  <p>vphone-cli 是一个利用 Apple 的虚拟化框架在 Apple Silicon 上启动虚拟 iPhone 的工具，具有一键创建和管理虚拟机的功能。</p>
+  <p class="why">解决了在非实体设备上进行 iOS 开发和测试的需求，提供了便捷的虚拟机管理方式。 — 项目利用了一种新颖的虚拟化技术，为 iOS 开发者提供了高效的工具，可以改变开发和测试的方式.</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/abue-ammar/tinycast">abue-ammar/tinycast</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端 · Swift
+    · +739 today · 6142 stars</div>
+  <p>Tinycast 是一款功能全面且高效的 macOS 启动器，提供全局热键、剪贴板历史和多种实用功能，提升用户工作效率。</p>
+  <p class="why">解决了 macOS 用户在使用多个应用时快速访问和管理应用程序、文件、热键和剪贴板内容的问题。 — 该项目通过提供一个原生且高效的应用启动器，能显著改善用户工作流程，尤其适合频繁使用 macOS 的用户，值得关注与使用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/arnegiacomo/fugleramme">arnegiacomo/fugleramme</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/硬件/开发工具 · Python
+    · +592 today · 2907 stars</div>
+  <p>这是一个为 Raspberry Pi 设计的电子墨水鸟类检测框架，结合本地 AI 技术和历史鸟类插图，提供实时鸟类检测功能。</p>
+  <p class="why">解决了鸟类观察者实时识别和了解鸟类的需求，结合传统艺术和现代技术。 — 该项目将传统鸟类观察与创新的音频识别技术结合，提供独特用户体验，具有较高的实用性与趣味性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/TencentCloud/Octop">TencentCloud/Octop</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/自托管系统 · Python
+    · +367 today · 3427 stars</div>
+  <p>Octop 是一个自托管的多用户 AI 助手，提供强大的隐私保护和灵活的多代理架构。</p>
+  <p class="why">解决个人和团队在保留隐私的情况下进行高效协作的需求，支持多种交流方式和扩展功能。 — Octop 提供了多用户多代理的特性，能在较高隐私保障下实现智能助理的功能，具有广泛的应用潜力，尤其适合需要数据保护的场景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/rowboatlabs/rowboat">rowboatlabs/rowboat</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/生产力工具 · TypeScript
+    · +304 today · 17877 stars</div>
+  <p>Rowboat 是一款旨在为团队提供多人协作的智能助手，能够在各自的机器上独立运行，并通过共享的空间实现协同工作。</p>
+  <p class="why">解决了传统工作助手只能单人使用的问题，使得团队成员可以共享和协作使用个人助手，从而提高工作效率。 — 该项目在多人协作与智能助手结合的创新上具有较大潜力，有助于改变人们的工作方式，但仍需继续观察其实际应用效果。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/anthropics/knowledge-work-plugins">anthropics/knowledge-work-plugins</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +287 today · 24554 stars</div>
+  <p>该项目提供了一系列面向知识工作者的插件，旨在通过定制化使Claude更好地适应特定团队和公司的工作流程。</p>
+  <p class="why">该项目通过插件帮助用户优化工作流程和提高工作效率，尤其是针对团队协作和个性化需求。 — 该项目通过整合多种任务和工作管理功能，能显著提升知识工作者的工作效率，尤其在团队协作中具有突破性潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/koala73/worldmonitor">koala73/worldmonitor</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/前端 · TypeScript
+    · +251 today · 86693 stars</div>
+  <p>World Monitor 项目提供了一个实时全球情报仪表盘，通过 AI 技术聚合新闻、监控地缘政治及基础设施情况，帮助用户在统一的界面集中获取重要信息。</p>
+  <p class="why">解决了信息过载的问题，使用户能够实时获取和分析全球资讯，便于做出更快的决策。 — 该项目通过 AI 技术整合多种信息源，提高了数据获取和处理的效率，对于需要快速反应的领域如商业、国际关系等具有显著的价值。虽然它的影响可能不会立刻改变工作方式，但在特定应用场景上极具潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/vercel/eve">vercel/eve</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · TypeScript
+    · +173 today · 5236 stars</div>
+  <p>eve 是一个专为可持续 AI 工具构建的文件系统优先框架，设计上目标明确，易于扩展和操作。</p>
+  <p class="why">eve 解决了构建和管理 AI 代理的复杂性问题，使开发者能够更高效地组织代码和资源，提高了项目的可维护性和可操作性。 — 该项目具备了在 AI 代理构建领域的实用性和潜力，提供了一种新颖的结构和方法，有望提高开发人员的工作效率，因此在细分市场内具备较高的关注价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/coder/coder">coder/coder</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/云开发环境 · Go
+    · +145 today · 14825 stars</div>
+  <p>Coder 提供了一种自托管的云开发环境解决方案，结合 AI 编程工具，旨在提高开发效率和安全性。</p>
+  <p class="why">解决了开发环境配置复杂和安全性问题，降低了使用云资源的成本。 — 此项目通过自托管方案及 AI 助手加速开发流程，极具创新性，可能会显著改变开发团队的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Stirling-Tools/Stirling-PDF">Stirling-Tools/Stirling-PDF</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开源 PDF 编辑器 · Java
+    · +128 today · 92447 stars</div>
+  <p>Stirling PDF 是一个强大的开源 PDF 编辑平台，可以在任何设备上进行 PDF 编辑，且具备多种工具和功能，适合各类用户。</p>
+  <p class="why">解决了传统在线 PDF 编辑需要上传文件的问题，提供了自托管和私有 API 的选项，增强了用户的隐私和数据安全。 — 项目在 PDF 编辑领域具备广泛的功能，包括编辑、转换和自动化等，适合个人和企业使用，具有较高的实用性和市场潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/CodebuffAI/freebuff">CodebuffAI/freebuff</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · TypeScript
+    · +97 today · 12277 stars</div>
+  <p>Freebuff 是一款多功能的 AI 编程助手，支持多种平台，旨在提高开发效率。</p>
+  <p class="why">解决了编程中的重复性技术问题，可以迅速生成代码并优化开发流程。 — 项目提供多种免费的 AI 编程工具，可以在本地、终端或云端使用，适合希望提高编程效率的开发者，具有较高的实用性和潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/LLMQuant/quant-mind">LLMQuant/quant-mind</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">量化金融/AI/开源工具 · Python
+    · +81 today · 2980 stars</div>
+  <p>QuantMind是一个专注于量化金融的开源知识提取与检索框架，旨在通过智能化的方式将原始金融信息转化为可靠的结构化知识。</p>
+  <p class="why">QuantMind解决了量化金融领域中对金融信息获取与知识管理效率低下的问题，提供了自动化的知识提取管道。 — 该项目展示了将智能体技术应用于量化金融领域的潜力，能够显著提高信息处理与知识获取的效率，具有较高的实际应用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ComposioHQ/awesome-claude-skills">ComposioHQ/awesome-claude-skills</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/自动化 · Python
+    · +70 today · 75240 stars</div>
+  <p>该项目为用户提供了大量Claude AI的技能和插件列表，旨在提升工作效率，通过集成多种应用实现自动化操作。</p>
+  <p class="why">项目针对用戶在使用Claude AI时希望提升生产力的问题，通过提供1000多个实用技能和插件，满足用户的多样化需求。 — 该项目通过提供丰富的技能和多应用集成，增强了Claude AI的实用性和灵活性，具有广泛的应用场景和潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/CodeWithCJ/SparkyFitness">CodeWithCJ/SparkyFitness</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">健康/健身应用 · TypeScript
+    · +65 today · 6041 stars</div>
+  <p>SparkyFitness 是一个专注于家庭的自托管健身追踪平台，利用 AI 技术帮助用户追踪饮食、健身和健康数据，同时确保数据隐私。</p>
+  <p class="why">提供用户一个自专家模式的健身追踪工具，避开数据隐私问题；通过 AI 辅助用户改善饮食与锻炼习惯。 — 这个项目结合了自托管和 AI，适应了越来越多用户对隐私和个性化健康管理的需求，属于行业内的较好选择。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/actualbudget/actual">actualbudget/actual</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">个人财务/开源软件 · TypeScript
+    · +65 today · 28980 stars</div>
+  <p>实际预算是个体理财工具，关注当地的预算处理与设备间的数据同步。</p>
+  <p class="why">解决了用户在个人财务管理中的数据隐私问题，并且提供了跨设备同步的便利性。 — 作为一款本地优先的个人理财应用，实际预算在隐私和便利性方面对比传统云服务有显著优势，值得关注。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
