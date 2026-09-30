@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-09-30</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-09-30</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的技术趋势显示，自动化和AI技术进一步渗透到多个领域，尤其是在安全、自然语言处理和开发工具等方面表现突出。其中，Redamon项目的全自动化AI渗透测试功能，不仅显著提高了漏洞检测的效率和准确性，还可能引领安全行业的未来。SkillOpt项目则为自我进化的智能体技能训练开辟新路径，增强了大语言模型的灵活性，有望在多个应用场景中产生深远影响。此外，HexStrike AI集成了150多种网络安全工具，是网络安全领域的重大创新，进一步提升了渗透测试的效率。今天的这些项目不仅技术先进，而且在实际应用中展现出巨大的潜力。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/samugit83/redamon">samugit83/redamon</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/安全 · Python
+    · +97 today · 2812 stars</div>
+  <p>Redamon是一个自动化的AI渗透测试框架，用于从侦察到后期利用的全面安全作业，能够在无人工干预的情况下操作。</p>
+  <p class="why">解决了传统渗透测试过程中人力的不足和效率低下的问题，能够快速响应并修复安全漏洞。 — 项目利用AI技术实现全面自动化，大幅提高了渗透测试的效率和准确性，可能会彻底改变安全行业的工作流程。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/microsoft/SkillOpt">microsoft/SkillOpt</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/自我进化智能体 · Python
+    · +85 today · 17875 stars</div>
+  <p>SkillOpt 项目提供了创新的自我进化智能体技能训练方法，极大提升了LLM代理的灵活性与效率，有望在多种应用场景中产生深远影响。</p>
+  <p class="why">解决了如何在不改变模型权重的情况下训练可重用的自然语言技能，实现智能体的自动化技能升级。 — 项目具备创新性和广泛适用性，可能会改变人工智能领域的工作方式，尤其是在技能训练和模型灵活性方面。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/0x4m4/hexstrike-ai">0x4m4/hexstrike-ai</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/网络安全/渗透测试 · Python
+    · +56 today · 12247 stars</div>
+  <p>HexStrike AI 是一个基于 AI 的先进渗透测试平台，结合了 150 多种网络安全工具和多个自主 AI 代理。</p>
+  <p class="why">自动化渗透测试和漏洞发现，减少了手动干预和提高了效率。 — 该项目集成了多种 AI 代理与渗透测试工具，显著提升了网络安全研究和漏洞管理的效率，是网络安全领域的一次重大创新。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/django/django">django/django</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端/后端 · Python
+    · +26 today · 91231 stars</div>
+  <p>Django 是一个高层次的 Python 网络框架，促使快速开发与简洁设计。</p>
+  <p class="why">为开发者提供高效的 Web 应用程序开发工具，帮助他们快速实现项目需求。 — Django 作为一个成熟且广泛使用的框架，不仅提高了开发效率，还促进了良好的代码结构，可能改变许多Web开发者的工作方式，具有深远影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/NVIDIA/OpenShell">NVIDIA/OpenShell</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/安全 · Rust
+    · +990 today · 10633 stars</div>
+  <p>OpenShell 是一个为自律 AI 代理提供安全、私密运行时的项目，其主要功能在于通过内核级别的政策执行以及形式验证，保护数据和网络安全。</p>
+  <p class="why">为自律型 AI 代理提供了安全的操作环境，防止未经授权的数据访问和网络调用。 — 该项目在保障 AI 代理安全运行方面具有重要意义，虽然可能不如某些突破性技术具有巨大影响力，但提供的隔离和安全机制对于企业级应用尤为重要。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/cs341-illinois/coursebook">cs341-illinois/coursebook</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">教育/开源文档/系统编程 · TeX
+    · +572 today · 3111 stars</div>
+  <p>这是伊利诺伊大学系统编程课程的开源教材，提供了高质量的系统编程入门知识，使用C语言进行教学。</p>
+  <p class="why">该项目旨在提高系统编程教材的质量与准确性，并保持开源特性，方便学习者与教师使用。 — 这个项目通过开源教材的形式为大学课程提供了高质量的学习资源，虽然是针对特定学科，但其标准化与开放的特性可能会影响相关领域的教学方法。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/oblien/openship">oblien/openship</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/开发工具 · TypeScript
+    · +437 today · 13840 stars</div>
+  <p>Openship 是一个自托管的部署平台，提供内置的 CI/CD 功能，简化了应用的构建、发布和路由过程。</p>
+  <p class="why">解决了传统 CI/CD 复杂配置的问题，提供易于使用的自托管解决方案。 — Openship 的自动化部署特性显著提高了开发效率，尤其适合需要频繁发布更新的团队，具有较高的实际应用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/satnaing/shadcn-admin">satnaing/shadcn-admin</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/UI 设计 · TypeScript
+    · +379 today · 15147 stars</div>
+  <p>这是一个构建适用于 Shadcn 和 Vite 的自定义管理后台 UI 的项目，功能丰富，支持响应式和无障碍设计。</p>
+  <p class="why">提供了一个可复用的管理员面板解决方案，简化管理界面的开发过程。 — 该项目不仅提供了基础的管理界面功能，还考虑到了响应式设计和无障碍支持，对于开发者在构建复杂应用时节省时间与精力具有重要价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/byoungd/up">byoungd/up</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">教育/终身学习指南/AI应用 · JavaScript
+    · +310 today · 65713 stars</div>
+  <p>这是一本针对普通人在 AI 时代持续学习与发展的指导书，涵盖英语学习、AI 学习、创业和人生成长等主题。</p>
+  <p class="why">帮助用户在快速变化的环境中有效学习，提升自我能力，掌握新的技能与知识，适应AI时代。 — 该项目提供了系统的学习方法，帮助普通人应对AI带来的挑战，具有现实意义和应用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/t8y2/dbx">t8y2/dbx</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">数据库管理工具 · Rust
+    · +232 today · 22048 stars</div>
+  <p>这是一个轻量级的跨平台数据库客户端，支持超过100种数据库，并具备内置AI功能，适合多种使用场景。</p>
+  <p class="why">解决了用户在管理多种数据库时的复杂性，提供了轻便的工具集和AI助手以提升使用效率。 — 该项目在数据库管理领域具有广泛的适用性，支持多种流行数据库，且内置AI功能可以提高用户的操作体验，具备较强的创新性与实用性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/practical-tutorials/project-based-learning">practical-tutorials/project-based-learning</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">教育/学习资源 · Python
+    · +215 today · 285283 stars</div>
+  <p>学习编程的项目导向教学资源集合，适合初学者</p>
+  <p class="why">为希望学习编程的开发者提供从零开始构建应用的实践项目，弥补了传统课程缺乏实际操作经验的问题。 — 该项目聚焦于项目基础的学习方式，提供了多种编程语言的实现示例，适合广大的编程学习者，虽然影响范围有限，但在教育领域具有较高价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ashhart/TensorFold">ashhart/TensorFold</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/语言模型推理 · Python
+    · +160 today · 643 stars</div>
+  <p>TensorFold 提供了一种在 Apple Silicon 和 NVIDIA GPU 上服务语言模型的解决方案, 通过兼容 OpenAI 的 API 实现高效解码。</p>
+  <p class="why">解决了当前主流计算硬件 (Apple Silicon, NVIDIA GPU) 上高效处理语言模型的需求，提供了易于访问的 API 接口。 — 项目支持多种硬件平台，提升了模型的兼容性和灵活性，能够满足高效的 LLM 解码需求，值得关注和使用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/NawfalMotii79/PLFM_RADAR">NawfalMotii79/PLFM_RADAR</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">硬件开发/开源软件 · PLSQL
+    · +145 today · 26218 stars</div>
+  <p>这是一个开源的低成本10.5 GHz相控阵雷达系统，旨在为研究人员和开发者提供探索雷达技术的平台。</p>
+  <p class="why">解决了雷达技术高昂成本和封闭性的问题，允许更广泛的用户参与和创新。 — 该项目提供了完整的开源硬件和软件，具备多项先进功能，适合研究和开发，具有较大的市场潜力和社会价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/moeru-ai/airi">moeru-ai/airi</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/数字生活 · TypeScript
+    · +124 today · 49832 stars</div>
+  <p>项目 AIRI 旨在重建 AI 虚拟角色，提供实时语音聊天和游戏互动功能，是一款具有创新性的数字伴侣应用。</p>
+  <p class="why">解决了虚拟角色的社交交互，增强了用户沉浸体验，使用户能够与虚拟伴侣进行实时交流和互动。 — 项目具有很大的创新潜力，结合了 AI 伴侣和多平台支持，可能会改变用户与虚拟角色的互动方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/averygan/reclip">averygan/reclip</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">下载工具 · HTML
+    · +113 today · 10122 stars</div>
+  <p>ReClip 是一个轻量级、自托管的音视频下载工具，用户可以从多个网站下载音频或视频，操作简单。</p>
+  <p class="why">解决了用户在多个平台下载视频或音频的需求，支持批量下载和多种格式。 — 该项目简单易用且功能强大，适合广泛的用户需求，但可能受到版权和服务条款限制。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/topoteretes/cognee">topoteretes/cognee</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/基础设施 · Python
+    · +103 today · 31227 stars</div>
+  <p>Cognee 是一个开源的 AI 内存平台，旨在为 AI 代理提供持久的长期记忆，能够提升代理的智能和功能。</p>
+  <p class="why">提供了一种工具，使 AI 代理能够跨会话进行信息检索与重用，增强了代理的记忆能力与效率。 — 该项目在 AI 代理的记忆管理上具有创新性，能够促进 AI 代理在各类任务中的应用，但仍处于相对早期发展阶段，长远影响还有待观察。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/cloudflare/vinext">cloudflare/vinext</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端框架 · TypeScript
+    · +100 today · 8988 stars</div>
+  <p>vinext 是一个不错的项目，能够让 Next.js 应用通过 Vite 在云平台上运行，提升了开发和部署的灵活性。</p>
+  <p class="why">解决了在 Cloudflare Workers 上部署 Next.js 应用的难题，并实现了与 Next.js API 的兼容。 — 该项目通过将 Next.js 应用重新实现到 Vite 上，展示了极大的灵活性和潜力，尽管仍有一些功能不完全，但其目标和发展方向表明可能改变当前的开发流程。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/HelpCode-ai/anythingmcp">HelpCode-ai/anythingmcp</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/前端 · TypeScript
+    · +84 today · 616 stars</div>
+  <p>一个将各种API转化为Claude和ChatGPT工具的平台, 支持265种连接器的自托管解决方案。</p>
+  <p class="why">解决了集成不同API的复杂性，让非开发者也能使用强大的工具。 — 项目提供了简化API连接的无代码解决方案，能显著改善企业IT系统间的数据流，通过提高效率改变工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/bytedance/deer-flow">bytedance/deer-flow</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/基础设施 · Python
+    · +71 today · 83237 stars</div>
+  <p>DeerFlow 是一款开源的超级智能代理框架，能够处理各种复杂任务，为深度研究提供了高效的工作流。</p>
+  <p class="why">该项目旨在更好地管理和自动化长周期任务，通过引入子代理和沙盒机制，从而提升研发效率和灵活性。 — DeerFlow 2.0 在功能上进行了全面重构，具备较强的实用性和创新性，有潜力在 AI 开发领域内引领新的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/SinaXhpm/Submarine">SinaXhpm/Submarine</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端 · TypeScript
+    · +40 today · 400 stars</div>
+  <p>Submarine 是一款现代化的 SSH 和 SFTP 客户端，支持多平台使用，提供多种功能于一个窗口内，简化了用户的操作体验。</p>
+  <p class="why">提供一个集成化的 SSH 和 SFTP 管理工具，减少了用户在不同工具间切换的繁琐；增强了服务器管理和文件传输的安全性和效率。 — 该项目通过整合多个工具为一体，显著提升了开发者和运维人员的工作效率，尤其是在多服务器管理方面，具有较大的实用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/chrisryugj/kordoc">chrisryugj/kordoc</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">文档处理工具/解析器 · TypeScript
+    · +36 today · 2294 stars</div>
+  <p>kordoc 是一个强大的文档解析工具，尤其适用于处理韩国特有的文档格式，提供了丰富的功能，促进了文档的转换和编辑。</p>
+  <p class="why">解决了 HWP、PDF 等格式文档转 Markdown 的需求，并实现了表格和结构的精确恢复。 — 该项目提供了高效的文档格式支持和自动处理功能，尤其在韩国市场具有突破性应用潜力，具有改变相关工作方式的可能性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/rakyll/hey">rakyll/hey</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">性能测试工具 · Go
+    · +34 today · 20480 stars</div>
+  <p>hey 是一款轻量级的 HTTP 负载生成器，能替代传统的 ApacheBench，适用于性能测试和压力测试，特别是在需要高并发请求的场景下。</p>
+  <p class="why">解决了对 Web 应用的负载测试需求，简化了测试流程，提供易用的 CLI 接口和灵活的配置选项。 — 该项目在性能测试领域有重要应用，且通过易于使用的命令行界面和多种配置选项，能够帮助开发者高效进行压力测试，具有很高的实用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/freemocap/freemocap">freemocap/freemocap</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">基础设施/开源软件 · TypeScript
+    · +31 today · 10359 stars</div>
+  <p>FreeMoCap 是一个免费的、开源的运动捕捉系统，致力于为边缘科学研究和教育提供低成本解决方案。</p>
+  <p class="why">为教育、科研和训练提供了一个低成本的运动捕捉解决方案，帮助用户在没有高端硬件的情况下进行运动捕捉。 — 这个项目有潜力在教育和科研领域改变传统的运动捕捉方式，尤其是在普通用户能够获得可接受的成本和技术门槛的前提下。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Rizzo-AI-Academy/rizzo-pii">Rizzo-AI-Academy/rizzo-pii</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">法律科技 / 隐私保护工具 · Python
+    · +26 today · 1113 stars</div>
+  <p>Rizzo-pii 是一款针对意大利法律文本的本地 PII（个人可识别信息）匿名化工具，旨在在不分享实际数据的情况下，使用先进的语言模型。</p>
+  <p class="why">解决了用户在与大型语言模型交互时的隐私泄露问题，同时符合 GDPR 法规要求。 — 该项目在法律和隐私领域具有重要意义，能够使法律专业人士在使用 AI 工具时保护客户数据，提升工作效率，极具潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/calcom/cal.diy">calcom/cal.diy</a>
+    <span class="sig" role="img" aria-label="关注度 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开源软件/调度管理 · TypeScript
+    · +24 today · 48745 stars</div>
+  <p>Cal.diy 是一个开源日程安排平台，适合希望自我托管的用户。</p>
+  <p class="why">该项目解决了用户对现有商业调度平台控制权不足的问题；提供了一个可自我托管的解决方案，适合个人及小团队使用。 — 该项目作为开源解决方案，在自我托管需求日益增长的背景下，具备一定的市场潜力，值得关注。虽然没有企业功能，但提供了完全开源的选择，适合技术用户。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
