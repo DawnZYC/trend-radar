@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-10-05</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-10-05</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的技术趋势显示，人工智能和自动化工具的结合仍然是开发者关注的焦点，多个项目旨在提高工作效率和用户体验。其中，值得特别关注的三个项目是：OpenMontage，它作为首个开源自动化视频制作系统，通过AI简化视频创作流程，具有颠覆潜力；Sentry，强大的错误追踪与性能监测工具，以其跨语言支持成为开发者在监控领域的主要选择，显著提升了代码维护效率；Agent-Reach，提供无API费用的互联网访问方式，专注社交媒体数据抓取，简化数据获取，为AI智能体与多平台交互开辟了新路径。这些项目将可能在各自领域产生深远影响，值得开发者深入探索。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/calesthio/OpenMontage">calesthio/OpenMontage</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">视频制作/开源软件/人工智能 · Python
+    · +245 today · 63225 stars</div>
+  <p>OpenMontage是一个开源的视频制作系统，结合了多个AI技术工具，具有强大的功能，将AI助手转变为视频制作工作室。</p>
+  <p class="why">解决了传统视频制作流程的复杂性，允许用户利用AI快速生成视频内容。 — 作为第一个开源的自动化视频制作系统，OpenMontage 具有颠覆传统视频制作方法的潜力，尤其是在结合多种AI技术的基础上，降低了制作门槛。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/getsentry/sentry">getsentry/sentry</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">监控与错误追踪 · Python
+    · +152 today · 45384 stars</div>
+  <p>Sentry 是一个开发者首选的错误追踪与性能监测平台，能够帮助开发团队快速检测、追踪和修复代码中的问题。</p>
+  <p class="why">解决了开发过程中代码错误检测与修复效率低的问题，提升了系统的稳定性和用户体验。 — Sentry 提供了强大的跨语言的支持，成为开发者在错误监控领域的主要解决方案，显著改善了软件开发与维护的方式，具有突破性的影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Panniantong/Agent-Reach">Panniantong/Agent-Reach</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/自动化 · Python
+    · +980 today · 90886 stars</div>
+  <p>Agent-Reach 项目为 AI 智能体提供了一种无 API 费用的互联网访问方式，具备快速抓取和搜索功能，尤其在社交媒体平台上表现突出。</p>
+  <p class="why">解决了 AI 代理与多平台数据交互的障碍，提供了一种简洁高效的数据获取方式。 — 平台聚焦社会化媒体抓取，简化了数据获取流程，具有较强的实用性与潜在应用价值，值得关注，但尚需观察其长期影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/JuliusBrussee/caveman">JuliusBrussee/caveman</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/前端 · Go
+    · +505 today · 109818 stars</div>
+  <p>Caveman项目通过大幅减少与AI交互时所需的Token数量，显著提高了文本生成的效率和经济性。</p>
+  <p class="why">该项目解决了多Token交互带来的成本和效率问题，通过简化输入，用户可以以更少的资源获取相同的信息和代码输出。 — Caveman的创新在于其显著提升了AI代理的交互效率，是一个值得关注的突破性项目，尤其在大规模应用AI的背景下。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/开发工具 · TypeScript
+    · +490 today · 25175 stars</div>
+  <p>T3 Code 是一个控制代理的工具，支持多个开发环境，旨在提供卓越的开发体验。</p>
+  <p class="why">解决了对多种开发代理的统一管理与控制问题，提升了开发者的使用效率。 — 项目提供了多平台支持和开源特性，较好地解决了开发者对代理的管理需求，具有较高的实用性和革新性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/tester-army/e2e">tester-army/e2e</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/测试工具 · TypeScript
+    · +345 today · 3121 stars</div>
+  <p>e2e是一个为web和移动应用设计的下一代端到端测试框架，利用自然语言描述测试目标并自动执行。</p>
+  <p class="why">简化和自动化端对端测试过程，提升测试效率。 — 该项目引入了自然语言驱动测试的创新理念，利用AI进行自动化测试流程，对开发和测试人员来说具有显著的提升潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ayghri/i-have-adhd">ayghri/i-have-adhd</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/生产力 · Python
+    · +277 today · 53601 stars</div>
+  <p>这是一个为ADHD人士优化的编程助手技能，通过提供简洁明了的指令输出，帮助用户更高效地完成编程任务。</p>
+  <p class="why">解决了传统编程助手输出冗长、不够明确的问题，特别针对注意力缺陷者，简化信息处理。 — 这个项目简化了开发过程中的反馈，对于ADHD用户尤其重要，可以提高他们的工作效率，具有较高的实用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/D4Vinci/Scrapling">D4Vinci/Scrapling</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">爬虫/数据提取 · Python
+    · +246 today · 85679 stars</div>
+  <p>Scrapling 是一个高效的网络爬虫框架，能够适应不同规模的数据抓取需求，适合现代网页使用。</p>
+  <p class="why">解决了在各种复杂环境下高效抓取数据的问题，使得用户可以更轻松地进行网络数据提取。 — 该项目具有创新性，可以显著提高网络抓取的效率和灵活性，符合现代数据需求，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Effect-TS/effect">Effect-TS/effect</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/编程/开发工具 · TypeScript
+    · +243 today · 16968 stars</div>
+  <p>Effect 是一个用于构建可靠、可维护且类型安全的 TypeScript 应用程序的库，特别适合于解决大规模应用中复杂的问题。</p>
+  <p class="why">它提供了处理类型错误、依赖注入、结构化并发、调度和统一模式验证的解决方案，减少开发者在构建复杂应用时的难题。 — Effect 提供了一系列高级特性和解决方案，非常适合需要高可靠性和可维护性的生产环境，因此具备较强的影响力和实施价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/hieunc229/mailflare">hieunc229/mailflare</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">云计算/自托管服务/邮件管理 · TypeScript
+    · +241 today · 4393 stars</div>
+  <p>Mailflare 是一个自托管的电子邮箱服务，旨在为个人和团队提供灵活的自定义域名邮箱解决方案。</p>
+  <p class="why">Mailflare 解决了专业人士和团队在自定义域名下管理电子邮件的问题，用户能够在自己的 Cloudflare 账户中自由配置邮箱服务。 — 该项目提供了灵活、可自托管的邮件服务结合了现代化的功能，适合团队和专业用户，能够有效提升邮件管理效率，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/michael-denyer/pstack-claude">michael-denyer/pstack-claude</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · JavaScript
+    · +232 today · 1141 stars</div>
+  <p>这是一个为Claude Code、Codex和其他代理框架提供工作流优化的工具，能够提升开发者的编码和代码审查效率。</p>
+  <p class="why">通过提供严谨的工作流和工具支持，解决了开发中的并发错误和测试无法覆盖的问题，同时简化了代码编写与审核流程。 — 该项目在AI代理环境中提升了开发者的工作效率，尤其适用于追求高质量代码的团队，具备显著的应用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/jamwithai/production-agentic-rag-course">jamwithai/production-agentic-rag-course</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/教育/在线课程 · Python
+    · +220 today · 9564 stars</div>
+  <p>这是一个专注于构建现代RAG系统的学习项目，旨在打造一个能够自动获取学术论文的AI研究助手，大幅提高学术研究效率。</p>
+  <p class="why">项目解决了学术研究者在获取和理解文献方面的困难，通过集成先进的检索增强生成技术，实现高效的信息获取和处理。 — 项目以实用的角度出发，教授现代AI系统的构建方法，特别是在RAG领域的应用，具备较高的实用性和专业性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/antirez/ds4">antirez/ds4</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/基础设施 · C
+    · +211 today · 23447 stars</div>
+  <p>DwarfStar项目致力于在消费级硬件上高效运行大型语言模型，是一款面向本地推理的引擎，支持多种硬件平台，具有良好的实用性和性能。</p>
+  <p class="why">解决了在个人硬件上运行大型语言模型的难题，使得消费者可以利用高性能设备进行推理工作。 — 该项目有潜力在AI推理领域中改变开发者和用户的工作方式，尤其是在消费级市场中，可以有效降低对高成本服务器的依赖。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/coreyhaines31/marketingskills">coreyhaines31/marketingskills</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/市场营销 · JavaScript
+    · +197 today · 53074 stars</div>
+  <p>该项目专注于为人工智能代理提供市场营销相关的技能，适合希望利用AI进行市场营销的技术营销人员和创始人。</p>
+  <p class="why">解决了AI在市场营销领域的应用，让技术营销人员能够更加高效地进行转化优化、文案撰写、SEO分析等任务。 — 项目具有显著的实用价值，能够帮助提升市场营销效果，特别是在AI技术越来越普及的背景下，可能改变部分营销工作方式，但尚需更广泛的用户反馈和实践检验。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/p-e-w/heretic">p-e-w/heretic</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/自然语言处理 · Python
+    · +171 today · 33236 stars</div>
+  <p>Heretic 是一款自动化工具，用于从变压器基础的语言模型中去除审查，以提高其响应能力。</p>
+  <p class="why">解决了语言模型在安全审查下的响应限制问题，提高了模型的实用性。 — 该项目通过先进的算法实现自动去审查，具有很大的潜力改变语言模型的应用方式，适合广泛用途。但仍需关注其合规性和伦理问题。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/handsomestWei/patent-disclosure-skill">handsomestWei/patent-disclosure-skill</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">专利管理/技术文档 · Python
+    · +151 today · 10989 stars</div>
+  <p>这是一个关于中国专利交底书编写与专利解读的工具，旨在降低专利撰写的门槛和提高效率。</p>
+  <p class="why">解决了专利交底书编写的复杂性，使研发人员能够更方便地整理和撰写专利申请资料。通过通俗化专利解读，提高了专业术语的可理解性。 — 项目具有实际应用价值，能够有效提升专利撰写和解读效率，适合科研人员和工程师使用，有潜力改变工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/autonomous-agents · TypeScript
+    · +109 today · 73877 stars</div>
+  <p>Ruflo 是一个强大的多智能体框架，支持智能工作流和对话式 AI 系统的开发，具有自适应记忆和自我学习的特性。</p>
+  <p class="why">提供了一个易于使用的平台，助力开发复杂的多智能体系统；支持多种 AI 插件，提升工作效率和智能化程度。 — Ruflo 在多智能体系统领域具有创新性，其自学习和自适应能力有潜力显著改变工作流程，值得开发者关注与尝试。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/LuxAlgo/Vela">LuxAlgo/Vela</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/金融技术 · TypeScript
+    · +103 today · 960 stars</div>
+  <p>LuxAlgo的Vela是一个高效、可扩展的金融图表库，专为Web设计，支持多种数据提供者及插件扩展。</p>
+  <p class="why">解决了在Web上快速、交互式绘制金融图表的问题，适合开发者实现定制化需求。 — 项目的高性能自定义图表绘制能力和良好的扩展性使其在金融技术领域具有重要用途，能够显著改善相关开发流程。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/n8n-io/n8n">n8n-io/n8n</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/工作流自动化 · TypeScript
+    · +100 today · 206660 stars</div>
+  <p>n8n是一个公平编码的工作流自动化平台，结合AI能力，支持自托管与云部署，并提供400多种集成。</p>
+  <p class="why">解决了企业在工作流管理中对AI集成和自动化的要求，简化了复杂工作流的创建与维护。 — n8n允许用户无锁定地接入多种AI模型，非常灵活，并且其广泛的集成功能可以大幅提升企业工作效率，是值得关注的工具。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/iptv-org/iptv">iptv-org/iptv</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/媒体流 · TypeScript
+    · +94 today · 140331 stars</div>
+  <p>这是一个全球范围内的公开IPTV频道的收集项目，允许用户获取和观看各种在线电视节目。</p>
+  <p class="why">该项目解决了获取和播放IPTV频道的问题，使用户能够方便地通过链接观看直播频道。 — 作为一个旨在集合全球IPTV频道的项目，该库提供了丰富的内容和用户友好的接口，能够显著提升用户观看在线电视的体验，尽管在法律性和版权方面可能存在争议，但其开放性和可访问性使其在普通用户中的影响力非常大。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/vercel-labs/skills">vercel-labs/skills</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端 · TypeScript
+    · +84 today · 33133 stars</div>
+  <p>这是一个用于操作开放代理技能的命令行工具，支持多种编码代理，使得用户可以轻松启动和使用不同的技能。</p>
+  <p class="why">解决了用户在使用多种编码代理时的技能管理问题，简化了技能的安装和使用过程。 — 该项目提供了多种编码代理的支持，具备良好的实用性和灵活性，是一项重要的开发工具，可能会影响开发者的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/earthtojake/text-to-cad">earthtojake/text-to-cad</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/CAD · Python
+    · +83 today · 16866 stars</div>
+  <p>该项目为用户提供了将文本转化为计算机辅助设计（CAD）的能力，增强传统CAD工具的功能，特别是在机械工程和机器人领域。</p>
+  <p class="why">解决用户通过自然语言生成CAD模型的问题，提高了设计流程的效率；支持多种输出格式，满足多样化的工程需求。 — 该项目引入了自然语言处理与CAD设计结合的新方式，可能会改变设计工程师的工作流，是一个值得关注的技术趋势。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/rmyndharis/OpenWA">rmyndharis/OpenWA</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">API/开发工具/自托管/前端/安全 · TypeScript
+    · +66 today · 15028 stars</div>
+  <p>OpenWA 提供自由、开源的WhatsApp API网关，适合开发者使用，解决了信息基础设施的控制问题。</p>
+  <p class="why">用于开发者搭建自己的WhatsApp消息基础架构，避免厂商锁定和隐藏费用。 — 项目提供了一种灵活的架构，可根据用户需求进行定制，同时又是开源的，填补了一定市场需求，具有较大的应用潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/pascalorg/editor">pascalorg/editor</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">3D 建筑设计/AI/开源工具 · TypeScript
+    · +63 today · 24625 stars</div>
+  <p>Pascal Editor 是一款开源的本地优先 3D 建筑编辑器，结合了 AI 代理的接口，提供流畅的用户体验与强大的建筑设计能力。</p>
+  <p class="why">解决了建筑设计过程中的可视化与交互难题，支持用户与 AI 一同进行设计工作。 — 项目结合了最新的 3D 技术和 AI 能力，为建筑设计领域提供了创新工具，特别适合需要高效合作的设计团队和个人。相较于传统 CAD 工具，Pascal Editor 提供了更加直观和丰富的用户体验。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ok-oldking/ok-wuthering-waves">ok-oldking/ok-wuthering-waves</a>
+    <span class="sig" role="img" aria-label="关注度 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">游戏自动化工具 · Python
+    · +59 today · 7551 stars</div>
+  <p>这是一个基于图像识别技术的自动化程序, 可以为《鸣潮》游戏提供后台自动操作功能。</p>
+  <p class="why">解决了玩家在游戏中进行无聊的重复性操作的问题，提升了游戏的便利性和效率。 — 具备独特的自动化功能，但由于其目的涉及游戏的自动化，可能会面临游戏公司对其合法性的审查，尚难以定义为突破性项目。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
