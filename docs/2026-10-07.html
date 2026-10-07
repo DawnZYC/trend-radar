@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-10-07</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 18 signals</div>
+    <h1>2026-10-07</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天 GitHub Trending 的技术趋势信号显示，AI工具和开发效率的提升依然是关注焦点。许多项目围绕如何优化开发流程和提升工作效率展开，反映出开发者对高效、易用工具的强烈需求。值得关注的三大项目包括：Omnigent，它提供了一个强大的AI代理框架，能够高效管理和协作多种AI代理，显著提高开发者的工作效率；Caddy，作为一款自动支持HTTPS的Web服务器，简化了网站加密的配置过程，提升了网络安全；Agency Agents则致力于高效管理多种AI工具的代理，方便用户实现更流畅的开发体验。这些项目不仅展示了当前技术的发展方向，也为开发者提供了实用的解决方案。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/omnigent-ai/omnigent">omnigent-ai/omnigent</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +28 today · 10631 stars</div>
+  <p>Omnigent是一个开放源代码的AI代理框架，允许用户在不同设备上协作和管理多种AI代理，提高开发效率。</p>
+  <p class="why">Omnigent解决了多个AI代理协作和管理的问题，支持跨设备实时同步和政策管理。 — 项目具备跨平台协作和多模型支持的能力，为开发者提供更高效的工作流程，可能改变AI开发的现状。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/caddyserver/caddy">caddyserver/caddy</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端/Web 服务器 · Go
+    · +24 today · 77418 stars</div>
+  <p>Caddy 是一个快速且可扩展的多平台 Web 服务器，支持 HTTP/1-2-3，且默认为 HTTPS 提供 TLS 加密。</p>
+  <p class="why">为用户简化了网站加密的配置过程，自动支持 HTTPS，提升了网站安全性。 — 作为一个强大的自动化HTTPS支持的Web服务器，Caddy极大地简化了用户的部署与管理过程，能有效提升网络安全，是当前Web服务器领域的重要创新。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/morluto/rea">morluto/rea</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">逆向工程/开发工具 · TypeScript
+    · +2956 today · 9572 stars</div>
+  <p>这是一个强大的逆向工程工具，旨在帮助开发者分析和理解软件及其行为。</p>
+  <p class="why">解决了逆向工程的复杂性，使得从二进制文件到应用程序的行为分析变得更加可行和高效。 — 项目提供了一系列逆向工程工具，促进了代码还原和功能理解，尤其对安全领域的开发人员具有重要意义，尽管还不能算作突破性的技术，但决对是一个值得关注的工具集。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/DuarteSantos8/openGym">DuarteSantos8/openGym</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">健身应用 / 自我托管 / 数据安全 · JavaScript
+    · +1419 today · 5727 stars</div>
+  <p>开源的健身和自我记录应用，强调数据隐私和自主控制。</p>
+  <p class="why">解决了用户在使用健身应用过程中对隐私和数据存储的担忧，同时提供了一套完整的锻炼记录管理工具。 — 项目突出了自我托管和数据隐私的优点，适应了用户对数据安全的高需求，可能会推动健身软件市场向更加自主透明的方向发展。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/boykopovar/AnyPS5">boykopovar/AnyPS5</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">游戏工具 · C++
+    · +949 today · 6613 stars</div>
+  <p>这是一个用于将 PS5 可执行文件自动移植到 Linux 和 Windows 的工具，具有较高的技术实用性和兼容性。</p>
+  <p class="why">解决了 PS5 游戏在非原生平台上的运行问题，促进了游戏的多平台兼容性。 — 项目提供了实用的游戏移植工具，且有助于游戏开发者和玩家在不同平台间进行更好的游戏体验，具有相当的技术价值和市场需求。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/msitarzewski/agency-agents">msitarzewski/agency-agents</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Shell
+    · +623 today · 157842 stars</div>
+  <p>本项目提供了一整套AI代理，旨在通过个性化的专家助力工作流程提升效率。</p>
+  <p class="why">提供专门化的AI工具以替代常规的工具集，帮助用户更高效地完成任务。 — 项目的创新之处在于将多个AI特化代理整合，为用户提供个性化的解决方案，尽管产出效果需进一步验证，但其应用潜力巨大。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/数据可视化 · HTML
+    · +228 today · 44060 stars</div>
+  <p>一个创新的图表设计工具，旨在提升图示质量与品牌一致性，解决了常见的图示设计问题。</p>
+  <p class="why">为设计师提供高质量且快速生成的图示，解决了与现有工具（如 Figma）的繁琐流程的问题。 — 该项目通过提供针对品牌的编辑质量视觉类型，降低了设计门槛，可能会显著改变设计师的工作流程。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/deepseek-ai/DeepGEMM">deepseek-ai/DeepGEMM</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">基础设计 · Cuda
+    · +199 today · 8713 stars</div>
+  <p>DeepGEMM 项目展示了高效的 GPU BLAS 核心库实现，专注于现代大语言模型的计算原语，具有显著的性能优势和易于学习的特性。</p>
+  <p class="why">解决了高性能矩阵计算的需求，并优化了 CUDA 编译过程，降低了用户的使用门槛。 — 该项目通过简化 GPU 核心库的使用和高性能计算，能够对深度学习领域的研究及应用产生积极影响，适合开发者使用并促进相关技术的普及。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/anthropics/knowledge-work-plugins">anthropics/knowledge-work-plugins</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +147 today · 26446 stars</div>
+  <p>该项目为知识工作者提供了插件，通过Claude Cowork平台提升团队工作流和效率。</p>
+  <p class="why">解决了知识工作者在不同职能上的需求定制，实现个性化工作辅助，提高工作效率。 — 该项目将AI技术与专业领域结合，提供多种定制化插件，能够显著提升团队协作和工作效率，具有较高的实用价值和广泛适用性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/wilbowes/EchoMuse">wilbowes/EchoMuse</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/智能家居/语音助手 · Python
+    · +53 today · 1099 stars</div>
+  <p>一个将旧款 Echo Dot 设备转变为本地语音助手的项目，可以增强智能家居体验。</p>
+  <p class="why">为没有Amazon账号的用户提供本地化语音助手的解决方案，充分利用旧设备，降低环境影响。 — 项目利用旧设备，转变为无依赖于云服务的本地语音控制方案，适合智能家居爱好者，具备较高的实用价值和潜在影响力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/dortania/OpenCore-Legacy-Patcher">dortania/OpenCore-Legacy-Patcher</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">基础设施/开源工具 · Python
+    · +40 today · 18479 stars</div>
+  <p>该项目旨在为不受苹果支持的老旧 Mac 电脑提供新生命，使其能够安装和使用最新版本的 macOS。</p>
+  <p class="why">解决了旧款 Mac 无法升级到最新 macOS 的问题，延长了设备使用寿命。 — 项目通过技术手段突破了苹果的限制，使得用户能在旧设备上体验新系统，具有较高的实用性及代替性，吸引了大量关注和使用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/backnotprop/plannotator">backnotprop/plannotator</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/人工智能工具 · TypeScript
+    · +25 today · 9183 stars</div>
+  <p>Plannotator 是一个用于视觉化审查 AI 编码代理计划和代码差异的工具，旨在提升团队协作和代码反馈效率。</p>
+  <p class="why">解决了工程师在与 AI 编码代理协作时的反馈和审查效率问题，便于添加批注、检查代码并给予及时反馈。 — 该项目极大优化了与 AI 工具的交互过程，提高了团队的工作效率，具有较高的应用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Mathieu2301/TradingView-API">Mathieu2301/TradingView-API</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">金融科技/数据分析工具 · TypeScript
+    · +22 today · 5540 stars</div>
+  <p>TradingView-API 是一个用于获取实时股票和加密货币市场数据的项目，支持回测和策略开发，适合交易者使用。</p>
+  <p class="why">为交易者提供了一个独立的 API，方便获取和使用 TradingView 的市场数据，提升了交易策略的实现效率。 — 该项目为金融交易者提供了易于使用的实时数据访问接口，具有广泛的应用潜力，能够显著提升用户的工作效率和策略回测能力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/raullenchai/Rapid-MLX">raullenchai/Rapid-MLX</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/基础设施/人工智能 · Python
+    · +16 today · 3920 stars</div>
+  <p>Rapid-MLX 是一个针对 Apple Silicon 的开源 LLM 推理服务器，提供高效的工具调用服务，速度是其竞争对手的四倍。</p>
+  <p class="why">提供高性能的 LLM 推理服务，优化工具调用的可靠性和速度，特别是在 Apple Silicon 环境下。 — 该项目在提供更快的 LLM 推理服务方面具有明显优势，并针对特定平台（Apple Silicon）进行了优化，满足了编程代理的需求，具有较高的应用潜力和创新性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/wonderwhy-er/DesktopCommanderMCP">wonderwhy-er/DesktopCommanderMCP</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/自动化 · TypeScript
+    · +13 today · 9942 stars</div>
+  <p>Desktop Commander MCP 是一款集成了多种 AI 功能的终端控制工具，能够执行长时间运行的命令并管理进程，适用于开发者日常任务的自动化。</p>
+  <p class="why">解决了开发者在本地文件管理和命令执行上的高效性问题，减少了使用 API 提交的成本。 — 该项目整合了终端操作和 AI 能力，能够显著提高开发效率，与传统工作方式相比具备创新性，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Bennettxai/FounderOS-DEMO">Bennettxai/FounderOS-DEMO</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/个人生产力 · TypeScript
+    · +10 today · 987 stars</div>
+  <p>FounderOS-DEMO 是一个开源的个人运营系统，通过一个实时仪表板为单人运营公司提供AI驱动的业务支持，旨在简化业务管理。</p>
+  <p class="why">帮助单人运营的企业集中管理多项业务职能，优化工作流程，减少时间和精力投入。 — 该项目在提升个人生产效率上有显著潜力，其集成的多功能平台可以革新单人创业者的工作方式，尤其在AI应用上具有前景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/msitarzewski/agency-agents-app">msitarzewski/agency-agents-app</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/开发工具 · TypeScript
+    · +10 today · 664 stars</div>
+  <p>Agency Agents 提供了一种高效的方式来组织和管理多个 AI 工具中的代理安装，提高开发效率。</p>
+  <p class="why">解决了不同 AI 工具间代理格式不统一的问题，让用户可以更方便地浏览、安装和追踪代理。 — 这个项目在管理 AI 代理方面提供了独特的本地存储和安装追踪功能，尤其适合多个工具的用户，是个值得关注的应用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Free-TV/IPTV">Free-TV/IPTV</a>
+    <span class="sig" role="img" aria-label="关注度 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/视频流 · Python
+    · +25 today · 20965 stars</div>
+  <p>这是一个提供全球免费电视通道的M3U播放列表项目。</p>
+  <p class="why">解决了用户获取和观看全球各种免费电视频道的需求。 — 项目受到了较多关注，但更像是一个实用工具，而非颠覆性创新。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
