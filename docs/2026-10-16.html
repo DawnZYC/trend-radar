@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-10-16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-10-16</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的GitHub Trending项目显示出人工智能和安全领域的强劲趋势，开发者们愈发关注如何提高工作效率与代码安全。值得特别关注的三大项目包括：Ghidra，这是一款国家安全局开发的软件反向工程框架，其强大的分析能力在安全分析领域具有重要影响；PentAGI，一款全面自动化的AI渗透测试工具，展示了革命性的渗透测试能力；以及Rust，这门高性能、内存安全的编程语言在现代系统开发中日益受到青睐。上述项目反映了当前软件开发中对安全性、效率与先进技术的迫切需求，值得开发者们深入探索。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/NationalSecurityAgency/ghidra">NationalSecurityAgency/ghidra</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">安全/软件分析 · Java
+    · +1369 today · 88736 stars</div>
+  <p>Ghidra是一个强大的软件反向工程框架，由美国国家安全局开发，提供了一系列高端的软件分析工具，支持多种平台，并可定制扩展。</p>
+  <p class="why">Ghidra解决了复杂软件反向工程中的规模和团队协作问题，帮助分析恶意代码和识别潜在网络与系统漏洞。 — Ghidra作为国家安全局的项目，不仅功能强大，且对安全分析领域具有重要影响，能够极大提高软件分析的效率和效果，是行业中的一项突破性工具。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/vxcontrol/pentagi">vxcontrol/pentagi</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">安全工具/人工智能 · Go
+    · +1070 today · 30471 stars</div>
+  <p>PentAGI 是一个全面自动化的 AI 渗透测试工具，具有执行复杂任务的能力。</p>
+  <p class="why">它解决了传统渗透测试人工执行的时效性和复杂性问题，通过自动化技术提高工作效率。 — 项目展示了出色的技术实力和创新，可能会在网络安全领域带来革命性变化，吸引了大量开发者的关注和参与。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/stablyai/orca">stablyai/orca</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/前端 · TypeScript
+    · +949 today · 93474 stars</div>
+  <p>Orca 是一个用于管理并行智能代理的开发环境，支持多种平台，具有手机监控和多工作树并行处理功能。</p>
+  <p class="why">帮助开发者同时运行多个智能助手以提高效率，支持在不同环境中管理和协调多代理工作。 — 该项目通过并行处理和跨平台支持显著提高了开发效率，具有改革式的潜力，对开发者工作方式将产生深远影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/xerj-org/xerj">xerj-org/xerj</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/搜索引擎 · Rust
+    · +715 today · 5631 stars</div>
+  <p>XERJ 是一种新型的 AI 数据搜索工具，通过自动索引功能，显著减少了数据检索的资源消耗，是一种对编程工作有显著改进的工具。</p>
+  <p class="why">解决了传统代码和文档检索效率低下、资源浪费的问题，特别是在大数据集和多格式文件的处理上。 — 该项目利用自动化索引和减少令牌使用的策略，可能彻底改变开发者在数据检索和编码任务中的工作方式，具有很大的应用价值和潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/rust-lang/rust">rust-lang/rust</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">编程语言/开源/软件开发 · Rust
+    · +205 today · 120303 stars</div>
+  <p>Rust 是一种高性能、内存安全的编程语言，旨在推动可靠高效软件的开发，受到广泛欢迎。</p>
+  <p class="why">Rust 通过其独特的所有权模型和丰富的类型系统解决了内存管理和线程安全的问题，减少了运行时错误和崩溃的可能性。 — Rust 在性能和安全性方面具备突破性优势，适用于大规模和关键性的系统编程，改变了开发者对内存安全及并发编程的传统看法。其工具链的完善也极大提升了开发效率。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/python/cpython">python/cpython</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">编程语言 · Python
+    · +127 today · 77566 stars</div>
+  <p>这是 Python 编程语言的官方版本，具备广泛用途和强大社区支持。</p>
+  <p class="why">Python 为开发者提供了一种高效、易于学习的编程语言方案，解决了快速开发和脚本编写的需求。 — 作为一门流行的编程语言，Python 在数据科学、网页开发、自动化等多个领域中都有重要的应用，极大地改变了软件开发的方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/microsoft/playwright">microsoft/playwright</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端/自动化测试工具 · TypeScript
+    · +81 today · 97800 stars</div>
+  <p>Playwright 是一个用于 Web 测试和自动化的框架，支持使用单一 API 测试 Chromium、Firefox 和 WebKit 浏览器。</p>
+  <p class="why">解决了跨浏览器的自动化测试难题，为开发者提供了统一的测试接口。 — 项目提供了强大的跨浏览器测试能力，以及现代化的自动化测试解决方案，对软件开发过程中的质量保障具有深远影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/vuejs/core">vuejs/core</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端/开源框架 · TypeScript
+    · +76 today · 54646 stars</div>
+  <p>Vue.js是一个逐步可采用的JavaScript框架，广泛用于构建Web UI，受到了社区的积极支持和贡献。</p>
+  <p class="why">Vue.js解决了快速构建用户界面的问题，提供了一个易于上手且灵活的开发框架，适合各类规模的项目。 — Vue.js作为一个成熟的框架，拥有大量用户和丰富的生态系统，其灵活性和易用性改变了许多开发者的工作方式，因此值得高度关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/nestjs/nest">nestjs/nest</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">框架 / 开发工具 · TypeScript
+    · +55 today · 76852 stars</div>
+  <p>Nest 是一个现代化的 Node.js 框架，支持构建高效和可扩展的服务器端应用程序，具有强大的 TypeScript 支持和良好的模块化设计。</p>
+  <p class="why">Nest 解决了开发复杂服务器端应用程序的需求，提供了一个结构良好、可扩展性强的开发平台，极大提高了开发效率。 — Nest 结合了现代开发理念和技术，使得后端开发变得更加高效和灵活，具备很强的实用性和市场前景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/nvm-sh/nvm">nvm-sh/nvm</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端/工具 · Shell
+    · +45 today · 95544 stars</div>
+  <p>Node 版本管理工具，为开发者提供便捷的 Node.js 版本管理，提升开发效率。</p>
+  <p class="why">解决了多版本 Node.js 管理的复杂性问题，方便用户在不同项目中使用特定版本的 Node.js。 — 这是一个成熟且广泛使用的工具，已经成为 Node.js 开发者的标准配置，极大提升了开发工作效率，具有重要的实用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/grafana/grafana">grafana/grafana</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端/数据可视化 · TypeScript
+    · +39 today · 77296 stars</div>
+  <p>Grafana 是一个开源的可观测性和数据可视化平台，支持从多个数据源（如 Prometheus、Loki、Elasticsearch 等）查询和可视化性能指标、日志和追踪信息。</p>
+  <p class="why">解决了多数据源监控和可视化的问题，支持灵活的实时数据展示和多元化数据分析。 — Grafana 是当前数据可视化领域的重要工具，具有广泛的应用场景和社区支持，是实现数据驱动决策不可或缺的项目。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +716 today · 53079 stars</div>
+  <p>CLI-Anything 是一个旨在将所有软件变得适合人工智能代理的工具，提供一个便捷的命令行管理平台，广泛适用于各种社区构建的 CLI 工具。</p>
+  <p class="why">解决了多软件平台之间的集成问题，使得用户可以通过统一的命令行接口使用不同的应用。提供了支持快速构建和管理 CLI 工具的功能，便利开发者和用户的交互。 — 项目展示了将人工智能与现有软件工具结合的新可能性，具有较强的创新性和实用性，可能会对工作流程产生积极影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/anomalyco/opencode">anomalyco/opencode</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开源工具 · TypeScript
+    · +401 today · 213922 stars</div>
+  <p>OpenCode 是一个开源的 AI 编程代理，旨在通过高效的编码助手提升开发效率。</p>
+  <p class="why">简化编程过程，提高编码的效率和准确性。 — 项目针对开发者需求，提供了智能编码支持，若能完善功能，有潜力改变编程工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/SegFault42/HeliosGen">SegFault42/HeliosGen</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/生成式AI工具 · TypeScript
+    · +331 today · 3104 stars</div>
+  <p>HeliosGen是一个自托管的生成式AI桌面应用，提供图像和视频生成的可视化工作流程构建功能。</p>
+  <p class="why">HeliosGen解决了用户对图像和视频生成工具的需求，提供了本地化、无须注册的使用体验，适合希望避免云端服务的用户。 — 该项目通过提供一个自托管的解决方案，回应了对隐私和数据控制的关注，非常符合当下生成式AI工具的趋势，具有高度的实用性和创新性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/anthropics/claude-plugins-official">anthropics/claude-plugins-official</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +307 today · 39080 stars</div>
+  <p>Claude Code 插件目录管理高质量插件，为开发者提供集成与扩展的便利，有助于提升使用 Claude Code 的体验。</p>
+  <p class="why">提供了一个官方插件目录，用户可以方便地找到并安装符合需求的高质量插件，提升了 Claude Code 的功能和灵活性。 — 该项目不仅为 Claude Code 用户提供了丰富的插件选择，还允许第三方开发者提交插件，同时确保一定的质量和安全标准，是对开发工作流程的积极促进。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ntdevlabs/tiny11builder">ntdevlabs/tiny11builder</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">系统工具/开发工具 · C#
+    · +194 today · 20502 stars</div>
+  <p>Tiny11 Builder 是一款用于构建定制化 Windows 11 镜像的 WinUI 应用程序, 允许用户选择去除的组件和应用。</p>
+  <p class="why">解决了 Windows 11 系统体积大和不必要组件多的问题, 提供定制化的选择以提高用户体验。 — 项目具备较高的实用性和针对性，尤其对开发者和高级用户有显著的价值，可能改变他们的使用方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ShawnPana/phone-harness">ShawnPana/phone-harness</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/自动化工具/移动开发 · Python
+    · +161 today · 3669 stars</div>
+  <p>Phone Harness 允许用户通过智能代理控制手机，提升了移动设备的自动化能力。</p>
+  <p class="why">简化了通过智能代理进行手机操作的过程；实现了无需越狱或复杂设置即可控制设备。 — 项目结合了 AI 和移动自动化技术，解决了实际应用中对手机操作的需求，具备广泛的应用潜力和创新性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/jamiepine/voicebox">jamiepine/voicebox</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/语音合成 · Python
+    · +144 today · 57596 stars</div>
+  <p>Voicebox 是一个开源的 AI 语音工作室，提供语音克隆和生成的功能，支持在本地机器上运行。</p>
+  <p class="why">该项目解决了用户需要生成或克隆语音的需求，可以被广泛应用于语音交互、游戏和虚拟现实等场景。 — 这个项目在 AI 语音生成领域具有相当大的潜力，能够通过高质量的语音克隆技术改变许多行业的工作方式，例如客户服务和创意产业，因此值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ahujasid/mcp-for-blender">ahujasid/mcp-for-blender</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/3D建模 · Python
+    · +126 today · 30965 stars</div>
+  <p>这个项目通过利用大型语言模型（LLM）来增强Blender 3D建模功能，提供了一种新的创作方式。</p>
+  <p class="why">解决了传统3D建模过程繁琐的问题，使得用户可以通过自然语言提示进行建模，提升了创作效率。 — 该项目结合了3D建模与AI技术，为创作者提供了新的工具和灵感，具有较大的应用潜力和创新性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/volcengine/OpenViking">volcengine/OpenViking</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/基础设施 · Python
+    · +105 today · 40015 stars</div>
+  <p>OpenViking 是一个自我进化的上下文数据库，旨在为人工智能代理提供统一的记忆、知识和技能管理。</p>
+  <p class="why">解决了人工智能代理在记忆和知识管理上的统一问题，实现了更高效的上下文存储和访问。 — 该项目提供了一种创新的解决方案，通过上下文数据库提升了 AI 代理的智能化和灵活性，潜在地改变了相关领域的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/supabase/supabase">supabase/supabase</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">数据库开发/后端 · TypeScript
+    · +98 today · 111614 stars</div>
+  <p>Supabase 是一个基于开源工具构建的 Postgres 开发平台，为开发者提供类似 Firebase 的体验。</p>
+  <p class="why">解决了开发者在构建 web、移动和 AI 应用时对后端服务的需求，提供容易使用的数据库解决方案。 — 该项目结合了多个强大的开源工具，功能全面，能够满足现代应用开发的需求，改变了后端服务的搭建方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/wshobson/agents">wshobson/agents</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/插件市场 · Python
+    · +97 today · 40863 stars</div>
+  <p>这是一个多硬件代理插件市场，提供多种AI编码工具的共同插件、技能和命令集合。</p>
+  <p class="why">简化了多种AI编码平台间的插件和技能管理，提升了开发效率。 — 该项目支持多种AI编码工具，功能强大，为开发者提供了统一的插件市场，有助于提高生产力，具有广阔的应用前景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ErTasselli/OpenTerminal">ErTasselli/OpenTerminal</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/开源工具/金融技术 · TypeScript
+    · +66 today · 1745 stars</div>
+  <p>OpenTerminal是一个基于免费公开市场数据构建的终端风格交易仪表板，适合大多数用户。</p>
+  <p class="why">解决了高昂交易终端订阅费用的问题，提供了一个可靠且无需API密钥的交易数据获取方法。 — 该项目提供了实用的功能集合，适合不愿意支付高额费用的用户，其开放性和免费使用模式具有广泛吸引力，同时在终端用户体验上也有创新。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/dimthink/PriceAI">dimthink/PriceAI</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/价格比较/订阅服务 · TypeScript
+    · +52 today · 4122 stars</div>
+  <p>PriceAI 是一款集中比价 AI 订阅和中转 API 的工具，功能丰富，符合市场需求。</p>
+  <p class="why">解决了用户在多个渠道获取 AI 订阅价格和资源时的信息不对称问题，以及对 API 利用效率的评估。 — 项目提供了较强的结构化价格对比功能，特别是在 AI 订阅领域，有望优化用户选择，然而在实际应用的真正普及度上仍需观察。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Crosstalk-Solutions/unifi-toolkit">Crosstalk-Solutions/unifi-toolkit</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">网络管理工具 · Python
+    · +44 today · 662 stars</div>
+  <p>这是一个功能全面的工具集，旨在提升UniFi网络管理和监控的效率。</p>
+  <p class="why">解决了UniFi网络环境中的设备管理、监控及安全事件分析等问题。 — 项目提供了多种实用功能，能够显著提高网络管理的便利性和安全性，同时具备实时监控及设备分析能力，适用于需要高效管理和监控网络的用户。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
