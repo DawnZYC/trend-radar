@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-10-30</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-10-30</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的技术趋势信号体现了AI与开发工具的深度融合，多个新项目聚焦于提高工作效率、保护隐私和优化用户体验。在这些项目中，最值得关注的三款是RuView、Claude Code Game Studios和Shannon。RuView通过WiFi信号实现无缝隐私友好的监测，重新定义了家居监控方式；Claude Code Game Studios模拟游戏开发流程，提高了效率，是独立开发者的潜在利器；而Shannon作为一款AI驱动的渗透测试工具，在提升网络安全测试效率方面具有突破性意义。如果您对这些前沿项目感兴趣，可以进一步探索它们的应用与发展潜力。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ruvnet/RuView">ruvnet/RuView</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">IoT/前端/安全 · Rust
+    · +596 today · 101585 stars</div>
+  <p>RuView可以通过WiFi信号实现实时空间智能化，监测生命体征和检测存在感，无需使用视频或穿戴设备。</p>
+  <p class="why">解决了在多种环境下进行隐私友好的监测问题，无需依赖于传统的监控设备。 — 该项目有潜力重塑智能家居监测和隐私保护的方式，具备创新性和实用性，有可能引领相关领域的发展。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Donchitos/Claude-Code-Game-Studios">Donchitos/Claude-Code-Game-Studios</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/游戏开发工具 · Shell
+    · +353 today · 29275 stars</div>
+  <p>Claude Code Game Studios提议使用AI代理来模拟游戏开发的完整流程，旨在提高开发效率与质量。</p>
+  <p class="why">解决了AI游戏开发中的结构化管理问题，提高开发效率及质量控制。 — 该项目通过提供具有明确责任和分工的49个AI代理，仿真真实的游戏开发工作室，能极大地改变独立游戏开发者的工作方式，是潜在的突破性工具。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/KeygraphHQ/shannon">KeygraphHQ/shannon</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/安全工具/渗透测试 · TypeScript
+    · +334 today · 50419 stars</div>
+  <p>Shannon 是一款 AI 驱动的网络应用和 API 渗透测试工具，能自动分析源代码并验证安全漏洞，具有显著的实用性和前景。</p>
+  <p class="why">提供便捷高效的渗透测试解决方案，特别是在 DevSecOps 环境中，帮助开发者在代码上线前识别并解决安全漏洞。 — 作为一个开放源码的自动化渗透测试工具，Shannon 能够显著提高测试效率，是网络安全领域中的一项突破性技术，颠覆了传统手动渗透测试的方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/beenuar/AiSOC">beenuar/AiSOC</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/安全/开源工具 · Python
+    · +320 today · 5149 stars</div>
+  <p>AiSOC 是一个开源的自托管 AI 安全运营中心，提供了整合和调查安全事件的能力，支持人机协作决策，有助于提升网络安全响应效率。</p>
+  <p class="why">解决了安全事件的快速检测、关联和响应问题，提高了安全运营团队的工作效率和准确率。 — 该项目集成了先进的 AI 和自动化工作流，能够从大量安全监控数据中筛选、调查和提出响应措施，极有可能改变网络安全领域的操作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/n8n-io/n8n">n8n-io/n8n</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/自动化平台 · TypeScript
+    · +161 today · 209051 stars</div>
+  <p>n8n是一个公平代码的工作流自动化平台，具备原生AI能力，支持可视化构建和自定义代码，提供了丰富的集成选项。</p>
+  <p class="why">解决了工作流自动化与AI集成的难题，提供了简便的方式进行复杂的工作流设计。 — n8n结合了低代码和AI功能，满足了企业对于AI工作流和集成的强烈需求，具有潜在的颠覆性和广泛的应用前景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/p-e-w/heretic">p-e-w/heretic</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/基础设计/前端 · Python
+    · +152 today · 37125 stars</div>
+  <p>Heretic 是一个自动化去审查语言模型的工具，能够在不进行昂贵后期训练的情况下，使用先进的方向性消融技术和参数优化方法。</p>
+  <p class="why">解决了对语言模型的审查问题，使得用户可以轻松去除模型中的审查机制，同时保持模型的智能性。 — 该项目在消除语言模型的安全审查方面具有很高的创新性和实用性，能够改变语言模型的使用方式，有潜力促进AI的发展。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/openobserve/openobserve">openobserve/openobserve</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">前端/监控/数据分析 · TypeScript
+    · +34 today · 22599 stars</div>
+  <p>OpenObserve 是一个开源的监控平台，以低存储成本和高性能为特点，旨在取代数据监控领域的主要产品。</p>
+  <p class="why">提出了高效且低成本的可观察性解决方案，简化了数据监控的部署与管理。 — 作为一种对标 Datadog 和 Splunk 的替代方案，OpenObserve 通过大幅降低存储成本并提升使用便捷性，有潜力改变企业数据监控的方式。其创新的存储设计和一体化的部署方式，使得复杂的监控操作大大简化。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/milind-soni/OpenMausBot">milind-soni/OpenMausBot</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · TypeScript
+    · +1199 today · 7531 stars</div>
+  <p>OpenMausBot 是一个开源的 Grok Bot 替代品，能够在一个聊天应用中使用多种 AI 代理。</p>
+  <p class="why">提供了一个可以自托管的多代理 AI 系统，允许用户选择不同的 AI 模型和个性，以满足特定需求。 — 该项目提供了灵活的 AI 代理选择和本地运行能力，有潜力改变用户与 AI 联系的方式，尤其在团队协作和个性化服务方面具有前景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/rlaope/oh-my-hermes">rlaope/oh-my-hermes</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +267 today · 4832 stars</div>
+  <p>oh-my-hermes 是一个集成了 Hermes Agent 的编程工具包，旨在提升开发者的工作效率和智能化程度。</p>
+  <p class="why">该项目解决了如何优化智能代理在IDE中的使用和管理的问题，使得开发过程更加高效和自动化。 — 该项目通过提供一个整合不同智能模型的框架，有助于改善开发效率，尤其在需要多种智能技能的场景下表现突出，具有改变工作方式的潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/lfnovo/open-notebook">lfnovo/open-notebook</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端 · TypeScript
+    · +220 today · 40940 stars</div>
+  <p>Open Notebook 是一个开源、私密性强的笔记应用，提供了灵活的特性与多模型支持。</p>
+  <p class="why">为用户提供了一个替代传统笔记应用的私密方案，允许用户自由选择 AI 模型并管理自己的内容。 — 该项目为用户提供了自主控制和多样化选择，适应了当前对隐私和多样化 AI 模型需求的趋势，具有较高的实际应用潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/expo/skills">expo/skills</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Shell
+    · +212 today · 3759 stars</div>
+  <p>Expo Skills 是一个为 Expo 项目构建和调试提供的 AI 代理技能集合，帮助开发者高效使用 Expo API。</p>
+  <p class="why">解决了开发者在使用 Expo 进行应用开发时, 如何有效利用 API 和工具的问题。 — 这个项目提供了一套工具来增强 AI 代理的功能，使得开发过程更加高效，尤其是对于使用 Expo 的开发者来说，能够显著提高工作效率，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/JCodesMore/ai-website-cloner-template">JCodesMore/ai-website-cloner-template</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/AI工具 · TypeScript
+    · +156 today · 37948 stars</div>
+  <p>该项目提供了一种使用AI代码代理快速克隆任何网站的解决方案，为开发者节省了时间。</p>
+  <p class="why">简化网站克隆过程，开发者可以通过一条命令重建网站，提升效率和易用性。 — 项目利用AI自动化网站克隆，具有较强的实用性和创新性，虽然还不够成熟，但对开发者而言是个不错的工具。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/agentscope-ai/QwenPaw">agentscope-ai/QwenPaw</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/个人助手 · TypeScript
+    · +152 today · 36910 stars</div>
+  <p>QwenPaw 是一款个人 AI 助手，支持多种聊天应用，易于安装和部署。</p>
+  <p class="why">提供了一种便捷的个人AI助手解决方案，可以在本地或云上部署，提高用户的聊天效率和交互体验。 — 该项目具有较高的自主部署性和多平台兼容性，适用于家庭或小型企业用户，能显著改善日常工作方式，故给予高分。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/xiaolai/the-craft-of-selfteaching">xiaolai/the-craft-of-selfteaching</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">教育/自学 · Jupyter Notebook
+    · +143 today · 18844 stars</div>
+  <p>这本书通过自学的角度探讨了学习编程的重要性，并为自学提供了具体的步骤和指导。</p>
+  <p class="why">提供了学习编程的框架和方法，帮助自学者掌握如何更有效地学习新知识。 — 该项目不仅提供了实用的学习路径，同时也强调了自学的重要性，适合广泛的读者群体，能够改变个人学习方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/PurpleDoubleD/locally-uncensored">PurpleDoubleD/locally-uncensored</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">本地人工智能、桌面应用 · TypeScript
+    · +111 today · 3029 stars</div>
+  <p>Locally Uncensored 是一个开源的本地 AI 工作室，提供聊天、图像和视频生成及编码代理等多种功能，适用于桌面，旨在保护用户隐私。</p>
+  <p class="why">该项目允许用户在本地计算机上进行 AI 生成任务，避免了对云端服务的依赖，保护用户数据隐私。 — 该项目的多功能集成和隐私保护特性，在当前 AI 发展的大背景下，有助于改变传统的工作方式，且易于安装和使用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/macro-inc/macro">macro-inc/macro</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/AI · Rust
+    · +106 today · 5652 stars</div>
+  <p>Macro是一个集成各种工作工具的统一工作空间，旨在通过共享AI记忆实现高效的团队协作。</p>
+  <p class="why">解决了团队协作中工具碎片化的问题，提供一个统一的操作系统，提高工作效率。 — 项目通过解决团队工作中的混乱，提供全面的工具集成，展现出改变工作方式的潜力，尤其适合中小型企业。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ChromeDevTools/chrome-devtools-mcp">ChromeDevTools/chrome-devtools-mcp</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/开发工具/自动化 · TypeScript
+    · +87 today · 54453 stars</div>
+  <p>ChromeDevTools/chrome-devtools-mcp 提供了一种将 Chrome 浏览器与 AI 编程助手集成的方式，增强了调试、性能分析和自动化能力。</p>
+  <p class="why">该项目解决了 AI 编程助手在自动化处理和调试过程中的限制，使得 AI 能够更好地控制和分析 web 应用。 — 该项目利用现有强大的 Chrome DevTools 功能，结合 AI 进行更智能的自动化和性能分析，有潜力改变开发者与 AI 工具的交互方式，提升工作效率。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/shitagaki-lab/see-through">shitagaki-lab/see-through</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/计算机视觉/动漫处理 · Python
+    · +78 today · 5144 stars</div>
+  <p>该项目通过单图像分层分解技术，为动漫角色生成可操作的2.5D模型，具有创新的自动化处理能力。</p>
+  <p class="why">解决静态动漫图像的可操作性问题，允许用户在多层级上进行编辑和自由操控，尤其适用于动画和游戏设计。 — 项目在动漫领域提供了一种新的工具，具有实际的艺术创作和技术表现潜力，为制作和加工动漫内容带来创新，有助于改变相关工作流程。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/upscayl/upscayl">upscayl/upscayl</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开源软件/图像处理 · TypeScript
+    · +76 today · 51305 stars</div>
+  <p>Upscayl 是一个开源的AI图像放大工具，支持多个操作系统，提供免费使用的选项。</p>
+  <p class="why">解决了图像放大时可能出现的清晰度下降的问题，允许用户在不牺牲质量的情况下提升图像分辨率。 — 作为一款开源项目，Upscayl 在图像处理领域提供了一个强有力的工具，尤其对于需要进行图像处理的开发者或设计师来说，实现了容易访问和较高的图像质量提升，是一个颇具价值的项目。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ParadevAI/Paradev">ParadevAI/Paradev</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具 · TypeScript
+    · +53 today · 15734 stars</div>
+  <p>ParadevAI的Paradev是一个用于并行管理多个编码助手的集成开发环境（IDE），旨在提升开发效率。</p>
+  <p class="why">解决了开发者在使用终端中多任务处理时的繁琐操作，通过专门的工作区来管理多个任务，避免了手动切换终端标签和分支的问题。 — 此项目通过改进编码助手的使用方式，有助于提高开发效率，具备重大应用价值，适合技术团队广泛采用，但需要进一步观察其实际使用效果和市场反馈。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/CopilotKit/CopilotKit">CopilotKit/CopilotKit</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/前端 · TypeScript
+    · +48 today · 38371 stars</div>
+  <p>CopilotKit 是一个开源的前端框架，用于将 AI 助手整合到各种应用中，支持多种技术栈。</p>
+  <p class="why">简化了 AI 助手与用户界面的集成，支持多种前端框架。 — 该项目提供了一种方便的方式将 AI 与用户交互界面结合，具备广泛的适用性，潜在改变工作方式，特别是在 AI 应用开发方面。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Yeachan-Heo/oh-my-claudecode">Yeachan-Heo/oh-my-claudecode</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">人工智能/开发工具/多代理系统 · TypeScript
+    · +35 today · 40412 stars</div>
+  <p>这款工具针对Claude代码提供多代理的编排方案，旨在简化开发流程，提升用户体验。</p>
+  <p class="why">简化Claude代码的使用流程，使多代理协作变得直观容易，降低了用户学习成本。 — 项目通过无缝集成多代理系统，提升了开发效率，具有较强的实用价值和创新性，适合快速发展的AI代码环境。然而，尚需观察其长期影响及社区支持情况。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/HKUDS/AutoSwarm">HKUDS/AutoSwarm</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +33 today · 2092 stars</div>
+  <p>AutoSwarm 是一个旨在将多个智能代理统一为一个协调团队的工具。</p>
+  <p class="why">解决了智能代理间的上下文共享和协作问题，使得完成复杂任务时不再需要人工协调和重复输入。 — 该项目通过整合不同能力的代理，提升了工作效率，具有变革潜力，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/alchemy-run/alchemy">alchemy-run/alchemy</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">云基础设施 / 开发工具 · TypeScript
+    · +24 today · 1805 stars</div>
+  <p>Alchemy 项目提供了一种基础设施与应用逻辑的统一解决方案，强调类型安全和无缝集成多云环境。</p>
+  <p class="why">解决了在多云环境中管理和调用基础设施的复杂性，简化了开发者的工作流程。 — 该项目通过将基础设施和逻辑结合在一个类型安全的环境中，极大地提升了开发效率，具有很大的潜力改变开发者与云服务的交互方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Raktim94/nodedr-restaurant-pos">Raktim94/nodedr-restaurant-pos</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/后端 · TypeScript
+    · +22 today · 230 stars</div>
+  <p>Nodedr OrderRestro 是一款专为餐饮业设计的自托管销售点管理系统，功能丰富，支持离线操作。</p>
+  <p class="why">解决了餐饮行业对自主控制和无订阅服务的管理需求，支持多种餐饮业务模式。 — 项目提供了针对餐厅管理的全面解决方案，离线功能尤为适合不稳定的网络环境，且自托管设计符合当前对数据隐私的关注，潜在改变餐饮行业的传统操作方式。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
