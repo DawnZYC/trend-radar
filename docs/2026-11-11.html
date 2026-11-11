@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-11-11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-11-11</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天的技术趋势主要集中在人工智能和基础设施的创新上，尤其是涉及到AI代理、物理模拟和多语言处理的项目受到了关注。其中，MuJoCo项目以其高性能的物理模拟能力，成为机器人技术和人工智能领域的重要工具；OpenSandbox提供了一个安全、高速的AI运行环境，为AI应用的开发和部署提供了强有力的支持；而VoxCPM2则通过无分词的方式生成自然流畅的语音，极大地提升了多语言语音合成的表现力。值得一提的是，这三个项目都在各自领域展现出广泛的应用潜力和创新性，代表了当前技术发展的重要方向。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/google-deepmind/mujoco">google-deepmind/mujoco</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">物理引擎/机器人技术 · C++
+    · +456 today · 17390 stars</div>
+  <p>MuJoCo 是一个通用的物理引擎，能够快速精确地模拟机器人、力学、图形和动画等领域中的关节结构与环境的交互。</p>
+  <p class="why">解决了机器人和其他领域中对高效而精确的物理模拟的需求，适用于研究和开发。 — MuJoCo 提供高性能模拟，适用于人工智能、机器人等多个领域的重要应用，具有广泛的实际价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/opensandbox-group/OpenSandbox">opensandbox-group/OpenSandbox</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/基础设施/前端 · Python
+    · +323 today · 17155 stars</div>
+  <p>OpenSandbox 是一个为 AI 应用提供安全、高速、可扩展的沙箱运行时环境的项目。</p>
+  <p class="why">提供一个隔离的环境来运行 AI 代理，确保安全性和高效性，使用 Docker 和 Kubernetes 部署。 — 该项目为 AI 代理提供了快速而灵活的运行环境，具有重要的基础设施意义，可能会对 AI 相关工作的方式产生深远影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/OpenBMB/VoxCPM">OpenBMB/VoxCPM</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">文本到语音生成 · Python
+    · +140 today · 42215 stars</div>
+  <p>VoxCPM2 是一个突破性的多语言文本到语音系统，采用无分词的方式生成自然流畅的语音，特别适合创意声音设计和真实人物的语音克隆。</p>
+  <p class="why">解决了多语言语音合成中对分词的依赖，提升了语音合成的自然性和表现力。 — 该项目具有创新的无分词处理方法和强大的多语言支持，可能会显著改变文本到语音生成的方式，是语音技术领域的一次重大进步。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ashishpatel26/500-AI-Agents-Projects">ashishpatel26/500-AI-Agents-Projects</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +126 today · 39654 stars</div>
+  <p>该项目集合展示了500多个AI代理的应用实例，涵盖多个行业，提供了丰富的开源实现案例，是一个极具实用价值的资源库。</p>
+  <p class="why">这个项目解决了学习和实现AI代理的门槛问题，适合开发者、研究人员和学生快速上手和探索不同框架的应用。 — 本项目是一个全面的资源库，提供了丰富的实例和详细的实现说明，能够帮助用户快速找到适合自己的AI代理项目，具有一定的创新性和实用性，对整个AI代理领域的发展可能产生积极影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/fosrl/pangolin">fosrl/pangolin</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">安全 · TypeScript
+    · +108 today · 23568 stars</div>
+  <p>Pangolin 是一款革命性的开源 SASE 平台，专注于安全访问和应用连接，实现网络安全统一，适合现代 IT 基础设施需求。</p>
+  <p class="why">有效解决了传统 SASE 平台的复杂性与安全隐私问题，提供简单易用的自托管解决方案。 — 该项目结合了网络和安全的最佳实践，提供了清晰的用户体验，适应现代企业需求，属于突破性解决方案。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ZhuLinsen/daily_stock_analysis">ZhuLinsen/daily_stock_analysis</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">金融科技/人工智能 · Python
+    · +960 today · 69576 stars</div>
+  <p>这是一个多市场股票分析的智能系统，旨在利用AI技术进行数据分析与决策支持。</p>
+  <p class="why">提供了一个集中化的智能决策工具，帮助用户分析及决策股票投资，从而降低迷茫和风险。 — 项目利用AI和大数据技术在股票分析领域具有前瞻性，能够极大的优化传统投资方式，并且支持多市场数据分析，符合当前金融科技发展的趋势。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/homeassistant-ai/ha-mcp">homeassistant-ai/ha-mcp</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/智能家居/自动化工具 · Python
+    · +790 today · 6700 stars</div>
+  <p>该项目利用AI助手，旨在为Home Assistant配置和自动化提供支持，具有较高的实用性和创新性。</p>
+  <p class="why">解决了家庭自动化的配置复杂性，使得普通用户也能轻松通过AI进行家庭管理和设备控制。 — 项目通过强大的AI助手实现家庭自动化的简化和智能化，具有一定的改变工作方式的潜力，但依赖于用户基础和AI技术的成熟度。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/anthropics/claude-quickstarts">anthropics/claude-quickstarts</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +531 today · 20524 stars</div>
+  <p>Claude Quickstarts 是一个帮助开发者快速构建使用 Claude API 的可部署应用程序的项目集合。</p>
+  <p class="why">简化了开发者使用 Claude API 的过程，提供了多种应用场景的快速入门解决方案，适合快速开发和原型设计。 — 该项目为开发者提供了一系列具体的快速入门示例，能有效促进 Claude API 的应用落地, 潜力巨大。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · JavaScript
+    · +465 today · 115207 stars</div>
+  <p>该项目提供了为AI编码代理设计的生产级工程技能，增强了软件开发的各个阶段的规范性和效率。</p>
+  <p class="why">提高AI编码代理在软件开发中的一致性和质量，减少人为错误和提高生产效率。 — 项目通过定义开发生命周期的命令，自动化了软件开发过程，有潜力显著提升开发效率及代码质量，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/garrytan/gbrain">garrytan/gbrain</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/记忆管理 · TypeScript
+    · +462 today · 32515 stars</div>
+  <p>GBrain 是一个有助于用户在多个 AI 代理之间管理和存储记忆的项目，可以增强现有代理的记忆功能，并支持语义搜索和记忆共享。</p>
+  <p class="why">解决了用户对 AI 代理记忆管理不善的问题，增强了信息的可追溯性与共享性。 — 该项目能够改善用户与多个 AI 代理之间的互动方式，提高记忆管理的灵活性与安全性，具有较大的应用潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Imbad0202/academic-research-skills">Imbad0202/academic-research-skills</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发展工具/基础设施设计 · Python
+    · +225 today · 56367 stars</div>
+  <p>这个项目致力于为学术研究提供全面的技能支持，尤其强调人机协作，以提高文献综述和论文写作的质量。</p>
+  <p class="why">通过提供一套针对学术研究的工具，帮助研究人员高效地进行文献搜索和论文撰写，同时确保写作质量与逻辑一致性，从而简化研究过程。 — 该项目结合了AI与学术研究，在提升研究效率与质量方面具有显著潜力，尤其是在文献综述和写作阶段，能够改变传统的研究工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/OpenCut-app/OpenCut">OpenCut-app/OpenCut</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">视频编辑/开源软件 · TypeScript
+    · +201 today · 98041 stars</div>
+  <p>OpenCut 是一款开源的视频编辑替代工具，旨在为用户提供自由且强大的编辑体验。</p>
+  <p class="why">为需要视频编辑工具的用户提供免费、开放的替代方案，特别是希望摆脱商业软件限制的创作者。 — OpenCut 项目通过重写架构并支持多平台，展示出其在视频编辑领域的创新性，尤其是在插件体系和自动化功能方面，具有潜在的广泛影响。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/tokio-rs/topcoat">tokio-rs/topcoat</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/基础设施 · Rust
+    · +192 today · 6850 stars</div>
+  <p>Topcoat是一个模块化的Rust全栈开发框架，旨在简化Web应用构建。</p>
+  <p class="why">通过提供开箱即用的功能，Topcoat解决了全栈开发中常见的繁琐配置与交互延迟问题。 — Topcoat通过将客户端的反应性与服务器端渲染结合，显著减少了开发者需要处理的样板代码，具备创新性，有潜力推动Rust在Web开发中的应用。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/WhiteTowerAI/ohmygame">WhiteTowerAI/ohmygame</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/游戏开发 · TypeScript
+    · +170 today · 2042 stars</div>
+  <p>OhMyGame 是一个开源游戏开发工作室，利用 AI 来简化游戏的创建和发布过程。</p>
+  <p class="why">解决了独立开发者在游戏开发中面临的技术门槛问题，使每个人都能轻松制作和上传游戏。 — 该项目利用 AI 技术简化了游戏开发流程，特别适合想要快速创作游戏的个人开发者，具有重要的应用价值。虽然处于测试阶段，但其创新性和易用性值得高度关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/we-promise/sure">we-promise/sure</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/个人财务管理 · Ruby
+    · +159 today · 12009 stars</div>
+  <p>Sure是一个个人理财应用程序，旨在为每个人提供服务。</p>
+  <p class="why">解决用户个人理财管理的痛点，提供财务监控和AI助手功能，让用户更容易掌握财务状况和投资建议。 — 项目在个人财务管理领域具备较强的实用性和创新性，尤其是对于想自我管理财务的用户，能够结合AI技术提供更多智能帮助，提升用户体验，值得关注和进一步探索。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/basketikun/infinite-canvas">basketikun/infinite-canvas</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/创作工具 · TypeScript
+    · +132 today · 10179 stars</div>
+  <p>无限画布是一个综合性的开源平台，专为AI创作提供多种工具与功能。</p>
+  <p class="why">解决了AI创作中的多工具整合与协作问题，提升了创作效率和交互性。 — 该项目在AI创作中具备高度整合与协作能力，可能会显著改变视觉创作和迭代的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/anthropics/claude-plugins-official">anthropics/claude-plugins-official</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/开发工具 · Python
+    · +129 today · 46785 stars</div>
+  <p>该项目是一个为Claude Code提供的高质量插件的官方目录，便于用户查找和安装相关插件。</p>
+  <p class="why">解决了用户寻找和管理Claude Code插件的复杂性，提供了一个可信赖的插件市场。 — 该项目通过集中管理插件，提高了开发者效率和安全性，具有很大潜力影响开发者的工作方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/googlecolab/google-colab-cli">googlecolab/google-colab-cli</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/集成环境 · Python
+    · +104 today · 2222 stars</div>
+  <p>该项目是一个用于访问 Google Colab 运行时的命令行界面，支持高性能计算与自动化流程。</p>
+  <p class="why">为开发者在终端中提供了与 Google Colab 直接交互的便捷方式，简化了 VM 资源管理与文件操作，提高工作效率。 — 项目具备丰富功能，支持自动化与高性能计算，可能显著提高开发者的生产力，但目前仅限于 Linux 和 macOS，限制了其应用范围。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/bradautomates/claude-video">bradautomates/claude-video</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/基础设施 · Python
+    · +92 today · 20452 stars</div>
+  <p>该项目为Claude提供了一种观看视频的能力，可以提取帧和转录内容，使其可以处理视频信息，从而增强其功能。</p>
+  <p class="why">解决了视频内容无法被AI理解的问题，使得Claude可以使用视频信息进行分析与处理。 — 项目提供了创新的功能，将视频处理能力与AI结合，拓展了AI的应用范围，具有实际应用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/SWE-agent/mini-swe-agent">SWE-agent/mini-swe-agent</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +86 today · 9519 stars</div>
+  <p>一个极简的 AI 软件工程代理，能够解决 GitHub 问题或在命令行中提供帮助，以其简单性和高性能受到了广泛关注。</p>
+  <p class="why">简化了开发者在使用 AI 解决问题时的复杂度，推动了 AI 代理在软件工程中的应用。 — 该项目以仅100行代码实现高效能，得到多家知名公司的采用，具有实用价值，可能改变开发者的工作方式，值得重点关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/neuml/txtai">neuml/txtai</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/基础设施/前端 · Python
+    · +83 today · 13278 stars</div>
+  <p>txtai 是一个全面的 AI 框架，专注于语义搜索和语言模型的工作流管理，具备多种功能和集成功能。</p>
+  <p class="why">简化了大型语言模型（LLM）的应用流程，实现了复杂问题的自主解决。提升了文档和多媒体内容的检索和处理效率。 — 该项目提供了一整套针对语义搜索和 LLM 工作流的解决方案，具备较高的技术整合度和实用性，可能在 AI 应用开发中带来变革，但尚未达到彻底改变工作方式的程度。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Open-Dev-Society/OpenStock">Open-Dev-Society/OpenStock</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/开源软件 · TypeScript
+    · +66 today · 21411 stars</div>
+  <p>OpenStock 是一个面向大众的开源股票市场跟踪平台，旨在以低成本替代昂贵的市场平台。</p>
+  <p class="why">解决了用户对实时股票价格监测和个性化提醒的需求，使得人人都能平等地获取市场信息。 — 作为一个开源产品，OpenStock 提供了一种更为平价和透明的方式来追踪股市动态，符合当前开放金融的趋势，值得关注其未来发展。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/opengeos/GeoLibre">opengeos/GeoLibre</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">基础设施/前端 · TypeScript
+    · +66 today · 8546 stars</div>
+  <p>GeoLibre是一款功能全面的GIS平台，能够在多种环境下可视化和分析地理空间数据。</p>
+  <p class="why">提供一个轻量且云原生的GIS解决方案，使用户能够在本地保护数据隐私，同时支持多种平台应用。 — 项目充分利用WebAssembly和现代前端技术，具备强大的数据处理能力，能够有效提升数据可视化与分析的工作方式，尤其适合数据科学和地理信息领域的用户。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/mantrakp04/ardia">mantrakp04/ardia</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/浏览器 · TypeScript
+    · +64 today · 1644 stars</div>
+  <p>Ardia 是一款创新的 Chromium 浏览器，专为 Mac 设计，提供独特的功能和隐私保护，适合追求在线安全和新体验的用户。</p>
+  <p class="why">提供了一种基于 Chromium 的浏览器体验，同时去除了广告和追踪，保护用户隐私。它通过侧边栏设计和分屏视图优化了多任务处理。 — 该项目通过独特的 UI 和隐私功能，有潜力改变用户的浏览习惯，特别是对重视隐私和效率的用户群体。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/XiaoYouChR/Ghost-Downloader-3">XiaoYouChR/Ghost-Downloader-3</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">下载管理工具 · Python
+    · +53 today · 11048 stars</div>
+  <p>一个功能强大的多协议下载器，支持跨平台使用。</p>
+  <p class="why">解决了在多个协议下的下载需求，提供统一的下载体验，简化了用户的操作流程。 — 项目功能强大且集成多种下载协议，适合广泛用户，同时还具备良好的用户体验，具有一定的创新性与实用性。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
