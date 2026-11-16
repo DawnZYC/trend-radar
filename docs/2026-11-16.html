@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trend Radar · 2026-11-16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --paper: #ECF1F2; --grid: rgba(23, 62, 71, .10); --card: rgba(255, 255, 255, .75);
+  --ink: #10282E; --dim: #5C7379; --line: #C8D7DB;
+  --blip: #177A5B; --surge: #D14E0C;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--blip); outline-offset: 3px; }
+header.site { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.dial { flex: none; width: 62px; height: 62px; border-radius: 50%;
+  border: 1.5px solid var(--ink); position: relative; overflow: hidden;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 9px, var(--grid) 9px 10px),
+    var(--paper); }
+.dial::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(23,122,91,.5), transparent 80deg);
+  animation: sweep 5s linear infinite; }
+@keyframes sweep { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .dial::after { animation: none; } }
+.masthead h1 { margin: 0; font-family: "Saira Condensed", sans-serif;
+  font-weight: 600; font-size: 40px; letter-spacing: .14em; text-transform: uppercase; }
+.masthead .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  letter-spacing: .18em; color: var(--dim); text-transform: uppercase; }
+.rule { border: 0; border-top: 1.5px solid var(--ink); margin: 22px 0 0; }
+.rule + .sub { display: flex; justify-content: space-between; gap: 12px;
+  font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--dim);
+  padding-top: 6px; margin-bottom: 40px; flex-wrap: wrap; }
+.mono { font-family: "IBM Plex Mono", monospace; }
+footer.site { margin-top: 56px; font-family: "IBM Plex Mono", monospace;
+  font-size: 12px; color: var(--dim); }
+footer.site a { color: var(--dim); }
+
+.back { font-family: "IBM Plex Mono", monospace; font-size: 13px;
+  text-decoration: none; color: var(--dim); }
+.back:hover { color: var(--ink); }
+header.site { margin-top: 18px; }
+.overview { border-left: 3px solid var(--ink); background: var(--card);
+  padding: 18px 22px; margin: 0 0 36px; }
+.overview .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .18em; color: var(--dim); display: block; margin-bottom: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); padding: 18px 22px;
+  margin-bottom: 14px; }
+.card .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.card .name { font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: 16px; text-decoration: none; }
+.card .name:hover { color: var(--blip); }
+.sig { display: inline-flex; gap: 3px; align-items: baseline; }
+.sig i { width: 5px; border-radius: 1px; background: var(--line); }
+.sig i.on { background: var(--blip); }
+.sig i:nth-child(1) { height: 6px; } .sig i:nth-child(2) { height: 9px; }
+.sig i:nth-child(3) { height: 12px; } .sig i:nth-child(4) { height: 15px; }
+.sig i:nth-child(5) { height: 18px; }
+.badge { font-family: "IBM Plex Mono", monospace; font-size: 11px;
+  letter-spacing: .1em; color: #fff; background: var(--surge);
+  padding: 2px 7px; border-radius: 2px; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+  color: var(--dim); margin: 6px 0 10px; }
+.card p { margin: 6px 0; }
+.card .why { color: var(--dim); font-size: 14px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="index.html">&larr; SCAN LOG</a>
+<header class="site">
+  <div class="dial" aria-hidden="true"></div>
+  <div class="masthead">
+    <div class="eyebrow">scan report · 25 signals</div>
+    <h1>2026-11-16</h1>
+  </div>
+</header>
+<hr class="rule">
+<div class="sub"><span>TREND RADAR</span><span>github trending · ai digest</span></div>
+<div class="overview"><span class="tag">OVERVIEW</span>今天，GitHub Trending 新上榜项目展示了AI与开发工具领域的快速发展，尤其是在代码审查、视频处理和交易系统方面。许多项目致力于提升工作效率和用户体验，显示出开发者对实用性和创新性的关注。
+
+特别值得关注的三个项目是：开放代码评审工具 alibaba/open-code-review，它提供多语言支持和现代化的AI技术，在提升代码审查效率上表现突出；Headroom 项目专注于优化AI输入的效率，通过减少传递给大型语言模型的令牌数量，大幅提升响应速度；以及 Claude Trading Skills，强调基于工作流的投资决策流程，能够帮助个人投资者提升交易策略的有效性。这些项目都在各自领域展示了强大的应用潜力和创新价值。</div>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/alibaba/open-code-review">alibaba/open-code-review</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">代码审查工具/开发工具 · Go
+    · +691 today · 52166 stars</div>
+  <p>阿里巴巴推出的混合架构代码评审工具，支持多种编程语言，对代码质量进行精确审查，具有较强的实用性。</p>
+  <p class="why">解决了代码评审效率低和安全性检查不全面的问题，提供了多语言支持和现代化的AI代理机制。 — 该项目结合了Alibab的规模应用和现代技术，提供了全新的代码评审体验，促进了开发流程的优化，具有潜在的广泛应用价值。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/headroomlabs-ai/headroom">headroomlabs-ai/headroom</a>
+    <span class="sig" role="img" aria-label="关注度 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具/优化 · Python
+    · +93 today · 79760 stars</div>
+  <p>Headroom 是一个用于为 AI 代理压缩输入的工具，能显著减少传送给 LLM 的令牌数，从而提高效率。</p>
+  <p class="why">解决了 AI 输入数据量过大导致的效率低下问题，特别是在处理重复数据时，有效压缩输入令牌。 — 项目通过减少传递给 LLM 的令牌数量，可能会大幅提升 AI 代理的响应速度和成本效益，具有突破性的应用前景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/tradermonty/claude-trading-skills">tradermonty/claude-trading-skills</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/金融科技/AI · Python
+    · +706 today · 5616 stars</div>
+  <p>Claude Trading Skills 是一个专注于提升个人投资者和交易者决策过程的工具包，强调使用工作流和批判性思维来改善交易策略。</p>
+  <p class="why">解决了个人投资者在市场分析和交易策略开发中的复杂性问题，提供了一个结构化的工作流程帮助用户进行风险管理和决策。 — 该项目通过结合人工智能与传统交易方法，提高了个人投资者的决策效率，具有创新性和实用性，能够显著改善投资者的交易过程。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/louislam/uptime-kuma">louislam/uptime-kuma</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">监控工具 · JavaScript
+    · +432 today · 94433 stars</div>
+  <p>Uptime Kuma 是一个易于使用的自托管监控工具，支持多种监控方式和通知功能。</p>
+  <p class="why">解决了用户对网站和服务可用性的监控需求，提供了自托管的便捷方案。 — 项目具备广泛的监控功能和可定制性，适合需要自托管监控解决方案的用户，有潜力成为行业标准工具。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Likely7/Veyra-NRVideo">Likely7/Veyra-NRVideo</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">视频处理/AI工具 · C++
+    · +423 today · 2823 stars</div>
+  <p>Veyra-NRVideo是一个基于人工智能的视频增强工具,旨在为用户提供实时的高质量视频处理体验,尤其适用于游戏流媒体和捕捉。这一项目利用了显卡的强大性能来改善视频质量,并引入了最新的AI技术。</p>
+  <p class="why">解决了高清视频流媒体处理延迟和质量不佳的问题,并通过AI增强提升了用户观看体验。 — 该项目通过结合最新的DLSS5技术和AI算法,大幅提升了视频处理性能和效果,在游戏直播和视频处理领域具备较大的应用潜力,属于值得关注的创新工具。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/Tencent/LoopForge">Tencent/LoopForge</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/工作流自动化/自托管 · Go
+    · +423 today · 1585 stars</div>
+  <p>LoopForge 是一个用于自动化软件交付的自托管工作流平台，整合了多种编码代理，支持通过标准操作程序(SOP)实现高效的开发流程。</p>
+  <p class="why">简化了软件交付过程中的协作与审批，通过自托管解决方案增强了数据安全性和灵活性。 — 该项目具有突破性的工作方式优化，尤其是在软件开发领域，通过集成多种智能代理，提高了开发效率与代码审核的规范性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ag-ui-protocol/ag-ui">ag-ui-protocol/ag-ui</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/AI · TypeScript
+    · +355 today · 17944 stars</div>
+  <p>AG-UI 是一种轻量级的事件驱动协议，旨在简化 AI 代理与用户应用的交互，具有良好的灵活性和易用性。</p>
+  <p class="why">解决了 AI 代理与用户界面之间的连接和事件处理问题，实现更高效的用户交互。 — AG-UI 为前端开发引入新的交互标准，为集成 AI 代理提供了灵活的解决方案，具有潜在的广泛应用前景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/kajisho5/ffmpeg-skill">kajisho5/ffmpeg-skill</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/音频处理 · Python
+    · +331 today · 5994 stars</div>
+  <p>一款为编程代理提供本地视频编辑功能的工具，支持多种视频处理操作，强调隐私与独立性。</p>
+  <p class="why">通过提供本地FFmpeg视频编辑功能，解决了对云服务的依赖和API秘钥的安全问题。 — 项目以Python为基础，可以在本地环境中处理视频，大幅提升了编程代理的实用性与灵活性，同时避免了数据上传的隐私风险，具有广泛的应用前景。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/tailscale/tailcat">tailscale/tailcat</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">网络工具 · Go
+    · +324 today · 9949 stars</div>
+  <p>Tailcat是一个基于Tailscale数据平面的网络工具，能够在不依赖Tailscale控制平面的情况下提供加密的点对点连接。</p>
+  <p class="why">解决了不需要Tailscale账号即可建立加密的端到端连接问题，适合对隐私和安全有较高要求的用户。 — 这个项目通过简化的方式提供了安全的网络连接，具有较大的实用性和潜在的应用场景，对于开发人员尤其有吸引力，值得高度关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/martin-olivier/airgorah">martin-olivier/airgorah</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">安全审计工具 · Rust
+    · +269 today · 6264 stars</div>
+  <p>Airgorah 是一种 WiFi 安全审计软件，专为评估和发现网络安全漏洞而设计，使用 Rust 编写，支持 GTK4 的图形界面。</p>
+  <p class="why">提供 WiFi 网络的安全审计功能，帮助网络管理者检测和修复潜在安全漏洞。 — 该项目在 WiFi 安全审计领域具有实用性，能帮助用户评估网络安全，具有较高的开发价值和技术探索价值，但使用需谨慎，法律风险也需重视。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/JuliusBrussee/caveman">JuliusBrussee/caveman</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Go
+    · +227 today · 120480 stars</div>
+  <p>Caveman项目通过使用更少的tokens来提高编程Agent的效率，提供了一种经济高效的替代解决方案。</p>
+  <p class="why">解决了编程自动化中的成本和效率问题，尤其是在使用大型语言模型时的token消耗。 — 该项目显著降低了AI编码助手的成本和token消耗，可能对开发者的工作方式产生积极影响，但尚未完全证明其广泛的适用性。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ahujasid/mcp-for-blender">ahujasid/mcp-for-blender</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +140 today · 34542 stars</div>
+  <p>这是一个社区插件，利用大型语言模型（LLM）帮助用户在 Blender 中进行三维建模和场景创建，以AI辅助手段简化3D操作。</p>
+  <p class="why">解决了3D建模的复杂性，通过自然语言提示简化用户与Blender的交互，提升了创作效率。 — 项目通过AI技术提升了3D建模的体验，具备广泛的应用潜力，尤其是对于创作者友好，可能会显著改变建模工作流程。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/andrewyng/openworker">andrewyng/openworker</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Python
+    · +139 today · 19347 stars</div>
+  <p>OpenWorker 是一款协作型桌面应用，旨在通过 Harness SDK 赋能用户的 AI 创意和日常工作流程。</p>
+  <p class="why">解决了用户在日常工作中高效组织任务和代码审查的问题，同时支持用户定制化的 AI 应用开发。 — 该项目提供了一种集成的解决方案，结合桌面应用与 SDK，具备一定的创新性和实用性，能显著提升用户的工作效率。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/SnailSploit/Claude-Red">SnailSploit/Claude-Red</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">安全工具/红队工具 · Python
+    · +131 today · 11039 stars</div>
+  <p>claude-red 是一个针对 Claude 技能系统的 offensive security 并且提升红队操作能力的库，提供专业攻击技术的指导。</p>
+  <p class="why">帮助安全研究人员有效模拟攻击，提升攻防能力；提供便捷的技能加载方式，增强了 Claude 的实用性。 — 该项目通过系统化的攻击技能提升了红队人员的作战效率和专业性，具有实用价值和创新性，值得关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/LibreTranslate/LibreTranslate">LibreTranslate/LibreTranslate</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开放源代码/翻译 · Python
+    · +130 today · 17762 stars</div>
+  <p>LibreTranslate 是一个免费开源的机器翻译 API，支持自托管和脱机使用，易于设置。</p>
+  <p class="why">提供自托管的机器翻译解决方案，避免依赖于商业软件（如 Google 翻译）。 — 项目具备自托管特性，推动了对开源翻译工具的关注，适合希望保护数据隐私和自主使用翻译服务的用户。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/bojieli/ai-infra-book">bojieli/ai-infra-book</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/基础设施/开源书籍 · Python
+    · +127 today · 7829 stars</div>
+  <p>本项目是一本关于 AI 基础设施的开源书稿，专注于 LLM 推理与训练系统设计，旨在通过量化分析来提升 AI 应用开发的效率和效果。</p>
+  <p class="why">解决了理解 AI 应用所需的底层基础设施的复杂性，并提供系统设计的量化思维方法。 — 该书从硬件约束和模型架构出发，深入探讨 AI Infra，具有较高的理论价值和实际应用潜力，对 AI 开发者和研究者均有较大帮助。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/motion-canvas/motion-canvas">motion-canvas/motion-canvas</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">开发工具/动画 · TypeScript
+    · +111 today · 19953 stars</div>
+  <p>Motion Canvas 是一个用于动画编程的 TypeScript 库，配有实时预览编辑器，专注于可视化表达。</p>
+  <p class="why">Motion Canvas 通过简化动画的创建过程，解决了传统动画软件学习曲线陡峭、操作复杂的问题，使得用户能够快速实现想法并同步配音。 — 该项目为动画制作提供了创新的编程方式和实时预览功能，适合开发者和设计师，具有改变传统动画制作工作的潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/volcengine/OpenViking">volcengine/OpenViking</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">人工智能/开发工具 · Python
+    · +111 today · 42278 stars</div>
+  <p>OpenViking 是一个自我演化的上下文数据库，专门为AI代理设计，旨在统一代理记忆、知识管理和技能，具备重要的行业应用前景。</p>
+  <p class="why">解决了AI代理在上下文理解和知识存储方面的碎片化问题，提升了AI助手的智能和适应能力。 — 该项目通过创新的上下文数据库概念，提升了AI代理的能力，具备潜在的广泛应用，因此值得持续关注。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/elementalsouls/Claude-BugHunter">elementalsouls/Claude-BugHunter</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI安全/安全工具 · Python
+    · +98 today · 6514 stars</div>
+  <p>Claude-BugHunter 是一个功能强大的漏洞猎杀和红队工作技能包，整合了众多技能和报告模式，能够极大提升安全测试的效率和准确性。</p>
+  <p class="why">提供了一整套自动化的漏洞检测和报告工具，帮助安全研究人员有效进行漏洞猎捕和外部红队活动。 — 该项目结合人工智能技术，有效提升了信息安全检测的自动化和智能化水平，在信息安全领域具有较大应用潜力，但尚不具备颠覆性的特征。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/nolly-studio/cult-ui">nolly-studio/cult-ui</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/UI 组件 · TypeScript
+    · +96 today · 7463 stars</div>
+  <p>Cult UI 是一个提供超过 150 个开源动画组件的项目，主要面向设计工程师，易于集成入 shadcn/ui 项目。</p>
+  <p class="why">为开发者提供大量免费和易用的映射组件，加快 UI 开发效率和创新。 — 项目提供了大量高质量的开源组件，且与流行的工具链（如 Tailwind CSS 和 React）无缝集成，能显著提高项目开发的效率，是前端开发领域的重要资源。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/block/buzz">block/buzz</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/开发工具 · Rust
+    · +95 today · 37492 stars</div>
+  <p>Buzz 是一个自托管的工作区平台，使人类和 AI 代理能够在同一环境中协作，旨在优化团队工作流程。</p>
+  <p class="why">通过将人类和 AI 代理结合在一个共享的工作空间中，Buzz 解决了传统团队协作中信息孤岛和角色权限管理的问题。 — Buzz 提供了一个创新的团队协作方式，整合了 AI 代理的能力与人类员工的工作，显著提升了工作效率，但仍需市场验证其实际应用效果。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/FujiwaraChoki/supoclip">FujiwaraChoki/supoclip</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">前端/人工智能工具 · Python
+    · +91 today · 3235 stars</div>
+  <p>SupoClip 是一个开源的 AI 视频剪辑工具，旨在提供无水印、无平台锁定的优质视频剪辑服务。</p>
+  <p class="why">解决了用户在使用 OpusClip 中遇到的限制与水印问题，让用户能够自由使用和自定义视频剪辑功能。 — 作为一个开源软件，SupoClip 提供与市场上流行的收费工具同等的服务，同时避免了平台锁定和品牌宣传，满足了当前用户对于自主权和隐私的需求。此项目在视频剪辑领域具有较大潜力，尤其是在内容创作者之间。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/HKUDS/Vibe-Trading">HKUDS/Vibe-Trading</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">金融科技 · Python
+    · +86 today · 38330 stars</div>
+  <p>Vibe-Trading 是一个个人交易代理系统，利用多代理技术和算法交易实现量化交易，适合金融科技领域的开发者和投资者。</p>
+  <p class="why">该项目通过提供全面的交易能力来降低普通用户进入算法交易的门槛，解决了个人投资者在高频交易和策略实现中的技术壁垒。 — 项目整合了多种流行技术，如 FastAPI 和 React，具备强大的后端和前端支持，且在 GitHub 上的受欢迎度和主题排位显示了其在算法交易和量化金融领域的潜力。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/ManimCommunity/manim">ManimCommunity/manim</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">教育工具/动画引擎 · Python
+    · +83 today · 42590 stars</div>
+  <p>Manim是一个用于创建数学动画的Python框架，适合教育和解释性视频使用，具备活跃的社区支持和持续的功能改进。</p>
+  <p class="why">帮助教育工作者和内容创作者轻松制作精确、程序化的数学动画，提升教学效果，增强观看体验。 — 项目拥有庞大的社区支持和活跃的开发，具备良好的文档和示例，且已被多个教育频道使用，能显著改变数学教育和内容制作的方式。</p>
+</article>
+
+<article class="card">
+  <div class="head">
+    <a class="name" href="https://github.com/asgeirtj/system_prompts_leaks">asgeirtj/system_prompts_leaks</a>
+    <span class="sig" role="img" aria-label="关注度 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+    
+  </div>
+  <div class="meta">AI/聊天机器人 · Python
+    · +83 today · 71498 stars</div>
+  <p>该项目收集了多个流行聊天机器人的系统提示泄露信息，提供了一个详尽的资源库，对研究和使用聊天机器人的开发者都具有价值。</p>
+  <p class="why">解决了开发者和研究人员获取聊天机器人的系统提示这一信息获取困难的问题，增强了对聊天机器人的了解。 — 该项目提供了大量的泄露信息，能够为开发者提供实用的参考和灵感，具有较高的应用价值，但可能涉及隐私和合规性问题。</p>
+</article>
+
+<footer class="site">tracked by <a href="https://github.com/DawnZYC/trend-radar">trend-radar</a></footer>
+</div></body></html>
